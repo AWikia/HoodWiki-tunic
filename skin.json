@@ -37,6 +37,9 @@
 			"i18n"
 		]
 	},
+	"ThemeModules": {
+		"tunic": [ "blue", "green", "dark", "pink" ]
+	},
 	"ResourceModules": {
 		"skins.tunic": {
 			"class": "ResourceLoaderSkinModule",
@@ -67,15 +70,34 @@
 			"scripts": [
 				"resources/main.js"
 			]
-		}
-	},
-	"ResourceFileModulePaths": {
-		"localBasePath": "",
-		"remoteSkinPath": "Tunic"
-	},
-	"ResourceModuleSkinStyles": {
-		"tunic": {
-			"+ext.echo.styles.badge": "resources/extensions/echo.styles.badge.less"
+		},
+		"themeloader.skins.tunic.blue": {
+			"styles": {
+				"resources/blue/style.css": {
+					"media": "screen"
+				}
+			}
+		},
+		"themeloader.skins.tunic.pink": {
+			"styles": {
+				"resources/pink/style.css": {
+					"media": "screen"
+				}
+			}
+		},
+		"themeloader.skins.tunic.greeen": {
+			"styles": {
+				"resources/green/style.css": {
+					"media": "screen"
+				}
+			}
+		},
+		"themeloader.skins.tunic.dark": {
+			"styles": {
+				"resources/dark/style.css": {
+					"media": "screen"
+				}
+			}
 		}
 	},
 	"manifest_version": 1
