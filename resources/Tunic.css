@@ -53,6 +53,12 @@ html body {
 }
 
 container {
+/** Scrollbar Styling **/
+	/* Track */
+	--scrollbar-track-color-1:rgb(var(--page-background-color-rgb));
+	--scrollbar-track-color-2:var(--page-secondary-background-color-hover);
+	--scrollbar-track-color-3:var(--page-secondary-background-color-active);
+	--scrollbar-track-text:rgb(var(--page-text-background-color-rgb));
 	padding:0.3em;
 	box-sizing:border-box;
 	color:var(--page-text-background-color);
