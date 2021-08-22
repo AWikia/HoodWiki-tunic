@@ -53,6 +53,29 @@
 				{{/data-logos}}
 				</a>
 			</div>
+			<div id="visual-colors">
+				<div role="navigation" id="p-visual-colors" class="mw-portlet mw-portlet-visual-colors" title="" aria-labelledby="p-visual-colors-label">
+					<h3 id="p-visual-colors-label">{{msg-tunic-visual-colors}}</h3>
+					<div class="mw-portlet-body">
+						<ul>
+							<li id="colorS"><a onclick="VisualColor('S')">{{msg-tunic-standard}}</a></li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+			<div id="wiki-themes">
+				<div role="navigation" id="p-themes" class="mw-portlet mw-portlet-themes" title="" aria-labelledby="p-themes-label">
+					<h3 id="p-themes-label">{{msg-tunic-themes}}</h3>
+					<div class="mw-portlet-body">
+						<ul>
+							<li><a onclick="HCa()">{{msg-tunic-theme}} A</a></li>
+							<li><a onclick="HCb()">{{msg-tunic-theme}} B</a></li>
+							<li><a onclick="HCc()">{{msg-tunic-theme}} C</a></li>
+							<li><a onclick="HCd()">{{msg-tunic-theme}} D</a></li>
+						</ul>		
+					</div>
+				</div>
+			</div>
 			{{#data-search-box}}
 			<form action="{{form-action}}" role="search" class="mw-portlet" id="p-search">
 				<input type="hidden" name="title" value="{{page-title}}">

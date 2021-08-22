@@ -1,0 +1,756 @@
+﻿/* Forced Colors */
+.theme-A[visualcolors="forced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#000000!important;
+--anchor-background-color:#f20884!important;
+--page-background-color:#000000!important;
+--page-border-background-color:#1fb714!important;
+--page-text-background-color:#fbf305!important;
+--accent-background-color:#006412!important;
+--sticky-header-background-color:#0000d3!important;
+--toolbar-background-color:#02abea!important;
+}
+
+.theme-B[visualcolors="forced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#000000!important;
+--anchor-background-color:#f20884!important;
+--page-background-color:#000000!important;
+--page-border-background-color:#c0c0c0!important;
+--page-text-background-color:#1fb714!important;
+--accent-background-color:#0000d3!important;
+--sticky-header-background-color:#02abea!important;
+--toolbar-background-color:#4700a5!important;
+}
+
+.theme-C[visualcolors="forced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#000000!important;
+--anchor-background-color:#fbf305!important;
+--page-background-color:#000000!important;
+--page-border-background-color:#1fb714!important;
+--page-text-background-color:#ffffff!important;
+--accent-background-color:#02abea!important;
+--sticky-header-background-color:#4700a5!important;
+--toolbar-background-color:#0000d3!important;
+}
+
+
+.theme-D[visualcolors="forced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#ffffff!important;
+--anchor-background-color:#0000d3!important;
+--page-background-color:#ffffff!important;
+--page-border-background-color:#562c05!important;
+--page-text-background-color:#000000!important;
+--accent-background-color:#4700a5!important;
+--sticky-header-background-color:#000000!important;
+--toolbar-background-color:#ffffff!important;
+}
+
+
+/* Luna Colors */
+[visualcolors="lunacolors"],
+[visualcolors="lunacolors"] body {
+--toolbar-background-color:auto!important;
+--community-background-image:url("https://i.pinimg.com/originals/75/da/f4/75daf4ba563e173cddcd7b9e86a39257.jpg")!important;
+--community-background-mode:full!important;
+--community-background-vertical-alignment:top!important;
+--community-background-size:stretched!important;
+--community-background-no-tiling:false!important;
+}
+
+.theme-A[visualcolors="lunacolors"]  { /* Blue */
+--community-background-color:#708fc6!important;
+--anchor-background-color:#215dc6!important;
+--page-background-color:#edead9!important;
+--page-border-background-color:#7292e1!important;
+--page-text-background-color:#333333!important;
+--accent-background-color:#47ab47!important;
+--sticky-header-background-color:#215dc6!important;
+}
+
+.theme-B[visualcolors="lunacolors"]  { /* Olive */
+--community-background-color:#d5e6bc!important;
+--anchor-background-color:#56662d!important;
+--page-background-color:#edead9!important;
+--page-border-background-color:#a8b689!important;
+--page-text-background-color:#333333!important;
+--accent-background-color:#51824a!important;
+--sticky-header-background-color:#8ea06e!important;
+}
+
+.theme-C[visualcolors="lunacolors"]  { /* Silver */
+--community-background-color:#d8d1d1!important;
+--anchor-background-color:#3f3d3d!important;
+--page-background-color:#edead9!important;
+--page-border-background-color:#acb0be!important;
+--page-text-background-color:#333333!important;
+--accent-background-color:#238f29!important;
+--sticky-header-background-color:#8c8ba0!important;
+}
+
+
+.theme-D[visualcolors="lunacolors"]  { /* Zune */
+--community-background-color:#cccccc!important;
+--anchor-background-color:#000080!important;
+--page-background-color:#e2e2e2!important;
+--page-border-background-color:#555555!important;
+--page-text-background-color:#000000!important;
+--accent-background-color:#e07330!important;
+--sticky-header-background-color:#282828!important;
+}
+
+
+/* Classic Forced Colors */
+.theme-A[visualcolors="classicforced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#000000!important;
+--anchor-background-color:#8080ff!important;
+--page-background-color:#000000!important;
+--page-border-background-color:#00ff00!important;
+--page-text-background-color:#ffff00!important;
+--accent-background-color:#008000!important;
+--sticky-header-background-color:#0000ff!important;
+--toolbar-background-color:#00ffff!important;
+}
+
+.theme-B[visualcolors="classicforced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#000000!important;
+--anchor-background-color:#8080ff!important;
+--page-background-color:#000000!important;
+--page-border-background-color:#c0c0c0!important;
+--page-text-background-color:#00ff00!important;
+--accent-background-color:#0000FF!important;
+--sticky-header-background-color:#00ffff!important;
+--toolbar-background-color:#000040!important;
+}
+
+.theme-C[visualcolors="classicforced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#000000!important;
+--anchor-background-color:#ffff00!important;
+--page-background-color:#000000!important;
+--page-border-background-color:#3ff23f!important;
+--page-text-background-color:#ffffff!important;
+--accent-background-color:#1AEBFF!important;
+--sticky-header-background-color:#37006e!important;
+--toolbar-background-color:#00002f!important;
+}
+
+
+.theme-D[visualcolors="classicforced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#ffffff!important;
+--anchor-background-color:#00009f!important;
+--page-background-color:#ffffff!important;
+--page-border-background-color:#600000!important;
+--page-text-background-color:#000000!important;
+--accent-background-color:#37006E!important;
+--sticky-header-background-color:#000000!important;
+--toolbar-background-color:#ffffff!important;
+}
+
+/* Classic Forced Colors */
+.theme-A[visualcolors="campbellforced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#0c0c0c!important;
+--anchor-background-color:#3a96dd!important;
+--page-background-color:#0c0c0c!important;
+--page-border-background-color:#16c60c!important;
+--page-text-background-color:#f9f1a5!important;
+--accent-background-color:#13a10e!important;
+--sticky-header-background-color:#3b78ff!important;
+--toolbar-background-color:#61d6d6!important;
+}
+
+.theme-B[visualcolors="campbellforced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#0c0c0c!important;
+--anchor-background-color:#3a96dd!important;
+--page-background-color:#0c0c0c!important;
+--page-border-background-color:#cccccc!important;
+--page-text-background-color:#16c60c!important;
+--accent-background-color:#3b78ff!important;
+--sticky-header-background-color:#61d6d6!important;
+--toolbar-background-color:#881798!important;
+}
+
+.theme-C[visualcolors="campbellforced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#0c0c0c!important;
+--anchor-background-color:#f9f1a5!important;
+--page-background-color:#0c0c0c!important;
+--page-border-background-color:#16c60c!important;
+--page-text-background-color:#f2f2f2!important;
+--accent-background-color:#61d6d6!important;
+--sticky-header-background-color:#881798!important;
+--toolbar-background-color:#0037da!important;
+}
+
+
+.theme-D[visualcolors="campbellforced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#f2f2f2!important;
+--anchor-background-color:#0037da!important;
+--page-background-color:#f2f2f2!important;
+--page-border-background-color:#c50f1f!important;
+--page-text-background-color:#0c0c0c!important;
+--accent-background-color:#881798!important;
+--sticky-header-background-color:#0c0c0c!important;
+--toolbar-background-color:#f2f2f2!important;
+}
+
+/* Classic Forced Colors */
+.theme-A[visualcolors="tangoforced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#000000!important;
+--anchor-background-color:#ad7fa8!important;
+--page-background-color:#000000!important;
+--page-border-background-color:#8ae234!important;
+--page-text-background-color:#fce94f!important;
+--accent-background-color:#4e9a06!important;
+--sticky-header-background-color:#729fcf!important;
+--toolbar-background-color:#34e2e2!important;
+}
+
+.theme-B[visualcolors="tangoforced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#000000!important;
+--anchor-background-color:#ad7fa8!important;
+--page-background-color:#000000!important;
+--page-border-background-color:#d3d7cf!important;
+--page-text-background-color:#8ae234!important;
+--accent-background-color:#729fcf!important;
+--sticky-header-background-color:#34e2e2!important;
+--toolbar-background-color:#75507b!important;
+}
+
+.theme-C[visualcolors="tangoforced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#000000!important;
+--anchor-background-color:#fce94f!important;
+--page-background-color:#000000!important;
+--page-border-background-color:#8ae234!important;
+--page-text-background-color:#eeeeec!important;
+--accent-background-color:#34e2e2!important;
+--sticky-header-background-color:#75507b!important;
+--toolbar-background-color:#3465a4!important;
+}
+
+
+.theme-D[visualcolors="tangoforced"]  {
+--community-background-image:url("")!important;
+--community-background-color:#eeeeec!important;
+--anchor-background-color:#3465a4!important;
+--page-background-color:#eeeeec!important;
+--page-border-background-color:#cc0000!important;
+--page-text-background-color:#000000!important;
+--accent-background-color:#75507b!important;
+--sticky-header-background-color:#000000!important;
+--toolbar-background-color:#eeeeec!important;
+}
+
+/* Factory colors used in evelution Store and Wiki Creation Wizard */
+ .theme-A[visualcolors="factorycolors"] {
+--community-background-image:url("");
+--community-background-color:#f6f6f6;
+--anchor-background-color:#00a3a3;
+--page-background-color:#ffffff;
+--page-border-background-color:#cccccc;
+--page-text-background-color:#002a32;
+--accent-background-color:#00D6D6;
+--sticky-header-background-color:#13282c;
+--toolbar-background-color:auto;
+}
+
+.theme-B[visualcolors="factorycolors"] {
+--community-background-image:url("");
+--community-background-color:#f6f6f6;
+--anchor-background-color:#0095c0;
+--page-background-color:#ffffff;
+--page-border-background-color:#cccccc;
+--page-text-background-color:#1a1a1a;
+--accent-background-color:#00B7E0;
+--sticky-header-background-color:#404a57;
+--toolbar-background-color:auto;
+}
+
+.theme-C[visualcolors="factorycolors"] {
+--community-background-image:url("");
+--community-background-color:#002a32;
+--anchor-background-color:#3c7fda;
+--page-background-color:#0e191a;
+--page-border-background-color:#7f9998;
+--page-text-background-color:#d4d5d5;
+--accent-background-color:#1a5eb8;
+--sticky-header-background-color:#404a56;
+--toolbar-background-color:auto;
+}
+
+.theme-D[visualcolors="factorycolors"] {
+--community-background-image:url("");
+--community-background-color:#002a32;
+--anchor-background-color:#5f7a7b;
+--page-background-color:#0e191a;
+--page-border-background-color:#7f9998;
+--page-text-background-color:#f2f5f5;
+--accent-background-color:#5f7a7b;
+--sticky-header-background-color:#becfd0;
+--toolbar-background-color:auto;
+}
+
+/* RGB Celebration Colors */
+.theme-A[visualcolors="rgbcolors"]  {
+--community-background-image:url("");
+--community-background-color:#f73400;
+--anchor-background-color:#600000;
+--page-background-color:#fedfec;
+--page-border-background-color:#800000;
+--page-text-background-color:#3a3a3a;
+--accent-background-color:#d13438;
+--sticky-header-background-color:#e81023;
+--toolbar-background-color:#ff6f6f;
+--caret-color:#ff00bf!important;
+}
+
+.theme-B[visualcolors="rgbcolors"] {
+--community-background-image:url("");
+--community-background-color:#5ea200;
+--anchor-background-color:#006412;
+--page-background-color:#82ca9c;
+--page-border-background-color:#008000;
+--page-text-background-color:#3a3a3a;
+--accent-background-color:#107c10;
+--sticky-header-background-color:#10893e;
+--toolbar-background-color:#47cf74;
+--caret-color:#bfff00!important;
+}
+
+.theme-C[visualcolors="rgbcolors"] {
+--community-background-image:url("");
+--community-background-color:#0068b7;
+--anchor-background-color:#00007f;
+--page-background-color:#99d9ea;
+--page-border-background-color:#008080;
+--page-text-background-color:#3a3a3a;
+--accent-background-color:#0063b1;
+--sticky-header-background-color:#0078d7;
+--toolbar-background-color:#4099e1;
+--caret-color:#00bfff!important;
+}
+
+.theme-D[visualcolors="rgbcolors"] {
+--community-background-image:url("");
+--community-background-color:#e2e2e2;
+--anchor-background-color:#404040;
+--page-background-color:#dcdcdc;
+--page-border-background-color:#a3a3a3;
+--page-text-background-color:#3a3a3a;
+--accent-background-color:#515c6b;
+--sticky-header-background-color:#767676;
+--toolbar-background-color:#879289;
+--caret-color:#bf00ff!important;
+}
+
+/** Retro Colors **/
+
+/* First */
+.theme-A[visualcolors="retro"]  {
+--community-background-image:url("headbg.jpg");
+--community-background-color:#e995ca;
+--anchor-background-color:#0699a3;
+--page-background-color:#ffffff;
+--page-border-background-color:#b0a8ad;
+--page-text-background-color:#000000;
+--accent-background-color:#18BBC5;
+--sticky-header-background-color:#ffffff;
+--toolbar-background-color:#ffffff;
+}
+
+.theme-B[visualcolors="retro"]  {
+--community-background-image:url("headbg3.jpg");
+--community-background-color:#166a35;
+--anchor-background-color:#e7443a;
+--page-background-color:#000000;
+--page-border-background-color:#4f5752;
+--page-text-background-color:#ffffff;
+--accent-background-color:#e7443a;
+--sticky-header-background-color:#000000;
+--toolbar-background-color:#000000;
+}
+
+.theme-C[visualcolors="retro"]  {
+--community-background-image:url("headbg.jpg");
+--community-background-color:#a99b3a;
+--anchor-background-color:#046691;
+--page-background-color:#abc123;
+--page-border-background-color:#68a001;
+--page-text-background-color:#000111;
+--accent-background-color:#3d3d99;
+--sticky-header-background-color:#f7f7f7;
+--toolbar-background-color:#ffc123;
+}
+
+.theme-D[visualcolors="retro"]  {
+--community-background-image:url("headbg.jpg");
+--community-background-color:#e995ca;
+--anchor-background-color:#c900c9;
+--page-background-color:#ffc0cb;
+--page-border-background-color:#dd94a0;
+--page-text-background-color:#020202;
+--accent-background-color:#ff0051;
+--sticky-header-background-color:#ff8093;
+--toolbar-background-color:#ffc0cb;
+}
+
+
+/* Second */
+.theme-A[visualcolors="retro2"] {
+--community-background-image:url("headbg.jpg");
+--community-background-color:#e995ca;
+--anchor-background-color:#058892;
+--page-background-color:#ffffff;
+--page-border-background-color:#ccc;
+--page-text-background-color:#000000;
+--accent-background-color:#18BBC5;
+--sticky-header-background-color:#0000ff;
+}
+
+.theme-B[visualcolors="retro2"] {
+--community-background-image:url("headbg.jpg");
+--community-background-color:#54d9f8;
+--anchor-background-color:#860498;
+--page-background-color:#ffecff;
+--page-border-background-color:#aac426;
+--page-text-background-color:#2a2a2a;
+--accent-background-color:#70C800;
+--sticky-header-background-color:#50679b;
+}
+
+.theme-C[visualcolors="retro2"] {
+--community-background-image:url("headbg3.jpg");
+--community-background-color:#610038;
+--anchor-background-color:#5959ff;
+--page-background-color:#282828;
+--page-border-background-color:#cccccc;
+--page-text-background-color:#f9f9f9;
+--accent-background-color:#2239ae;
+--sticky-header-background-color:#7f6969;
+}
+
+.theme-D[visualcolors="retro2"] {
+--community-background-image:url("headbg6.jpg");
+--community-background-color:#ac599e;
+--anchor-background-color:#298805;
+--page-background-color:#ffffff;
+--page-border-background-color:#cccccc;
+--page-text-background-color:#000000;
+--accent-background-color:#5CBB81;
+--sticky-header-background-color:#ff0000;
+}
+
+/* Third */
+.theme-A[visualcolors="retro3"] {
+--community-background-image:url("");
+--community-background-color:#a2ddfe;
+--anchor-background-color:#e14a22;
+--page-background-color:#fefeff;
+--page-border-background-color:#7e787d;
+--page-text-background-color:#020002;
+--accent-background-color:#FEAFD3;
+--sticky-header-background-color:#639d04;
+}
+
+.theme-B[visualcolors="retro3"] {
+--community-background-image:url("nightly.jpg");
+--community-background-color:#000;
+--anchor-background-color:#00ffff;
+--page-background-color:#3a3a3a;
+--page-border-background-color:#cccddd;
+--page-text-background-color:#c9d4d5;
+--accent-background-color:#375885;
+--sticky-header-background-color:#663399;
+}
+
+.theme-C[visualcolors="retro3"] {
+--community-background-image:url("dev.jpg");
+--community-background-color:#0000aa;
+--anchor-background-color:#00aaff;
+--page-background-color:#0000a8;
+--page-border-background-color:#aaaacc;
+--page-text-background-color:#f9f9f9;
+--accent-background-color:#00699E;
+--sticky-header-background-color:#16c4c4;
+}
+
+.theme-D[visualcolors="retro3"] {
+--community-background-image:url("headbg5.jpg");
+--community-background-color:#76f6ff;
+--anchor-background-color:#800080;
+--page-background-color:#e0e8ee;
+--page-border-background-color:#dda0a9;
+--page-text-background-color:#1a2b3c;
+--accent-background-color:#E78097;
+--sticky-header-background-color:#c384df;
+}
+
+/* Fourth to Seventh*/
+
+[visualcolors="retro4"],
+[visualcolors="retro5"],
+[visualcolors="retro6"],
+[visualcolors="retro7"]    {
+--page-text-background-color:#000000!important;
+}
+
+/* Fourth */
+.theme-A[visualcolors="retro4"] {
+    --community-background-color:#420000;
+    --community-background-image:url("");
+    --anchor-background-color:#800000;
+    --page-background-color:#c2bfa5;
+    --page-border-background-color:#8d8961;
+    --accent-background-color:#8d8961;
+    --sticky-header-background-color:#800000;
+    --toolbar-background-color:#8d8961;
+}
+
+.theme-B[visualcolors="retro4"] {
+    --community-background-color:#a28d68;
+    --community-background-image:url("");
+    --anchor-background-color:#008080;
+    --page-background-color:#d6ccbb;
+    --page-border-background-color:#a28d68;
+    --accent-background-color:#008080;
+    --sticky-header-background-color:#008080;
+    --toolbar-background-color:#a28d68;
+}
+
+.theme-C[visualcolors="retro4"] {
+    --community-background-color:#400040;
+    --community-background-image:url("");
+    --anchor-background-color:#366056;
+    --page-background-color:#90b0a8;
+    --page-border-background-color:#588078;
+    --accent-background-color:#588078;
+    --sticky-header-background-color:#588078;
+    --toolbar-background-color:#90b0a8;
+}
+
+.theme-D[visualcolors="retro4"] {
+    --community-background-color:#000000;
+    --community-background-image:url("");
+    --anchor-background-color:#493da0;
+    --page-background-color:#aea8d9;
+    --page-border-background-color:#5a4eb1;
+    --accent-background-color:#5a4eb1;
+    --sticky-header-background-color:#5a4eb1;
+    --toolbar-background-color:#808080;
+}
+
+/* Fifth */
+.theme-A[visualcolors="retro5"] {
+    --community-background-color:#000000;
+    --community-background-image:url("");
+    --anchor-background-color:#937313;
+    --page-background-color:#e6d8ae;
+    --page-border-background-color:#c6a646;
+    --accent-background-color:#c6a646;
+    --sticky-header-background-color:#800000;
+    --toolbar-background-color:#c6a646;
+}
+
+.theme-B[visualcolors="retro5"] {
+    --community-background-color:#2c4e47;
+    --community-background-image:url("");
+    --anchor-background-color:#000080;
+    --page-background-color:#88c0b8;
+    --page-border-background-color:#489088;
+    --accent-background-color:#000080;
+    --sticky-header-background-color:#000080;
+    --toolbar-background-color:#489088;
+}
+
+.theme-C[visualcolors="retro5"] {
+    --community-background-color:#402840;
+    --community-background-image:url("");
+    --anchor-background-color:#484060;
+    --page-background-color:#a89890;
+    --page-border-background-color:#786058;
+    --accent-background-color:#008080;
+    --sticky-header-background-color:#484060;
+    --toolbar-background-color:#786058;
+}
+
+.theme-D[visualcolors="retro5"] {
+    --community-background-color:#420042;
+    --community-background-image:url("");
+    --anchor-background-color:#93610b;
+    --page-background-color:#ecd59d;
+    --page-border-background-color:#d7a52f;
+    --accent-background-color:#800080;
+    --sticky-header-background-color:#d7a52f;
+    --toolbar-background-color:#a0a0a4;
+}
+
+/* Sixth */
+.theme-A[visualcolors="retro6"] {
+    --community-background-color:#000000;
+    --community-background-image:url("");
+    --anchor-background-color:#2d435b;
+    --page-background-color:#8399b1;
+    --page-border-background-color:#4f657d;
+    --accent-background-color:#4f657d;
+    --sticky-header-background-color:#4f657d;
+    --toolbar-background-color:#808080;
+}
+
+.theme-B[visualcolors="retro6"] {
+    --community-background-color:#000042;
+    --community-background-image:url("");
+    --anchor-background-color:#800000;
+    --page-background-color:#c0c0c0;
+    --page-border-background-color:#808080;
+    --accent-background-color:#800000;
+    --sticky-header-background-color:#800000;
+    --toolbar-background-color:#808080;
+}
+
+.theme-C[visualcolors="retro6"] {
+    --community-background-color:#808080;
+    --community-background-image:url("");
+    --anchor-background-color:#8e5060;
+    --page-background-color:#cfafb7;
+    --page-border-background-color:#9f6070;
+    --accent-background-color:#9f6070;
+    --sticky-header-background-color:#9f6070;
+    --toolbar-background-color:#a0a0a4;
+}
+
+.theme-D[visualcolors="retro6"] {
+    --community-background-color:#414141;
+    --community-background-image:url("");
+    --anchor-background-color:#336075;
+    --page-background-color:#9db9c8;
+    --page-border-background-color:#558097;
+    --accent-background-color:#558097;
+    --sticky-header-background-color:#558097;
+    --toolbar-background-color:#808080;
+}
+
+/* Seventh */
+.theme-A[visualcolors="retro7"] {
+    --community-background-color:#213f21;
+    --community-background-image:url("");
+    --anchor-background-color:#377542;
+    --page-background-color:#a2c8a9;
+    --page-border-background-color:#599764;
+    --accent-background-color:#599764;
+    --sticky-header-background-color:#599764;
+    --toolbar-background-color:#808080;
+}
+
+.theme-B[visualcolors="retro7"] {
+    --community-background-color:#000000;
+    --community-background-image:url("");
+    --anchor-background-color:#800080;
+    --page-background-color:#c0c0c0;
+    --page-border-background-color:#808080;
+    --accent-background-color:#800080;
+    --sticky-header-background-color:#800080;
+    --toolbar-background-color:#808080;
+}
+
+.theme-C[visualcolors="retro7"] {
+    --community-background-color:#004040;
+    --community-background-image:url("");
+    --anchor-background-color:#007070;
+    --page-background-color:#c0c0c0;
+    --page-border-background-color:#808080;
+    --accent-background-color:#008080;
+    --sticky-header-background-color:#008080;
+    --toolbar-background-color:#808080;
+}
+
+.theme-D[visualcolors="retro7"] {
+    --community-background-color:#00401d;
+    --community-background-image:url("");
+    --anchor-background-color:#808000;
+    --page-background-color:#dedea0;
+    --page-border-background-color:#abab30;
+    --accent-background-color:#808000;
+    --sticky-header-background-color:#808000;
+    --toolbar-background-color:#bcbc41;
+}
+
+.theme-A[visualcolors="fandomcolors"] {
+--community-background-image:url("FandomBG1.png");
+--community-background-color:#ffc500;
+--community-background-mode:standard;
+--community-background-vertical-alignment:center;
+--community-background-size:cover;
+--community-background-no-tiling:false;
+--anchor-background-color:#520044;
+--page-background-color:#ffffff;
+--page-border-background-color:auto;
+--page-text-background-color:auto;
+--accent-background-color:#520044;
+--sticky-header-background-color:#520044;
+--toolbar-background-color:auto;
+--custom-secondary-font:"Rubik";
+}
+
+
+.theme-B[visualcolors="fandomcolors"] {
+--community-background-image:url("FandomBG2.png");
+--community-background-color:#ffc500;
+--community-background-mode:standard;
+--community-background-vertical-alignment:center;
+--community-background-size:cover;
+--community-background-no-tiling:false;
+--anchor-background-color:#fa005a;
+--page-background-color:#ffffff;
+--page-border-background-color:auto;
+--page-text-background-color:auto;
+--accent-background-color:#fa005a;
+--sticky-header-background-color:#fa005a;
+--toolbar-background-color:auto;
+--custom-secondary-font:"Rubik";
+}
+
+
+.theme-C[visualcolors="fandomcolors"] {
+--community-background-image:url("FandomBG3.png");
+--community-background-color:#520044;
+--community-background-mode:standard;
+--community-background-vertical-alignment:center;
+--community-background-size:cover;
+--community-background-no-tiling:false;
+--anchor-background-color:#ffc500;
+--page-background-color:#070f10;
+--page-border-background-color:auto;
+--page-text-background-color:auto;
+--accent-background-color:#ffc500;
+--sticky-header-background-color:#ffc500;
+--toolbar-background-color:auto;
+--custom-secondary-font:"Rubik";
+}
+
+.theme-D[visualcolors="fandomcolors"] {
+--community-background-image:url("FandomBG4.png");
+--community-background-color:#520044;
+--community-background-mode:standard;
+--community-background-vertical-alignment:center;
+--community-background-size:cover;
+--community-background-no-tiling:false;
+--anchor-background-color:#86d7dc;
+--page-background-color:#070f10;
+--page-border-background-color:auto;
+--page-text-background-color:auto;
+--accent-background-color:#86d7dc;
+--sticky-header-background-color:#86d7dc;
+--toolbar-background-color:auto;
+--custom-secondary-font:"Rubik";
+}

@@ -1,7 +1,11 @@
 {
 	"@metadata": {
-		"authors": [ "Gabriel Wicke, HM100, Timwi and HoodWiki" ]
+		"authors": [ "Gabriel Wicke, Timwi and HoodWiki" ]
 	},
 	"skinname-tunic": "Tunic",
-	"tunic-desc": "Uma pele móvel vagamente baseada no MonoBook"
+	"tunic-desc": "Uma pele móvel vagamente baseada no MonoBook",
+	"tunic-theme": "Tema",
+	"tunic-themes": "Temas",
+	"tunic-standard": "Padrão",
+	"tunic-visual-colors": "Cores Invertidas"
 }

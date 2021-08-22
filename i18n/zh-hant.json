@@ -1,0 +1,22 @@
+
+{
+	"@metadata": {
+		"authors": [ "Gabriel Wicke, Timwi and HoodWiki" ]
+	},
+	"skinname-tunic": "Tunic",
+	"tunic-desc": "A mobile skin loosely based on MonoBook that is based on CPE language and more enhancements to the retired Chick skin.",
+	"tunic-theme": "主题",
+	"tunic-themes": "主题",
+	"tunic-standard": "標準",
+	"tunic-visual-styles": "視覺樣式",
+	"tunic-visual-colors": "視覺顏色",
+    "tunic-color-factorycolors": "工廠配色",
+    "tunic-color-lunacolors": "XP Luna",
+    "tunic-color-classicforced": "Windows 強制色",
+    "tunic-color-campbellforced": "Cambell 強制色",
+    "tunic-color-forced": "tunic OS 強制色",
+    "tunic-color-tangoforced": "Tango 強制色",
+    "tunic-color-rgbcolors": "RGB 集合",
+    "tunic-color-retro": "復古",
+    "tunic-color-fandomcolors": "Fandom 2021"
+}

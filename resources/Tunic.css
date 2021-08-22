@@ -1,3 +1,55 @@
+.theme-A[visualcolors="standard"] {
+--community-background-image:url("");
+--community-background-color:#767676;
+--community-background-size:contain;
+--anchor-background-color:#562c05;
+--page-background-color:#ffffff;
+--page-border-background-color:#6e6e6e;
+--page-text-background-color:#2b2b2b;
+--accent-background-color:#4c4a48;
+--sticky-header-background-color:#e2e2e2;
+--toolbar-background-color:#ababab;
+}
+
+.theme-B[visualcolors="standard"] {
+--community-background-image:url("");
+--community-background-color:#a13bc9;
+--community-background-size:contain;
+--anchor-background-color:#8b12ae;
+--page-background-color:#d9cfe5;
+--page-border-background-color:#800080;
+--page-text-background-color:#2b2b2b;
+--accent-background-color:#8e8cd8;
+--sticky-header-background-color:#6b69d6;
+--toolbar-background-color:#7e73a5;
+}
+
+.theme-C[visualcolors="standard"] {
+--community-background-image:url("");
+--community-background-color:#000000;
+--community-background-size:contain;
+--anchor-background-color:#c0c0c0;
+--page-background-color:#000000;
+--page-border-background-color:#6e6e6e;
+--page-text-background-color:#e2e2e2;
+--accent-background-color:#4a5459;
+--sticky-header-background-color:#69797e;
+--toolbar-background-color:#879289;
+}
+
+.theme-D[visualcolors="standard"] {
+--community-background-image:url("");
+--community-background-color:#180052;
+--community-background-size:contain;
+--anchor-background-color:#02abea;
+--page-background-color:#0a3b76;
+--page-border-background-color:#008080;
+--page-text-background-color:#e2e2e2;
+--accent-background-color:#0063b1;
+--sticky-header-background-color:#0078d7;
+--toolbar-background-color:#576dcd;
+}
+
 html body {
   --cpe-body-cursor:auto!important;
   --cpe-auto-cursor: default!important;
@@ -14,7 +66,7 @@ html body {
 	outline:0;
 }
 
-.theme-A {
+:root {
 --max-width:1440px; /* Tunic is a Mobile Skin */
 --community-background-image:url("");
 --community-background-image-opacity:100%;
@@ -40,6 +92,7 @@ html body {
 --logo-filter-duration:300ms;
 --logo-filter-delay:0;
 }
+
 
 .body-community-background-color,
 .gradient-overlay {

@@ -1,7 +1,20 @@
 {
 	"@metadata": {
-		"authors": [ "Gabriel Wicke, HM100, Timwi and HoodWiki" ]
+		"authors": [ "Gabriel Wicke, Timwi and HoodWiki" ]
 	},
 	"skinname-tunic": "Tunic",
-	"tunic-desc": "Ένα κινητό δέρμα που βασίζεται χαλαρά στο MonoBook που είναι βασισμένο στην Γλώσσα CPE και πολλές βελτιώσεις στο παραιτιμένο θέμα εμφάνισης Chick."
+	"tunic-desc": "Ένα κινητό δέρμα που βασίζεται χαλαρά στο MonoBook που είναι βασισμένο στην Γλώσσα CPE και πολλές βελτιώσεις στο παραιτιμένο θέμα εμφάνισης Chick.",
+	"tunic-theme": "Θέμα",
+	"tunic-themes": "Θέματα",
+	"tunic-standard": "Κανονικό",
+	"tunic-visual-colors": "Οπτικά χρώματα",
+    "tunic-color-factorycolors": "Εργοστασικά",
+    "tunic-color-lunacolors": "XP Luna",
+    "tunic-color-classicforced": "Εξαναγκάσμένα των Windows",
+    "tunic-color-campbellforced": "Εξαναγκάσμένα Cambell",
+    "tunic-color-forced": "Εξαναγκάσμένα του tunic OS",
+    "tunic-color-tangoforced": "Εξαναγκάσμένα Tango",
+    "tunic-color-rgbcolors": "Γιωρτής RGB",
+    "tunic-color-retro": "Ρετρό",
+    "tunic-color-fandomcolors": "Fandom 2021"
 }

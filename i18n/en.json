@@ -1,7 +1,20 @@
 {
 	"@metadata": {
-		"authors": [ "Gabriel Wicke, HM100, Timwi and HoodWiki" ]
+		"authors": [ "Gabriel Wicke, Timwi and HoodWiki" ]
 	},
 	"skinname-tunic": "Tunic",
-	"tunic-desc": "A mobile skin loosely based on MonoBook that is based on CPE language and more enhancements to the retired Chick skin."
+	"tunic-desc": "A mobile skin loosely based on MonoBook that is based on CPE language and more enhancements to the retired Chick skin.",
+	"tunic-theme": "Theme",
+	"tunic-themes": "Themes",
+    "tunic-standard": "Standard",
+    "tunic-visual-colors": "Visual colors",
+    "tunic-color-factorycolors": "Factory",
+    "tunic-color-lunacolors": "XP Luna",
+    "tunic-color-classicforced": "Windows Forced",
+    "tunic-color-campbellforced": "Cambell Forced",
+    "tunic-color-forced": "tunic OS Forced",
+    "tunic-color-tangoforced": "Tango Forced",
+    "tunic-color-rgbcolors": "RGB Celebration",
+    "tunic-color-retro": "Retro",
+    "tunic-color-fandomcolors": "Fandom 2021"
 }

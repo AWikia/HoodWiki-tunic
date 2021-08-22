@@ -120,7 +120,7 @@ var visualColorNames = ['Factory', 'XP Luna', 'Windows Forced', 'Campbell Forced
 		CursorT('auto');
 		$("head").append('<style class="social-colors"></style>');
 		ManagerRows(); // For Task Manager Only
-		 VisualStyleCompile(); // Compiles the Contrast Options
+//    	 VisualStyleCompile(); // Compiles the Contrast Options
 		VisualStyle(style_active,false);
 		VisualColor(color_active,false);
 		ContrastBanner(); // Notice
@@ -289,7 +289,7 @@ function VisualStyleCompile() {
 
 		}
 		str = '<li id="color' + i + '"><a onclick="VisualColor(' + i + ')">' + visualColorNames[i] + '</a></li>'
-		$(".cpe-dropdown .cpe-dropdown__content .cpe-list.cpe-visual-colors").append(str);
+		$(".cpe-dropdown .cpe-dropdown__content .cpe-list.cpe-visual-colors, .skin-tunic #p-visual-colors .mw-portlet-body ul").append(str);
 	}
 
 

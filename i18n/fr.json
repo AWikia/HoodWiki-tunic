@@ -1,7 +1,11 @@
 {
 	"@metadata": {
-		"authors": [ "Gabriel Wicke, HM100, Timwi and HoodWiki" ]
+		"authors": [ "Gabriel Wicke, Timwi and HoodWiki" ]
 	},
 	"skinname-tunic": "Tunic",
-	"tunic-desc": "Un skin mobile vaguement basé sur MonoBook"
+	"tunic-desc": "Un skin mobile vaguement basé sur MonoBook",
+	"tunic-theme": "Thème",
+    "tunic-themes": "Thèmes",
+	"tunic-standard": "La Norme",
+	"tunic-visual-colors": "Couleurs Visuelles",
 }

@@ -1,6 +1,6 @@
 {
 	"name": "Tunic",
-	"version": "2.4.0",
+	"version": "2.5.0",
 	"author": "Gabriel Wicke, Timwi and HoodWiki",
 	"url": "https://www.mediawiki.org/wiki/Skin:Tunic",
 	"descriptionmsg": "tunic-desc",
@@ -21,6 +21,10 @@
 					"skins.tunic"
 				],
 				"messages": [
+					"tunic-themes",
+					"tunic-theme",
+					"tunic-visual-colors",
+					"tunic-standard",
 					"sitetitle",
 					"search",
 					"tagline",
@@ -64,12 +68,26 @@
 				"resources/OOUI.css": {
 					"media": "screen"
 				},
+				"resources/Visual Colors.css": {
+					"media": "screen"
+				},
 				"resources/print.css": {
 					"media": "print"
 				}
 			}
 		},
 		"skins.tunic.js": {
+		  "messages": [
+			"tunic-color-factorycolors",         
+			"tunic-color-lunacolors",         
+			"tunic-color-classicforced",         
+			"tunic-color-campbellforced",         
+			"tunic-color-forced",         
+			"tunic-color-tangoforced",         
+			"tunic-color-rgbcolors",         
+			"tunic-color-retro",         
+			"tunic-color-fandomcolors"
+		   ],
 			"scripts": [
 				"resources/main.js"
 			]

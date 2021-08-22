@@ -1,7 +1,11 @@
 {
 	"@metadata": {
-		"authors": [ "Gabriel Wicke, HM100, Timwi and HoodWiki" ]
+		"authors": [ "Gabriel Wicke, Timwi and HoodWiki" ]
 	},
 	"skinname-tunic": "Tunic",
-	"tunic-desc": "He kiri pukoro kei te waatea i runga i te MonoBook"
+	"tunic-desc": "He kiri pukoro kei te waatea i runga i te MonoBook",
+	"tunic-theme": "Kaupapa",
+	"tunic-themes": "Kaupapa",
+	"tunic-standard": "Paerewa",
+	"tunic-visual-colours": "Tae tirohanga"
 }
