@@ -1,0 +1,123 @@
+html body {
+  --cpe-body-cursor:auto!important;
+  --cpe-auto-cursor: default!important;
+  --cpe-blocked-cursor:not-allowed!important;
+  --cpe-help-cursor:help!important;
+  --cpe-text-cursor:text!important;
+  --cpe-hand-cursor:pointer!important;
+	font-family:"Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	margin:0;
+	padding:0;
+	background-color:initial!important;
+	color:initial!important;
+}
+
+:focus:not(:focus-visible) {
+	outline:0;
+}
+
+.theme-A {
+--max-width:1440px; /* Tunic is a Mobile Skin */
+--community-background-image:url("");
+--community-background-image-opacity:100%;
+--community-background-color:#f6f6f6;
+--community-background-text-color:;
+--community-background-mode:modern;
+--community-background-horizontal-alignment:center;
+--community-background-vertical-alignment:center;
+--community-background-size:cover;
+--community-background-no-tiling:false;
+--anchor-background-color:#0645ad;
+--page-background-color:#ffffff;
+--page-border-background-color:#a2a9b1;
+--page-text-background-color:#000000;
+--accent-background-color:#3366cc;
+--sticky-header-background-color:#fcd36c;
+--toolbar-background-color:#aaa;
+--caret-color:auto;
+--custom-secondary-font:"";
+--border-radius:3px;
+--logo-filter:opacity(1);
+--logo-filter-hover:opacity(0.8);
+--logo-filter-duration:300ms;
+--logo-filter-delay:0;
+}
+
+.body-community-background-color,
+.gradient-overlay {
+	--community-background-color-rgb:var(--page-background-color-rgb);
+}
+
+container {
+	padding:0.3em;
+	box-sizing:border-box;
+	color:var(--page-text-background-color);
+}
+
+/* Theming for tunic  */
+a, a.external { color: rgb(var(--anchor-background-color-rgb)); }
+a:visited { color: var(--article-link-background-color-hover); }
+a:hover, a:active, a.external:hover { color: var(--article-link-background-color-hover); }
+a.stub { color: var(--message-background-color); }
+a.new,
+#p-personal a.new { color:var(--alert-background-color); }
+a.new:hover,
+#p-personal a.new:hover { color:var(--article-new-link-background-color-hover); }
+a.new:visited,
+#p-personal a.new:visited { color:var(--alert-background-color); }
+
+
+hr {
+	color: rgb(var(--page-border-background-color-rgb));
+	background-color:rgb(var(--page-border-background-color-rgb));
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color:rgb(var(--page-text-backround-color-rgb));
+	border-bottom-color:rgb(var(--page-border-background-color-rgb));
+}
+
+fieldset, textarea, select, pre {
+	border-color:var(--anchor-gradient-color-hover);
+}
+
+code, pre, .catlinks, #toc,  div.thumbinner, .toccolours {
+	background-color:var(--page-secondary-background-color);
+}
+
+.usermessage {
+	border-color:var(--warning-gradient-color-hover);
+	background-color:var(--warning-gradient-color);
+	color:var(--warning-foreground-color);
+}
+
+.catlinks, #toc, div.thumbinner, html .thumbimage, img.thumbborder, .toccolours {
+	border-color:rgb(var(--page-border-background-color-rgb));
+	
+}
+
+.documentByLine {
+	color:var(--message-background-color);
+}
+
+ul.special li.not-patrolled, ol.special li.not-patrolled {
+	background-color: rgba(var(--warning-background-color), 0.4);
+}
+
+span.updatedmarker {
+	color:var(--success-foreground-color);
+	background-color:var(--success-background-color);
+}
+
+body > container #footer {
+	background-color: var(--page-background-color-rgb);
+	border-top-color: var(--sticky-header-background-color);
+	border-bottom-color: var(--sticky-header-background-color);
+}
+
+head:first-child + body input {
+    visibility: visible;
+    border-color: var(--anchor-gradient-color);
+    color: rgb(var(--page-text-background-color-rgb));
+    background-color: rgb(var(--page-background-color-rgb));
+}
