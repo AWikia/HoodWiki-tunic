@@ -118,7 +118,7 @@ span.updatedmarker {
 }
 
 body > container #footer {
-	background-color: var(--page-background-color-rgb);
+	background-color: var(--page-secondary-background-color);
 	border-top-color: var(--sticky-header-background-color);
 	border-bottom-color: var(--sticky-header-background-color);
 }
