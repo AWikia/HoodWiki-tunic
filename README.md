@@ -22,13 +22,13 @@ http://www.gnu.org/copyleft/gpl.html
 To Run Tunic on your wiki, you must have MediaWiki 1.36 or greater. Older versions are not supported
 
 # Installation
-To Install Evelution, you must download the reposistory first. Make a folder called **Tunic** in **Skins** diractory where you have installed MediaWiki and extract the zipped file contents in **Tunic** folder.  Lastly, put this in **LocalSettings.php**:
+To Install Tunic, you must download the reposistory first. Make a folder called **Tunic** in **Skins** diractory where you have installed MediaWiki and extract the zipped file contents in **Tunic** folder.  Lastly, put this in **LocalSettings.php**:
 ```php
 wfLoadSkin( 'Tunic' );
 ```
 
 # New Version release
-- New releaes on Evelution will always come by HM100. However, users with **Triage** or **Write** access can merge others PRs to Evelution. Once I got access to Evelution Skin in my personal MW instance, I will try to merge the changes from this repo to the **Tunic** folder in my MW instance and will release a new release, major or minor.
+- New releaes on Tunic will always come by HM100. However, users with **Triage** or **Write** access can merge others PRs to Evelution. Once I got access to Evelution Skin in my personal MW instance, I will try to merge the changes from this repo to the **Tunic** folder in my MW instance and will release a new release, major or minor.
 
 # More Help
 Join to [our Discord Server](https://discord.gg/a6FbV6zWFs) for more help about Tunic and its friends
