@@ -126,6 +126,8 @@ a.new:hover,
 #p-personal a.new:hover { color:var(--article-new-link-background-color-hover); }
 a.new:visited,
 #p-personal a.new:visited { color:var(--alert-background-color); }
+a.new:visited:hover,
+#p-personal a.new:visited:hover { color:var(--article-new-link-background-color-hover); }
 
 
 hr {
