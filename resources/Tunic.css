@@ -121,3 +121,8 @@ head:first-child + body input {
     color: rgb(var(--page-text-background-color-rgb));
     background-color: rgb(var(--page-background-color-rgb));
 }
+
+head:first-child + body input[type="checkbox"],
+head:first-child + body input[type="radio"] {
+	border:0;
+}

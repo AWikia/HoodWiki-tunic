@@ -1,6 +1,6 @@
 {
 	"name": "Tunic",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"author": "Gabriel Wicke, Timwi and HoodWiki",
 	"url": "https://www.mediawiki.org/wiki/Skin:Tunic",
 	"descriptionmsg": "tunic-desc",
@@ -49,13 +49,13 @@
 				"logo": true
 			},
 			"styles": {
+				"resources/screen-common.less": {
+					"media": "screen"
+				},
 				"resources/CPE.css": {
 					"media": "screen"
 				},
 				"resources/Icons.css": {
-					"media": "screen"
-				},
-				"resources/screen-common.less": {
 					"media": "screen"
 				},
 				"resources/Tunic.css": {
