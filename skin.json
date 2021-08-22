@@ -1,7 +1,7 @@
 {
 	"name": "Tunic",
-	"version": "2.0",
-	"author": "Gabriel Wicke, HM100, Timwi and HoodWiki",
+	"version": "2.0.0",
+	"author": "Gabriel Wicke, Timwi and HoodWiki",
 	"url": "https://www.mediawiki.org/wiki/Skin:Tunic",
 	"descriptionmsg": "tunic-desc",
 	"namemsg": "skinname-tunic",
