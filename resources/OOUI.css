@@ -1,0 +1,1620 @@
+/* OOUI and Extension Overrides for Evelution */
+.oo-ui-flaggedElement-destructive,
+.mw-ui-destructive  {
+    --accent-background-color-rgb: var(--alert-background-color-rgb)!important;
+    --accent-background-color: var(--alert-background-color)!important;
+    --accent-background-color-hover: var(--alert-background-color-hover)!important;
+    --accent-background-color-active: var(--alert-background-color-active)!important;
+    --accent-foreground-color: var(--alert-foreground-color)!important;
+    --accent-foreground-color-hover: var(--alert-foreground-color-hover)!important;
+    --accent-background-color-page-background-color-mix-light:var(--alert-background-color-page-background-color-mix-light)!important;
+    --accent-background-color-page-background-color-mix: var(--alert-background-color-page-background-color-mix)!important;
+}
+
+/* Begin */
+
+/* Static Variables for non-color management compliance 
+**
+	--community-background-image:url("")!important;
+	--community-background-mode:modern!important;
+	--community-background-size:cover!important;
+	--community-background-alignment:top!important;
+	--community-background-color:#f6f6f6!important;
+	--anchor-background-color:#0645ad!important;
+	--page-background-color:#ffffff!important;
+	--page-border-background-color:#a2a9b1!important;
+	--page-text-background-color:#000000!important;
+	--accent-background-color:#3366cc!important;
+	--sticky-header-background-color:#a7d7f9;
+	--toolbar-background-color:#ffffff;
+    --alert-background-color:#dd3333;
+    --warning-background-color:#ffcc33;
+    --success-background-color:#14866d;
+    --message-background-color:#575859;
+**
+*/
+:root {
+--community-background-image:url("");
+--community-background-color:#f6f6f6;
+--community-background-color-hover:#b9b9b9;
+--community-background-color-active:#8a8a8a;
+--community-gradient-color:#f6f6f6;
+--community-gradient-color-hover:#b9b9b9;
+--community-foreground-color:#000000;
+--community-foreground-color-hover:#404040;
+--community-foreground-color-inverted:#ffffff;
+--community-foreground-color-hover-inverted:#bfbfbf;
+--community-background-color-page-background-color-mix-light:#fdfdfd;
+--community-background-color-page-background-color-mix:#fbfbfb;
+--community-background-color-rgb:246,246,246;
+--community-background-color-hover-rgb:185,185,185;
+--community-background-color-active-rgb:138,138,138;
+--community-gradient-color-rgb:246,246,246;
+--community-gradient-color-hover-rgb:185,185,185;
+--community-foreground-color-rgb:0,0,0;
+--community-foreground-color-hover-rgb:64,64,64;
+--community-foreground-color-inverted-rgb:255,255,255;
+--community-foreground-color-hover-inverted-rgb:191,191,191;
+--community-background-mode:modern;
+--community-background-horizontal-alignment:center;
+--community-background-vertical-alignment:center;
+--community-background-size:cover;
+--community-background-no-tiling:false;
+--anchor-background-color:#0645ad;
+--anchor-background-color-hover:#0f66f7;
+--anchor-background-color-active:#4b8cf9;
+--anchor-gradient-color:#0f66f7;
+--anchor-gradient-color-hover:#0645ad;
+--anchor-foreground-color:#ffffff;
+--anchor-foreground-color-hover:#bfbfbf;
+--anchor-foreground-color-inverted:#000000;
+--anchor-foreground-color-hover-inverted:#404040;
+--anchor-background-color-page-background-color-mix-light:#cddaef;
+--anchor-background-color-page-background-color-mix:#9bb5de;
+--anchor-background-color-rgb:6,69,173;
+--anchor-background-color-hover-rgb:15,102,247;
+--anchor-background-color-active-rgb:75,140,249;
+--anchor-gradient-color-rgb:15,102,247;
+--anchor-gradient-color-hover-rgb:6,69,173;
+--anchor-foreground-color-rgb:255,255,255;
+--anchor-foreground-color-hover-rgb:191,191,191;
+--anchor-foreground-color-inverted-rgb:0,0,0;
+--anchor-foreground-color-hover-inverted-rgb:64,64,64;
+--page-background-color:#ffffff;
+--page-background-color-hover:#bfbfbf;
+--page-background-color-active:#8f8f8f;
+--page-secondary-background-color:#e4e4e4;
+--page-secondary-background-color-hover:#ababab;
+--page-secondary-background-color-active:#808080;
+--page-background-color-rgb:255,255,255;
+--page-background-color-hover-rgb:191,191,191;
+--page-background-color-active-rgb:143,143,143;
+--page-secondary-background-color-rgb:228,228,228;
+--page-secondary-background-color-hover-rgb:171,171,171;
+--page-secondary-background-color-active-rgb:128,128,128;
+--page-border-background-color:#a2a9b1;
+--page-border-background-color-hover:#747e8a;
+--page-border-background-color-active:#575f68;
+--page-border-gradient-color:#a2a9b1;
+--page-border-gradient-color-hover:#747e8a;
+--page-border-foreground-color:#000000;
+--page-border-foreground-color-inverted:#ffffff;
+--page-border-foreground-color-hover:#404040;
+--page-border-background-color-page-background-color-mix-light:#eceeef;
+--page-border-background-color-page-background-color-mix:#dadde0;
+--page-border-background-color-rgb:162,169,177;
+--page-border-background-color-hover-rgb:116,126,138;
+--page-border-background-color-active-rgb:87,95,104;
+--page-border-gradient-color-rgb:162,169,177;
+--page-border-gradient-color-hover-rgb:116,126,138;
+--page-border-foreground-color-rgb:0,0,0;
+--page-border-foreground-color-inverted-rgb:255,255,255;
+--page-border-foreground-color-hover-rgb:64,64,64;
+--page-text-background-color:#000000;
+--page-text-background-color-hover:#404040;
+--page-text-background-color-active:#707070;
+--page-text-gradient-color:#404040;
+--page-text-gradient-color-hover:#000000;
+--page-text-foreground-color:#ffffff;
+--page-text-foreground-color-hover:#bfbfbf;
+--page-text-foreground-color-inverted:#000000;
+--page-text-foreground-hover-color-inverted:#404040;
+--page-text-background-color-page-background-color-mix-light:#cccccc;
+--page-text-background-color-page-background-color-mix:#999999;
+--page-text-background-color-rgb:0,0,0;
+--page-text-background-color-hover-rgb:64,64,64;
+--page-text-background-color-active-rgb:112,112,112;
+--page-text-gradient-color-rgb:64,64,64;
+--page-text-gradient-color-hover-rgb:0,0,0;
+--page-text-foreground-color-rgb:255,255,255;
+--page-text-foreground-color-hover-rgb:191,191,191;
+--page-text-foreground-color-inverted-rgb:0,0,0;
+--page-text-foreground-hover-color-inverted-rgb:64,64,64;
+--accent-background-color:#3366cc;
+--accent-background-color-hover:#668cd9;
+--accent-background-color-active:#8ca9e3;
+--accent-gradient-color:#668cd9;
+--accent-gradient-color-hover:#3366cc;
+--accent-foreground-color:#ffffff;
+--accent-foreground-color-hover:#bfbfbf;
+--accent-foreground-color-inverted:#000000;
+--accent-foreground-color-hover-inverted:#404040;
+--accent-background-color-page-background-color-mix-light:#d6e0f5;
+--accent-background-color-page-background-color-mix:#adc2eb;
+--accent-background-color-rgb:51,102,204;
+--accent-background-color-hover-rgb:102,140,217;
+--accent-background-color-active-rgb:140,169,227;
+--accent-gradient-color-rgb:102,140,217;
+--accent-gradient-color-hover-rgb:51,102,204;
+--accent-foreground-color-rgb:255,255,255;
+--accent-foreground-color-hover-rgb:191,191,191;
+--accent-foreground-color-inverted-rgb:0,0,0;
+--accent-foreground-color-hover-inverted-rgb:64,64,64;
+--sticky-header-background-color:#a7d7f9;
+--sticky-header-background-color-hover:#46abf2;
+--sticky-header-background-color-active:#0f87db;
+--sticky-header-gradient-color:#a7d7f9;
+--sticky-header-gradient-color-hover:#46abf2;
+--sticky-header-foreground-color:#000000;
+--sticky-header-foreground-color-hover:#404040;
+--sticky-header-foreground-color-inverted:#ffffff;
+--sticky-header-foreground-color-hover-inverted:#bfbfbf;
+--sticky-header-background-color-page-background-color-mix-light:#edf7fe;
+--sticky-header-background-color-page-background-color-mix:#dceffd;
+--sticky-header-background-color-rgb:167,215,249;
+--sticky-header-background-color-hover-rgb:70,171,242;
+--sticky-header-background-color-active-rgb:15,135,219;
+--sticky-header-gradient-color-rgb:167,215,249;
+--sticky-header-gradient-color-hover-rgb:70,171,242;
+--sticky-header-foreground-color-rgb:0,0,0;
+--sticky-header-foreground-color-hover-rgb:64,64,64;
+--sticky-header-foreground-color-inverted-rgb:255,255,255;
+--sticky-header-foreground-color-hover-inverted-rgb:191,191,191;
+--toolbar-background-color:#ffffff;
+--toolbar-background-color-hover:#bfbfbf;
+--toolbar-background-color-active:#8f8f8f;
+--toolbar-gradient-color:#ffffff;
+--toolbar-gradient-color-hover:#bfbfbf;
+--toolbar-foreground-color:#000000;
+--toolbar-foreground-color-hover:#404040;
+--toolbar-foreground-color-inverted:#ffffff;
+--toolbar-foreground-color-hover-inverted:#bfbfbf;
+--toolbar-background-color-page-background-color-mix-light:#ffffff;
+--toolbar-background-color-page-background-color-mix:#ffffff;
+--toolbar-background-color-rgb:255,255,255;
+--toolbar-background-color-hover-rgb:191,191,191;
+--toolbar-background-color-active-rgb:143,143,143;
+--toolbar-gradient-color-rgb:255,255,255;
+--toolbar-gradient-color-hover-rgb:191,191,191;
+--toolbar-foreground-color-rgb:0,0,0;
+--toolbar-foreground-color-hover-rgb:64,64,64;
+--toolbar-foreground-color-inverted-rgb:255,255,255;
+--toolbar-foreground-color-hover-inverted-rgb:191,191,191;
+--alert-background-color:#dd3333;
+--alert-background-color-hover:#e66666;
+--alert-background-color-active:#ec8c8c;
+--alert-gradient-color:#e66666;
+--alert-gradient-color-hover:#dd3333;
+--alert-foreground-color:#ffffff;
+--alert-foreground-color-hover:#bfbfbf;
+--alert-foreground-color-inverted:#000000;
+--alert-foreground-color-hover-inverted:#404040;
+--alert-background-color-page-background-color-mix-light:#f8d6d6;
+--alert-background-color-page-background-color-mix:#f1adad;
+--alert-background-color-rgb:221,51,51;
+--alert-background-color-hover-rgb:230,102,102;
+--alert-background-color-active-rgb:236,140,140;
+--alert-gradient-color-rgb:230,102,102;
+--alert-gradient-color-hover-rgb:221,51,51;
+--alert-foreground-color-rgb:255,255,255;
+--alert-foreground-color-hover-rgb:191,191,191;
+--alert-foreground-color-inverted-rgb:0,0,0;
+--alert-foreground-color-hover-inverted-rgb:64,64,64;
+--warning-background-color:#ffcc33;
+--warning-background-color-hover:#e5ac00;
+--warning-background-color-active:#ac8100;
+--warning-gradient-color:#ffcc33;
+--warning-gradient-color-hover:#e5ac00;
+--warning-foreground-color:#000000;
+--warning-foreground-color-hover:#404040;
+--warning-foreground-color-inverted:#ffffff;
+--warning-foreground-color-hover-inverted:#bfbfbf;
+--warning-background-color-page-background-color-mix-light:#fff5d6;
+--warning-background-color-page-background-color-mix:#ffebad;
+--warning-background-color-rgb:255,204,51;
+--warning-background-color-hover-rgb:229,172,0;
+--warning-background-color-active-rgb:172,129,0;
+--warning-gradient-color-rgb:255,204,51;
+--warning-gradient-color-hover-rgb:229,172,0;
+--warning-foreground-color-rgb:0,0,0;
+--warning-foreground-color-hover-rgb:64,64,64;
+--warning-foreground-color-inverted-rgb:255,255,255;
+--warning-foreground-color-hover-inverted-rgb:191,191,191;
+--success-background-color:#14866d;
+--success-background-color-hover:#20d3ac;
+--success-background-color-active:#51e5c4;
+--success-gradient-color:#20d3ac;
+--success-gradient-color-hover:#14866d;
+--success-foreground-color:#ffffff;
+--success-foreground-color-hover:#bfbfbf;
+--success-foreground-color-inverted:#000000;
+--success-foreground-color-hover-inverted:#404040;
+--success-background-color-page-background-color-mix-light:#d0e7e2;
+--success-background-color-page-background-color-mix:#a1cfc5;
+--success-background-color-rgb:20,134,109;
+--success-background-color-hover-rgb:32,211,172;
+--success-background-color-active-rgb:81,229,196;
+--success-gradient-color-rgb:32,211,172;
+--success-gradient-color-hover-rgb:20,134,109;
+--success-foreground-color-rgb:255,255,255;
+--success-foreground-color-hover-rgb:191,191,191;
+--success-foreground-color-inverted-rgb:0,0,0;
+--success-foreground-color-hover-inverted-rgb:64,64,64;
+--message-background-color:#575859;
+--message-background-color-hover:#808283;
+--message-background-color-active:#a0a1a2;
+--message-gradient-color:#808283;
+--message-gradient-color-hover:#575859;
+--message-foreground-color:#ffffff;
+--message-foreground-color-hover:#bfbfbf;
+--message-foreground-color-inverted:#000000;
+--message-foreground-color-hover-inverted:#404040;
+--message-background-color-page-background-color-mix-light:#dddede;
+--message-background-color-page-background-color-mix:#bcbcbd;
+--message-background-color-rgb:87,88,89;
+--message-background-color-hover-rgb:128,130,131;
+--message-background-color-active-rgb:160,161,162;
+--message-gradient-color-rgb:128,130,131;
+--message-gradient-color-hover-rgb:87,88,89;
+--message-foreground-color-rgb:255,255,255;
+--message-foreground-color-hover-rgb:191,191,191;
+--message-foreground-color-inverted-rgb:0,0,0;
+--message-foreground-color-hover-inverted-rgb:64,64,64;
+--caret-color:auto;
+--custom-secondary-font:"";
+--border-radius:3px;
+--logo-filter:opacity(1);
+--logo-filter-hover:opacity(0.8);
+--logo-filter-duration:300ms;
+--logo-filter-delay:0;
+--article-link-background-color-hover:#264c99;
+--article-secondary-link-background-color-hover:#053482;
+--article-new-link-background-color-hover:#af1d1d;
+}
+
+
+container .oo-ui-defaultOverlay,
+container .mw-notification-area-overlay,
+container .uls-menu,
+container .ve-ui-overlay,
+container .mwe-popups-overlay {
+	z-index:101!important;
+	max-width:var(--max-width);
+}
+
+
+container .mwe-popups-overlay {
+	max-width:var(--max-width);
+}
+
+body .mw-pulsating-dot:before, body .mw-pulsating-dot:after {
+	background-color:rgb(var(--accent-background-color-rgb));
+}
+
+/* Icons */
+.oo-ui-iconElement-icon,
+.oo-ui-indicatorElement-indicator {
+  background:currentColor!Important;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+
+.oo-ui-iconElement-icon.oo-ui-iconElement-noIcon {
+	visibility:hidden;
+}
+
+/* Error Boxes */
+.messagebox, .errorbox, .warningbox, .successbox {
+    color: #0e191a;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    border: 1px solid;
+    padding: 12px 24px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+.messagebox a, .errorbox a, .warningbox a, .successbox a,
+.messagebox a:visited, .errorbox a:visited, .warningbox a:visited, .successbox a:visited {
+	color:#376266;
+}
+
+.messagebox a:hover, .errorbox a:hover, .warningbox a:hover, .successbox a:hover,
+.messagebox a:visited:hover, .errorbox a:visited:hover, .warningbox a:visited:hover, .successbox a:visited:hover {
+	color:#0e191a;
+}
+
+.messagebox {
+    background-color: var(--message-gradient-color);
+    border-color: var(--message-gradient-color-hover);
+}
+
+.errorbox {
+    background-color: var(--alert-gradient-color);
+    border-color: var(--alert-gradient-color-hover);
+}
+
+.warningbox {
+    background-color: var(--warning-gradient-color);
+    border-color: var(--warning-gradient-color-hover);
+}
+
+.successbox {
+    background-color: var(--success-gradient-color);
+    border-color: var(--success-gradient-color-hover);
+}
+
+/* MediaWiki */
+.mw-prefs-buttons {
+	background-color:rgb(var(--page-background-color-rgb));
+	border-top-color:rgb(var(--page-border-background-color-rgb));
+	bottom:var(--sticky-nav-size);
+	transition:bottom 400ms ease;
+}
+
+main[toolbar="false"] .mw-prefs-buttons {
+	bottom:0;
+}
+
+body .mw-notification {
+	border-color:rgb(var(--page-border-background-color-rgb));
+	color:rgb(var(--page-text-background-color-rgb));
+	background-color:rgba(var(--page-secondary-background-color-rgb),0.7);
+	-webkit-backdrop-filter:var(--backdrop-filter);
+	backdrop-filter:var(--backdrop-filter);
+	border-radius:var(--border-radius);
+}
+
+body .mw-notification.mw-notification-type-error {
+	color:#0e191a;
+	background-color:rgba(var(--alert-gradient-color-rgb),0.7);
+    border-color: var(--alert-gradient-color-hover);
+}
+
+body .mw-notification.mw-notification-type-success {
+	color:#0e191a;
+	background-color:rgba(var(--success-gradient-color-rgb),0.7);
+    border-color: var(--success-gradient-color-hover);
+}
+
+body .mw-notification.mw-notification-type-warn {
+	color:#0e191a;
+	background-color:rgba(var(--warning-gradient-color-rgb),0.7);
+    border-color: var(--warning-gradient-color-hover);
+
+}
+
+body .catlinks {
+	font-size:14px;
+	border:1px solid rgb(var(--page-border-background-color-rgb));
+	background-color:var(--page-secondary-background-color);
+	padding:4px;
+	margin-top:4px;
+	clear:both;
+	border-radius:var(--border-radius);
+}
+
+body div.thumbinner,
+body .thumbimage,
+body li.gallerybox div.thumb {
+	border-radius:var(--border-radius);
+	border-color:rgb(var(--page-border-background-color-rgb));
+	background-color:var(--page-secondary-background-color);
+}
+
+.mw-content-ltr .mw-editsection, .mw-content-rtl .mw-content-ltr .mw-editsection {
+	margin-left:1em;
+}
+
+.mw-editsection, .mw-editsection-like {
+    font-size: small;
+    font-weight: normal;
+    margin-left: 1em;
+    vertical-align: baseline;
+    line-height: 1em;
+}
+
+/* Chexbox & Radio Boxes */
+body .oo-ui-radioInputWidget [type='radio'],
+body .mw-ui-radio:not(#noop) [type='radio'],
+body .oo-ui-checkboxInputWidget [type='checkbox'],
+body .mw-ui-checkbox:not(#noop) [type='checkbox'] {
+	opacity:1!important;
+}
+
+body .oo-ui-radioInputWidget [type='radio'] + span,
+body .mw-ui-radio:not(#noop) [type='radio'] + label:before,
+body .oo-ui-checkboxInputWidget [type='checkbox'] + span,
+body .mw-ui-checkbox:not(#noop) [type='checkbox'] + label:before {
+	opacity:0!important;
+}
+
+
+body .mw-ui-checkbox:not(#noop) [type='checkbox'],
+body .mw-ui-radio:not(#noop) [type='radio'] {
+	display:inline-block;
+}
+
+body .tux-editor-header {
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+/* Tabs */
+body .oo-ui-tabSelectWidget-framed {
+	background-color:var(--page-secondary-background-color);
+}
+
+body .oo-ui-panelLayout-framed,
+.mw-prefs-tabs-wrapper.oo-ui-panelLayout-framed, .mw-prefs-tabs > .oo-ui-menuLayout-content > .oo-ui-indexLayout-stackLayout > .oo-ui-tabPanelLayout {
+	border-color:rgb(var(--page-border-background-color-rgb));
+}
+
+body .oo-ui-tabOptionWidget {
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .oo-ui-tabSelectWidget-framed .oo-ui-tabOptionWidget.oo-ui-widget-enabled:hover {
+	background-color:rgba(var(--page-background-color-rgb),0.3);
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .oo-ui-tabSelectWidget-framed .oo-ui-tabOptionWidget.oo-ui-widget-enabled:active {
+	background-color:rgba(var(--page-background-color-rgb),0.8);
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .oo-ui-tabSelectWidget-framed .oo-ui-tabOptionWidget.oo-ui-optionWidget-selected,
+body .oo-ui-tabSelectWidget-framed .oo-ui-tabOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget-selected:hover {
+	background-color:rgb(var(--page-background-color-rgb));
+	color:rgb(var(--page-text-background-color-rgb));	
+}
+
+body .oo-ui-tabSelectWidget-framed .oo-ui-tabOptionWidget.oo-ui-optionWidget-selected .oo-ui-labelElement-label {
+	border-bottom-color:transparent;
+}
+
+/* All Buttons */
+.oo-ui-buttonElement-framed.oo-ui-widget-disabled > .oo-ui-buttonElement-button {
+	filter:grayscale(100%)!important;
+}
+
+body .oo-ui-buttonElement > .oo-ui-buttonElement-button,
+body .mw-ui-button,
+body .mw-ui-button:not(:disabled) {
+    transition:background-color 200ms, border-color 200ms, outline-offset 50ms, outline-color 200ms, color 200ms, box-shadow 200ms!important;
+    font-size:13px;
+    font-family:var(--secondary-font);
+    font-weight:600;
+    padding:7px 12px;
+    border-radius:var(--border-radius); 
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    vertical-align:middle;
+    line-height:16px;
+    text-decoration:none;
+    margin:2.5px;
+    border-width:0;
+    outline:2px solid transparent;
+    outline-offset:0px;
+}
+
+body .oo-ui-buttonElement-frameless.oo-ui-iconElement > .oo-ui-buttonElement-button {
+	padding:0;
+	margin:0;
+}
+
+body .oo-ui-buttonSelectWidget .oo-ui-buttonOptionWidget .oo-ui-buttonElement-button {
+	margin-left:2.5px;
+	margin-right:2.5px;
+}
+
+body .mw-rcfilters-ui-liveUpdateButtonWidget.oo-ui-toggleWidget-on:after {
+	background:rgba(var(--accent-foreground-color-rgb),0.5);
+	mix-blend-mode:normal;
+}
+
+/* Frameless Buttons */
+body .oo-ui-buttonElement-frameless.oo-ui-labelElement > .oo-ui-buttonElement-button,
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button,
+body .mw-ui-button.mw-ui-quiet,
+body .mw-ui-button.mw-ui-quiet:not(:disabled),
+body .mw-button.mw-ui-quiet:disabled {
+
+	background-color:transparent!important;
+	color:rgb(var(--accent-background-color-rgb));
+	border-color:transparent!important;
+}
+
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover,
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button:hover,
+body .mw-ui-button.mw-ui-quiet:not(:disabled):hover,
+body .mw-ui-button.mw-ui-quiet:hover {
+
+	color:var(--accent-background-color-hover);
+}
+
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled.oo-ui-buttonElement-pressed > input.oo-ui-buttonElement-button, 
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button:active,
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button:active, 
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive.oo-ui-buttonElement-pressed > .oo-ui-buttonElement-button,
+body .mw-ui-button.mw-ui-quiet:not(:disabled):active,
+body .mw-ui-button.mw-ui-quiet:active {
+
+	color:var(--accent-background-color-active);
+}
+
+
+
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover {
+	color:var(--page-text-background-color-hover);
+}
+
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled.oo-ui-buttonElement-pressed > input.oo-ui-buttonElement-button, 
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button:active {
+	color:var(--page-text-background-color-active);
+}
+
+/* Framelsss Primary */
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button {
+	background-color:transparent!important;
+	color:rgb(var(--accent-background-color-rgb));
+	border-color:transparent!important;
+}
+
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button:hover {
+	color:var(--accent-background-color-hover);
+}
+
+
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button:active {
+	color:var(--accent-background-color-active); /* color:var(--accent-background-color-active); */
+}
+
+
+/* Secondary Buttons */
+
+
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button,
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button,
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button,
+body .mw-ui-button,
+body .mw-ui-button:not(:disabled),
+body .mw-button:disabled {
+    border-color:rgb(var(--accent-background-color-rgb));
+    background-color:rgb(var(--page-background-color-rgb));
+    color:rgb(var(--accent-background-color-rgb));
+    box-shadow:0 0 1.5px 1.5px rgb(var(--page-background-color-rgb));
+    box-shadow:0 0 1.5px 1.5px currentColor;
+}
+
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:focus,
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button:focus,
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button:focus,
+body .mw-ui-button:not(:disabled):focus,
+body .mw-ui-button:focus {
+    border-color:rgb(var(--accent-background-color-rgb));
+    background-color:rgb(var(--page-background-color-rgb));
+    color:var(--accent-background-color-active);
+    box-shadow:0 0 1.5px 1.5px rgb(var(--page-background-color-rgb));  
+    box-shadow:0 0 1.5px 1.5px currentColor;
+}
+
+
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover,
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-progressive  > .oo-ui-buttonElement-button:hover,
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive  > .oo-ui-buttonElement-button:hover,
+body .mw-ui-button:not(:disabled):hover,
+body .mw-ui-button:hover {
+    border-color:var(--accent-background-color-hover);
+    background-color:var(--accent-background-color-page-background-color-mix-light);
+    background-color:rgb(var(--page-background-color-rgb));
+    color:var(--accent-background-color-hover);
+    box-shadow:0 0 1.5px 1.5px var(--accent-background-color-page-background-color-mix-light);
+    box-shadow:0 0 1.5px 1.5px currentColor;
+}
+
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:active, 
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-buttonElement-pressed > .oo-ui-buttonElement-button,
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button:active, 
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-buttonElement-pressed.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button,
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button:active, 
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-buttonElement-pressed.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button,
+body .mw-ui-button:not(:disabled):active,
+body .mw-ui-button:active {
+    border-color:var(--accent-background-color-active);
+    background-color:var(--accent-background-color-page-background-color-mix);
+    background-color:rgb(var(--page-background-color-rgb));
+    color:var(--accent-background-color-active); /* color:var(--accent-background-color-active); */ 
+    box-shadow:0 0 1.5px 1.5px var(--accent-background-color-page-background-color-mix);
+    box-shadow:0 0 1.5px 1.5px currentColor;
+}
+
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button:focus:not(:active),
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button:focus:not(:active),
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button:focus:not(:active),
+body .mw-ui-button:not(:disabled):focus,
+body .mw-ui-button:focus:not(:active) {
+  outline-color:currentcolor;
+  outline-offset:-2px!important;
+  outline-width:2px;
+    text-decoration:none;
+}
+
+
+/* Primary Buttons */
+
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button,
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button,
+body .oo-ui-buttonElement-framed.oo-ui-widget-disabled > .oo-ui-buttonElement-button,
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-buttonElement-active > .oo-ui-buttonElement-button,
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-buttonElement-active > .oo-ui-buttonElement-button:focus,
+body .oo-ui-buttonSelectWidget.oo-ui-widget-enabled:focus .oo-ui-buttonOptionWidget.oo-ui-optionWidget-selected .oo-ui-buttonElement-button,
+body .mw-ui-button.mw-ui-progressive,
+body .mw-ui-button.mw-ui-progressive:not(:disabled),
+body .mw-ui-button.mw-ui-progressive:disabled {
+    border-color:rgb(var(--accent-background-color-rgb));
+    background-color:rgb(var(--accent-background-color-rgb));
+    color:var(--accent-foreground-color);
+    box-shadow:0 0 1.5px 1.5px rgb(var(--accent-background-color-rgb));
+}
+
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button:focus,
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button:focus,
+body .mw-ui-button.mw-ui-progressive:not(:disabled):focus,
+body .mw-ui-button.mw-ui-progressive:focus {
+    box-shadow:0 0 1.5px 1.5px rgb(var(--accent-background-color-rgb));
+    border-color:rgb(var(--accent-background-color-rgb));
+    background-color:rgb(var(--accent-background-color-rgb));
+    color:var(--accent-foreground-color);
+}
+
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button:hover,
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button:hover,
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-buttonElement-active > .oo-ui-buttonElement-button:focus:hover,
+body .oo-ui-buttonSelectWidget.oo-ui-widget-enabled:focus:hover .oo-ui-buttonOptionWidget.oo-ui-optionWidget-selected .oo-ui-buttonElement-button,
+body .mw-ui-button.mw-ui-progressive:not(:disabled):hover,
+body .mw-ui-button.mw-ui-progressive:hover  {
+    border-color:var(--accent-background-color-hover);
+    background-color:var(--accent-background-color-hover);
+    color:var(--accent-foreground-color);
+    box-shadow:0 0 1.5px 1.5px var(--accent-background-color-hover);
+}
+
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button:active, 
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button:active, 
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive.oo-ui-buttonElement-pressed > .oo-ui-buttonElement-button, 
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive.oo-ui-buttonElement-active > .oo-ui-buttonElement-button, 
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive.oo-ui-popupToolGroup-active > .oo-ui-buttonElement-button,
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-buttonElement-active > .oo-ui-buttonElement-button:focus:active,
+body .oo-ui-buttonSelectWidget.oo-ui-widget-enabled:focus:active .oo-ui-buttonOptionWidget.oo-ui-optionWidget-selected .oo-ui-buttonElement-button,
+body .mw-ui-button.mw-ui-progressive:not(:disabled):active,
+body .mw-ui-button.mw-ui-progressive:active  {
+    border-color:var(--accent-background-color-active);
+    background-color:var(--accent-background-color-active);
+    color:var(--accent-foreground-color);
+    box-shadow:0 0 1.5px 1.5px var(--accent-background-color-active);
+    outline-color:transparent;
+}
+
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button:focus:not(:active),
+body .oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-destructive > .oo-ui-buttonElement-button:focus:not(:active),
+body .mw-ui-button.mw-ui-progressive:not(:disabled):focus,
+body .mw-ui-button.mw-ui-progressive:focus:not(:active) {
+  outline-color:currentcolor;
+  outline-offset:-2px;
+  border-color:rgb(var(--accent-background-color-rgb));
+  color:var(--accent-foreground-color-hover);
+    text-decoration:none;
+}
+
+/* Widget */
+body .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled,
+body .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined {
+	background-color:var(--page-secondary-background-color);
+}
+
+body .mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle {
+	background-color:var(--page-secondary-background-color);
+	color:rgb(var(--page-text-background-color-rgb));
+	border-color:rgb(var(--page-border-background-color-rgb));
+}
+
+body .mw-rcfilters-ui-filterTagMultiselectWidget-views-select-widget.oo-ui-widget {
+	border-color:rgb(var(--page-border-background-color-rgb));
+	height:32.5px;
+}
+
+
+body .mw-rcfilters-ui-filterTagMultiselectWidget-wrapper-content-title {
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .oo-ui-menuSelectWidget,
+body .wikiEditor-ui-toolbar .group .tool-select .options,
+body .oo-ui-popupWidget-popup,
+body .mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend,
+body .toc,
+body .oo-ui-popupToolGroup-tools {
+	scrollbar-color:var(--scrollbar-thumb-color-1) var(--scrollbar-track-color-1);
+/** Scrollbar Styling **/
+	/* Track */
+	--scrollbar-track-color-1:var(--page-secondary-background-color);
+	--scrollbar-track-color-2:var(--page-secondary-background-color-hover);
+	--scrollbar-track-color-3:var(--page-secondary-background-color-active);
+	--scrollbar-track-text:rgb(var(--page-text-background-color-rgb));
+	/* Thumb */
+	--scrollbar-thumb-color-1:rgb(var(--page-border-background-color-rgb));
+	--scrollbar-thumb-color-2:var(--page-border-background-color-hover);
+	--scrollbar-thumb-color-3:var(--page-border-background-color-active);
+	--scrollbar-thumb-text:var(--page-border-foreground-color);
+	
+	background-color:var(--page-secondary-background-color);
+	color:rgb(var(--page-text-background-color-rgb));
+	border-color:rgb(var(--page-border-background-color-rgb));
+	border-radius:var(--border-radius);
+}
+
+
+
+body .mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted:not(.oo-ui-optionWidget-selected) {
+	background-color:var(--page-secondary-background-color);
+}
+
+body .mw-rcfilters-ui-itemMenuOptionWidget:hover,
+body .mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted.oo-ui-optionWidget-highlighted,
+body .oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted,
+body .mw-rcfilters-ui-filterMenuHeaderWidget-header,
+body .mw-rcfilters-ui-menuSelectWidget-footer,
+body .oo-ui-tool.oo-ui-widget-enabled > .oo-ui-tool-link:hover,
+body .oo-ui-listToolGroup-tools .oo-ui-tool.oo-ui-widget-enabled:hover,
+body .wikiEditor-ui-toolbar .group .tool-select .menu .options .option:hover {
+	background-color:var(--page-secondary-background-color-hover);
+	color:rgb(var(--page-text-background-color-rgb));
+
+}
+
+body .mw-rcfilters-ui-itemMenuOptionWidget-label-desc,
+body .mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted .mw-rcfilters-ui-itemMenuOptionWidget-label-title, 
+body .mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted .mw-rcfilters-ui-itemMenuOptionWidget-label-desc {
+	color:var(--page-text-background-color-hover);
+}
+
+body .mw-rcfilters-ui-itemMenuOptionWidget-label-title {
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+
+body .oo-ui-menuSectionOptionWidget {
+	color:rgb(var(--page-border-background-color-rgb));
+}
+
+body .oo-ui-menuOptionWidget.oo-ui-optionWidget-selected {
+	background-color:var(--anchor-background-color-page-background-color-mix-light);
+	color:rgb(var(--anchor-background-color-rgb));
+}
+
+body .mw-rcfilters-ui-itemMenuOptionWidget.oo-ui-optionWidget-selected {
+	background-color:var(--anchor-background-color-page-background-color-mix-light);
+	color:rgb(var(--anchor-background-color-rgb));
+}
+
+body .oo-ui-menuOptionWidget.oo-ui-widget-enabled.oo-ui-optionWidget  {
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .oo-ui-menuOptionWidget.oo-ui-optionWidget-selected.oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted,
+body .oo-ui-menuOptionWidget.oo-ui-optionWidget-pressed.oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted {
+	background-color:var(--anchor-background-color-page-background-color-mix-light);
+	color:rgb(var(--anchor-background-color-rgb));
+}
+
+
+body .mw-rcfilters-ui-filterMenuSectionOptionWidget {
+	color:var(--page-border-foreground-color);
+	background-color:rgb(var(--page-border-background-color-rgb));
+}
+
+body .mw-rcfilters-ui-filterMenuSectionOptionWidget-header-title.oo-ui-labelElement-label {
+	color:inherit;
+}
+
+body .mw-rcfilters-ui-filterMenuHeaderWidget-title,
+body .mw-rcfilters-ui-viewSwitchWidget label.oo-ui-labelWidget,
+body .oo-ui-labelWidget {
+	color:inherit;
+}
+
+body .oo-ui-labelWidget.oo-ui-inline-help {
+	color:var(--page-text-background-color-hover);
+}
+
+body .oo-ui-buttonGroupWidget .oo-ui-buttonElement-framed:last-child .oo-ui-buttonElement-button {
+	margin-left:2.5px;
+}
+
+
+body .oo-ui-tagItemWidget.oo-ui-widget-enabled {
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .oo-ui-tagItemWidget.oo-ui-widget-enabled:hover {
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .oo-ui-tagItemWidget.oo-ui-widget-enabled:not(.oo-ui-tagItemWidget-fixed),
+body .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled {
+	background-color:rgb(var(--page-background-color-rgb));
+	border-color:rgb(var(--page-border-background-color-rgb));
+}
+
+body .oo-ui-tagItemWidget.oo-ui-widget-enabled:focus {
+	border-color:rgb(var(--anchor-background-color-rgb))!important;
+	box-shadow:inset 0 0 0 1px rgb(var(--anchor-background-color-rgb));
+}
+
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover {
+	background-color:rgba(var(--page-text-background-color-rgb),0.02745098);
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+
+body .oo-ui-tagItemWidget.oo-ui-widget-enabled .oo-ui-buttonElement-button {
+	padding:0;
+	margin:0;
+}
+
+body .oo-ui-tagItemWidget.oo-ui-widget-enabled .oo-ui-buttonElement-button:hover {
+	background-color:rgb(var(--page-background-color-rgb));
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button:active {
+	background-color:rgba(var(--page-text-background-color-rgb),0.08235294);
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+
+body .oo-ui-tagItemWidget.oo-ui-widget-enabled .oo-ui-buttonElement-button:active {
+	background-color:var(--page-background-color-hover);
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+
+body .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .mw-rcfilters-ui-tagItemWidget-selected.oo-ui-tagItemWidget.oo-ui-widget-enabled {
+	background-color:var(--anchor-background-color-page-background-color-mix-light);
+	border-color:rgb(var(--anchor-background-color-rgb));
+}
+
+body .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button:focus {
+	border-color:rgb(var(--anchor-background-color-rgb));
+	box-shadow:inset 0 0 0 1px rgb(var(--anchor-background-color-rgb));
+}
+
+body .oo-ui-popupWidget-anchored-top .oo-ui-popupWidget-anchor:after {
+	border-bottom-color:rgb(var(--page-border-background-color-rgb));
+}
+
+
+body .oo-ui-popupWidget-anchored-top .oo-ui-popupWidget-anchor:before {
+	border-bottom-color:transparent;
+}
+
+
+/*
+body[dark-mode="true"] .oo-ui-iconElement-icon {
+	filter:invert(1) hue-rotate(180deg)!Important;
+}
+*/
+
+body #pagehistory li.selected {
+	background-color:var(--page-secondary-background-color);
+	border-color:rgb(var(--page-border-background-color-rgb));
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+
+
+
+/* Input Boxes */
+body .oo-ui-textInputWidget .oo-ui-inputWidget-input,
+body .oo-ui-textInputWidget.oo-ui-widget-enabled .oo-ui-inputWidget-input,
+body .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle,
+body .oo-ui-textInputWidget.oo-ui-widget-disabled .oo-ui-inputWidget-input,
+body .mw-ui-input  {
+	--input-box-color:rgb(var(--page-background-color-rgb));
+	--input-box-hover:var(--accent-background-color-page-background-color-mix-light);
+	--input-box-focus:var(--accent-background-color-page-background-color-mix);
+	--input-box-solid:rgb(var(--accent-background-color-rgb));
+    transition:background-color 200ms, border-color 200ms, outline-offset 50ms, outline-color 200ms, color 200ms, box-shadow 200ms!important;
+    font-size:13px;
+    font-family:var(--secondary-font);
+    font-weight:600;
+    color:rgb(var(--page-text-background-color-rgb));
+    padding:9px 12px;
+    border:0;
+    border-color:rgb(var(--page-border-background-color-rgb));
+    border-radius:var(--border-radius); 
+    display:inline-flex;
+    align-items:center;
+    justify-content:flex-start;
+    vertical-align:middle;
+    line-height:16px;
+    background-color:var(--input-box-color);
+    outline:0px;
+    outline-offset:0px;
+    box-sizing:border-box;
+    box-shadow:0 0 1.5px 1.5px var(--input-box-color);
+    box-shadow:0 0 1.5px 1.5px currentColor;
+    margin:2.5px;
+}
+
+body .oo-ui-textInputWidget.oo-ui-widget-disabled .oo-ui-inputWidget-input {
+    box-shadow:0 0 1.5px 1.5px var(--input-box-color)!important;
+}
+
+body .oo-ui-numberInputWidget-buttoned .oo-ui-inputWidget-input {
+	border-radius:0;
+	padding-top:16px;
+	padding-bottom:16px;
+	margin-left:0!Important;
+	margin-right:0!important;
+	
+}
+
+body .oo-ui-tagMultiselectWidget.oo-ui-tagMultiselectWidget-outlined .oo-ui-inputWidget-input {
+	margin-left:0!Important;
+	margin-right:0!important;
+}
+
+body .oo-ui-comboBoxInputWidget .oo-ui-inputWidget-input {
+	padding-top:16px;
+	padding-bottom:16px;
+	margin-left:0!Important;
+	margin-right:0!important;
+}
+
+body .oo-ui-actionFieldLayout .oo-ui-actionFieldLayout-input > .oo-ui-widget.oo-ui-textInputWidget > .oo-ui-inputWidget-input, 
+body .oo-ui-actionFieldLayout .oo-ui-actionFieldLayout-input > .oo-ui-widget .oo-ui-dropdownWidget-handle,
+body .oo-ui-actionFieldLayout .oo-ui-actionFieldLayout-input > .oo-ui-widget .oo-ui-tagMultiselectWidget-handle {
+	padding-top:16px;
+	padding-bottom:16px;
+	border-radius:var(--border-radius) 0 0 var(--border-radius);
+}
+
+body .mw-ui-input:invalid {
+    box-shadow:0 0 1.5px 1.5px var(--input-box-color);
+}
+
+body .oo-ui-textInputWidget.oo-ui-iconElement .oo-ui-inputWidget-input {
+    padding-left: 31.571px;
+    margin: 0;
+    border-radius: 0;
+    border: 1px solid rgb(var(--page-border-background-color-rgb));
+    box-shadow: none!important;
+    box-sizing: content-box;
+    padding-top: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+}
+
+body .oo-ui-dropdownWidget.oo-ui-indicatorElement .oo-ui-dropdownWidget-handle {
+    padding-left: 31.571px;
+}
+
+body .oo-ui-textInputWidget.oo-ui-widget-disabled .oo-ui-inputWidget-input {
+	filter:grayscale(1)!important;
+	opacity:1;
+}
+
+body .mw-rcfilters-ui-filterTagMultiselectWidget .oo-ui-tagMultiselectWidget-input input {
+	height:32.5px;
+}
+
+body .oo-ui-buttonElement-frameless.oo-ui-iconElement > .oo-ui-buttonElement-button {
+	margin-top:0;
+	padding-top:0;
+	padding-bottom:0;
+	padding-right:0;
+}
+
+
+body .oo-ui-textInputWidget.oo-ui-widget-enabled:hover .oo-ui-inputWidget-input,
+body .oo-ui-dropdownWidget.oo-ui-widget-enabled.oo-ui-dropdownWidget-open .oo-ui-dropdownWidget-handle,
+body .mw-ui-input:hover {
+    background-color:var(--input-box-hover);
+    box-shadow:0 0 1.5px 1.5px var(--input-box-hover);
+    border-color:rgb(var(--page-border-background-color-rgb));
+    box-shadow:0 0 1.5px 1.5px currentColor;
+}
+
+body .oo-ui-textInputWidget.oo-ui-widget-enabled .oo-ui-inputWidget-input:focus,
+body .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:focus,
+body .mw-ui-input:focus {
+    background-color:var(--input-box-focus);
+    box-shadow:0 0 1.5px 1.5px var(--input-box-focus);
+    border-color:rgb(var(--page-border-background-color-rgb));
+    box-shadow:0 0 1.5px 1.5px var(--input-box-focus);
+    box-shadow:0 0 1.5px 1.5px var(--input-box-solid);
+}
+
+/* Select Boxes */
+
+body .oo-ui-dropdownInputWidget.oo-ui-widget-enabled,
+body .oo-ui-dropdownInputWidget.oo-ui-widget-enabled:hover {
+	background-color:transparent;
+}
+
+body .oo-ui-dropdownWidget.oo-ui-widget-disabled .oo-ui-dropdownWidget-handle {
+	filter:grayscale(100%)!important;
+}
+
+body .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle,
+body .oo-ui-dropdownWidget.oo-ui-widget-disabled .oo-ui-dropdownWidget-handle {
+	--input-box-color:rgb(var(--page-background-color-rgb));
+	--input-box-hover:var(--accent-background-color-page-background-color-mix-light);
+	--input-box-focus:var(--accent-background-color-page-background-color-mix);
+	--input-box-solid:rgb(var(--accent-background-color-rgb));
+    transition:background-color 200ms, border-color 200ms, outline-offset 50ms, outline-color 200ms, color 200ms, box-shadow 200ms;
+    font-size:13px;
+    font-family:var(--secondary-font);
+    font-weight:600;
+    color:rgb(var(--page-text-background-color-rgb));
+    border:0;
+    border-color:rgb(var(--page-border-background-color-rgb));
+/*    border-radius:var(--border-radius); */
+    vertical-align:middle;
+    background-color:var(--input-box-color);
+    outline:0px;
+    outline-offset:0px;
+    box-sizing:border-box;
+    box-shadow:0 0 1.5px 1.5px var(--input-box-color);
+    box-shadow:0 0 1.5px 1.5px currentColor;
+    margin:2.5px;
+    padding:8px 12px;
+}
+
+
+
+body .oo-ui-dropdownWidget.oo-ui-widget-enabled.oo-ui-dropdownWidget-open .oo-ui-dropdownWidget-handle,
+body .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:hover {
+    background-color:var(--input-box-hover);
+    box-shadow:0 0 1.5px 1.5px var(--input-box-hover);
+    box-shadow:0 0 1.5px 1.5px currentColor;
+    border-color:rgb(var(--page-border-background-color-rgb));
+    color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:focus {
+    background-color:var(--input-box-focus);
+    box-shadow:0 0 1.5px 1.5px var(--input-box-focus);
+    box-shadow:0 0 1.5px 1.5px var(--input-box-solid);
+    border-color:rgb(var(--page-border-background-color-rgb));
+    color:rgb(var(--page-text-background-color-rgb));
+}
+
+
+/* Windows */
+body .oo-ui-windowManager-modal.oo-ui-windowManager-floating > .oo-ui-dialog > .oo-ui-window-frame {
+	border-color:rgb(var(--page-border-background-color-rgb));
+}
+
+body .oo-ui-windowManager-modal > .oo-ui-dialog > .oo-ui-window-frame {
+	background-color:var(--page-secondary-background-color);
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .oo-ui-processDialog-content .oo-ui-window-head, .oo-ui-processDialog-content .oo-ui-window-foot {
+	background-color:var(--sticky-header-background-color);
+	color:var(--sticky-header-foreground-color);
+	outline-color:var(--sticky-header-foreground-color);
+}
+
+body .oo-ui-outlineOptionWidget.oo-ui-optionWidget-highlighted {
+	background-color:rgb(var(--page-background-color-rgb));
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .oo-ui-outlineOptionWidget.oo-ui-optionWidget-pressed,
+body .oo-ui-outlineOptionWidget.oo-ui-optionWidget-selected {
+	background-color:var(--anchor-background-color-page-background-color-mix-light);
+	color:rgb(var(--anchor-background-color-rgb));
+}
+
+body .oo-ui-processDialog-actions-safe .oo-ui-widget-enabled.oo-ui-iconElement:not(.oo-ui-labelElement) > .oo-ui-buttonElement-button {
+	box-shadow:none;
+	border:0;
+	border-radius:var(--border-radius);
+	color:var(--sticky-header-foreground-color);
+}
+
+body .oo-ui-processDialog-actions-safe .oo-ui-widget-enabled.oo-ui-iconElement:not(.oo-ui-labelElement) > .oo-ui-buttonElement-button:hover {
+		background-color:rgba(var(--sticky-header-foreground-color-rgb),0.15);
+		color:var(--sticky-header-foreground-color-hover);
+		border:0;
+}
+
+body .oo-ui-processDialog-actions-safe .oo-ui-widget-enabled.oo-ui-iconElement:not(.oo-ui-labelElement) > .oo-ui-buttonElement-button:active {
+		background-color:rgba(var(--sticky-header-foreground-color-rgb),0.3);
+		color:rgba(var(--sticky-header-foreground-color-hover-rgb), 0.8);
+}
+
+body .oo-ui-processDialog-actions-safe .oo-ui-widget-enabled.oo-ui-iconElement:not(.oo-ui-labelElement) > .oo-ui-buttonElement-button:focus {
+		border:0;
+}
+
+body .oo-ui-toolbar-bar,
+body .wikiEditor-ui-toolbar {
+    background-color: var(--page-secondary-background-color);
+    color: rgb(var(--page-text-background-color-rgb));
+    border-color:rgb(var(--page-border-background-color-rgb));
+}
+
+body .oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle:hover,
+body .oo-ui-tool.oo-ui-widget-enabled > .oo-ui-tool-link:hover {
+	background-color:rgb(var(--page-background-color-rgb));
+}
+
+body .oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle:active,
+body .oo-ui-popupToolGroup.oo-ui-popupToolGroup-active > .oo-ui-popupToolGroup-handle,
+body .oo-ui-tool.oo-ui-widget-enabled > .oo-ui-tool-link:active, 
+body .oo-ui-tool.oo-ui-widget-enabled.oo-ui-tool-active > .oo-ui-tool-link, 
+body .oo-ui-tool.oo-ui-widget-enabled.oo-ui-popupToolGroup-active > .oo-ui-tool-link {
+	background-color:var(--anchor-background-color-page-background-color-mix-light);
+	color:rgb(var(--anchor-background-color-rgb));
+}
+
+body .wikiEditor-ui-toolbar .tabs span.tab a.current, 
+body .wikiEditor-ui-toolbar .tabs span.tab a.current:visited,
+body .wikiEditor-ui-toolbar .group .tool-select .label,
+body .wikiEditor-ui-toolbar .group .label,
+body .wikiEditor-ui-toolbar .group .tool-select .options .option {
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .wikiEditor-ui-toolbar .tabs span.tab a {
+	color:rgb(var(--anchor-background-color-rgb));
+}
+
+body .wikiEditor-ui-toolbar .page-characters div span {
+	height:22.1px;
+	font-size:14px;
+	border-color:rgb(var(--page-border-background-color-rgb));
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .wikiEditor-ui-toolbar .page-characters div span:hover {
+	border-color:var(--page-border-background-color-hover);
+	background-color:rgb(var(--page-background-color-rgb));
+}
+
+body .wikiEditor-ui-toolbar .booklet > .index > :hover {
+	background-color:rgb(var(--page-background-color-rgb));
+}
+
+body .wikiEditor-ui-toolbar .booklet > .index > .current {
+	background-color:var(--anchor-background-color-page-background-color-mix-light);
+	color:rgb(var(--anchor-background-color-rgb));
+}
+
+/* Echo */
+body .mw-echo-ui-notificationsInboxWidget-toolbarWrapper {
+	background:var(--page-secondary-background-color);
+	color:rgb(var(--page-text-background-color-rgb));
+	padding:6px;
+}
+
+/* Frameless Tabs */
+body .oo-ui-tabSelectWidget-frameless .oo-ui-tabOptionWidget {
+	box-shadow:inset 0 0 0 0 rgb(var(--accent-background-color-rgb));
+}
+
+
+body .oo-ui-tabSelectWidget-frameless .oo-ui-tabOptionWidget.oo-ui-optionWidget-selected {
+	color:rgb(var(--accent-background-color-rgb));
+	box-shadow:inset 0 -2px 0 0 rgb(var(--accent-background-color-rgb));
+}
+
+body .oo-ui-tabSelectWidget-frameless .oo-ui-tabOptionWidget.oo-ui-widget-enabled:hover {
+	color:var(--accent-background-color-hover);
+	box-shadow:inset 0 -2px 0 0 var(--accent-background-color-hover);
+}
+
+body .oo-ui-tabSelectWidget-frameless .oo-ui-tabOptionWidget.oo-ui-widget-enabled:active {
+	color:var(--accent-background-color-active);
+	box-shadow:inset 0 -2px 0 0 var(--accent-background-color-active);
+}
+
+/* ULS Menu */
+body .uls-menu {
+	top:0px!important; /* Override Inline Style */
+	left:50px!important;
+	border-color:rgb(var(--page-border-background-color-rgb));
+	background-color:rgb(var(--page-background-color-rgb));
+	color:rgb(var(--page-text-background-color-rgb));
+	transition:top 400ms ease
+}
+
+.headroom--not-top .uls-menu,
+.single-header .uls-menu {
+	top:50px!important; /* Override Inline Style */
+}
+
+body .uls-search,
+body #uls-settings-block {
+	border-color:rgb(var(--page-border-background-color-rgb));
+	background-color:var(--page-secondary-background-color);
+}
+
+body .uls-languagefilter {
+	background-color:var(--page-secondary-background-color);
+}
+
+body .uls-filtersuggestion {
+	background-color:var(--page-secondary-background-color);
+	color:var(--page-text-background-color-hover);
+}
+
+body .uls-lcd {
+	background-color:rgb(var(--page-background-color-rgb));
+}
+
+body .uls-lcd-region-title,
+body #uls-settings-block > button,
+body .languagesettings-menu h1,
+body #languagesettings-settings-panel h3,
+body #languagesettings-settings-panel h4,
+body .languagesettings-menu .menu-section {
+	color:inherit;
+}
+
+body #uls-settings-block > button:hover {
+	color:var(--page-text-background-color-hover);
+}
+
+body .uls-language-block a {
+	color:rgb(var(--anchor-background-color-rgb));
+}
+
+body .uls-language-block a:hover {
+	color:var(--anchor-background-color-hover);
+}
+
+body .uls-language-block > ul > li:hover {
+	background-color:var(--anchor-background-color-page-background-color-mix-light);
+}
+
+body #languagesettings-settings-panel {
+	background-color:transparent;
+	color:inherit;
+}
+
+body .uls-input-settings .uls-input-settings-inputmethods-list,
+body .languagesettings-menu .menu-section:hover {
+	background-color:var(--page-secondary-background-color);
+}
+
+body .languagesettings-menu .menu-section.active {
+	background-color:var(--page-secondary-background-color);
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+
+
+body .languagesettings-menu .menu-section .settings-text {
+	color:var(--page-text-background-color-hover);
+}
+
+body .uls-language-settings-close-block {
+	background-color:rgb(var(--page-background-color-rgb));
+}
+
+body[dark-mode="true"] .uls-icon-close {
+	background:currentColor!important;
+  -webkit-mask-size: 16px 16px;
+          mask-size: 16px 16px;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KCTxwYXRoIGQ9Im0zLjYzNiAyLjIyMiAxNC4xNDIgMTQuMTQyLTEuNDE0IDEuNDE0TDIuMjIyIDMuNjM2eiIvPgoJPHBhdGggZD0iTTE3Ljc3OCAzLjYzNiAzLjYzNiAxNy43NzhsLTEuNDE0LTEuNDE0TDE2LjM2NCAyLjIyMnoiLz4KPC9zdmc+Cg==);
+  mask-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KCTxwYXRoIGQ9Im0zLjYzNiAyLjIyMiAxNC4xNDIgMTQuMTQyLTEuNDE0IDEuNDE0TDIuMjIyIDMuNjM2eiIvPgoJPHBhdGggZD0iTTE3Ljc3OCAzLjYzNiAzLjYzNiAxNy43NzhsLTEuNDE0LTEuNDE0TDE2LjM2NCAyLjIyMnoiLz4KPC9zdmc+Cg==);
+
+}
+
+.uls-tipsy.uls-tipsy {
+	visibility:hidden!important;
+}
+
+body #languagesettings-panels .mw-ui-pressed {
+    background-color: var(--accent-background-color-active);
+    color: var(--accent-foreground-color-inverted);
+    box-shadow:0 0 1.5px 1.5px var(--accent-background-color-active);
+}
+
+
+/* File Input */
+
+
+body .oo-ui-selectFileWidget-dropTarget {
+	background-color:var(--page-secondary-background-color);
+	color:rgb(var(--page-text-background-color-rgb));
+	border-color:rgb(var(--page-border-background-color-rgb));
+}
+
+body .oo-ui-selectFileWidget.oo-ui-widget-enabled.oo-ui-selectFileWidget-dropTarget {
+	background-color:var(--page-secondary-background-color);
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+/* Progress */
+body .oo-ui-progressBarWidget {
+	border-color:rgb(var(--page-border-background-color-rgb));
+}
+
+body .oo-ui-progressBarWidget.oo-ui-widget-disabled {
+	filter:grayscale(1)!important;
+}
+
+body .oo-ui-progressBarWidget:not( .oo-ui-pendingElement-pending ) {
+	background-color:rgb(var(--page-background-color-rgb));
+}
+
+body .oo-ui-progressBarWidget.oo-ui-widget-enabled .oo-ui-progressBarWidget-bar,
+body .oo-ui-progressBarWidget.oo-ui-widget-disabled .oo-ui-progressBarWidget-bar {
+	background-color:rgb(var(--anchor-background-color-rgb));
+}
+
+body .oo-ui-pendingElement-pending {
+	background-color:var(--page-border-background-color-page-background-color-mix)!important;
+}
+
+/* Translate Extension */
+body .ext-translate-container .tux-messagelist .tux-message-pagemode .tux-message-item-compact {
+	border-bottom-color:var(--page-secondary-background-color-hover);
+	border-left-color:rgb(var(--page-border-background-color-rgb));
+	border-right-color:rgb(var(--page-border-background-color-rgb));
+	background-color:var(--page-secondary-background-color);
+	color:rgb(var(--page-text-background-color-rgb));
+}
+body .ext-translate-container .tux-messagelist .tux-message-pagemode:first-child .tux-message-item-compact {
+	border-top-color:rgb(var(--page-border-background-color-rgb));
+}
+
+body .ext-translate-container .tux-messagelist .tux-message-pagemode:last-child .tux-message-item-compact {
+	border-bottom-color:rgb(var(--page-border-background-color-rgb));
+}
+
+body .ext-translate-container .tux-messagelist .tux-message-pagemode {
+	background-color:transparent;
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .tux-messagelist {
+	background-color:transparent;
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+
+body .tux-messagetable-header {
+	border-bottom-color:var(--page-text-background-color-hover);
+	box-shadow: 0 3px 3px -3px rgba(var(--text-background-color-rgb), 0.5);
+}
+
+body .group-warning {
+	background-color:var(--warning-gradient-color);
+	color:#0e191a;
+	border:2px solid var(--warning-gradient-color-hover);
+}
+
+body .ext-translate-container .tux-messagelist .tux-message-pagemode .tux-message-item-compact:hover {
+	background-color:var(--page-secondary-background-color-hover);
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .tux-message-item {
+	border-bottom-color:rgb(var(--page-border-background-color-rgb));
+	background:var(--page-secondary-background-color);
+}
+
+body .tux-message-item:hover {
+	background:var(--page-secondary-background-color-hover);
+}
+
+body .tux-message-editor {
+	background-color:rgb(var(--page-background-color-rgb));
+	border-color:var(--page-text-background-color-hover);
+	box-shadow: 0 2px 6px rgba(var(--text-background-color-rgb), 0.3);
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .grid .tux-message-editor .messagekey {
+	color:inherit;
+}
+
+body .tux-message-editor .messagekey .caret {
+    border-top-color: rgb(var(--page-text-background-color-rgb));
+}
+
+body .tux-message-editor .editcolumn {
+	background-color:rgb(var(--page-background-color-rgb));
+	border-right-color:rgb(var(--page-border-background-color-rgb));
+}
+
+body .grid .tux-message-editor .close {
+	background:currentColor;
+    -webkit-mask: no-repeat center center;
+    mask: no-repeat center center;
+    -webkit-mask-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E %3Cpath d=%22M3.636 2.222l14.142 14.142-1.414 1.414L2.222 3.636z%22/%3E %3Cpath d=%22M17.778 3.636L3.636 17.778l-1.414-1.414L16.364 2.222z%22/%3E %3C/svg%3E");
+    mask-image: linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E %3Cpath d=%22M3.636 2.222l14.142 14.142-1.414 1.414L2.222 3.636z%22/%3E %3Cpath d=%22M17.778 3.636L3.636 17.778l-1.414-1.414L16.364 2.222z%22/%3E %3C/svg%3E");
+}
+
+body .tux-dropdown-menu {
+	border-color:rgb(var(--page-border-background-color-rgb));
+	box-shadow:0 3px 3px -3px rgba(var(--text-background-color-rgb), 0.5);
+}
+
+body .grid .tux-message-editor .infocolumn-block {
+	background-color:var(--page-secondary-background-color);
+}
+
+body .tux-message-editor__caret:before {
+	border-right-color:rgb(var(--page-border-background-color-rgb));
+}
+
+body .tux-message-editor__caret:after {
+	border-right-color:var(--page-secondary-background-color);
+}
+
+body .tux-messagelist .tux-message-pagemode .tux-pagemode-source {
+	color:inherit;
+}
+
+body .tux-action-bar {
+    background-color: var(--page-background-color-hover);
+    color: rgb(var(--page-text-background-color-rgb));
+    box-shadow: 0 2px 6px rgba(rgb(var(--page-text-background-color-rgb)), 0.3);
+}
+
+body .tux-editor-editsummary-block input {
+	background-color:var(--page-secondary-background-color);
+	border-color:rgb(var(--page-border-background-color-rgb));
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .tux-editor-insert-buttons button {
+    border-color:var(--page-border-background-button);
+    background-color:rgb(var(--page-background-color-rgb));
+    color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .tux-editor-insert-buttons .tux-editor-paste-original-button {
+    background-color:rgb(var(--page-background-color-rgb));
+}
+
+body .tux-message-selector li a,
+body .tux-breadcrumb,
+body .ext-translate-language-selector-label,
+body .tux-message-selector label,
+body .tux-message-editor .shortcutinfo {
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .tux-message-selector li a:hover {
+	color:var(--page-text-background-color-hover);
+}
+
+
+body .tux-message-selector li.selected a,
+body .tux-breadcrumb__item--aggregate,
+body .ext-translate-language-selector .uls {
+	color:rgb(var(--anchor-background-color-rgb));
+}
+
+body .tux-message-selector li.selected a:hover,
+body .tux-breadcrumb__item--aggregate:hover,
+body .ext-translate-language-selector .uls:hover  {
+	color:var(--anchor-background-color-active);
+}
+
+body .tux-message-selector .more ul {
+	border-color:rgb(var(--page-border-background-color-rgb));
+	border-top-color:transparent;
+	background-color:rgb(var(--page-background-color-rgb));
+	border-color:rgb(var(--page-border-background-color-rgb));
+}
+
+body .tux-action-bar button {
+	background:rgb(var(--page-background-color-rgb));
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .tux-action-bar button:hover {
+	background:rgb(var(--page-background-color-rgb));
+}
+
+
+body .tux-action-bar button:active, body .tux-action-bar button.down {
+	background:rgb(var(--page-text-background-color-rgb));
+	color:rgb(var(--page-background-color-rgb));
+}
+
+body .tux-message-editor textarea {
+	border-color:var(--page-border-background-color-hover);
+	color:rgb(var(--page-text-background-color-rgb));
+}
+
+body .tux-groupselector {
+    top: 64px;
+    right: 0;
+    border-color:var(--page-text-background-color-hover);
+    background-color: rgb(var(--page-background-color-rgb));
+    box-shadow: 0 5px 10px rgba(rgb(var(--page-text-background-color-rgb)),0.2);
+}
+
+@media screen and (min-height: 600px) {
+	.tux-messagetable-header.floating {
+		background: var(--page-secondary-background-color);
+		top: 50px;
+		left:50px;
+		z-index: 200;
+		max-width:calc(var(--max-width) - 50px);
+	}
+}
+
+.grid .row .six {
+	display:flex;
+}
+
+body .mw-pt-languages-label {
+	background-color:var(--page-secondary-background-color);
+}
+
+body .mw-pt-languages {
+	border-color:rgb(var(--page-border-background-color-rgb));
+	background-color:rgb(var(--page-background-color-rgb));
+}
+
+/* Profile APP */
+body #profile-top {
+	border-bottom-color:rgb(var(--page-background-color-rgb));
+	display:inline-block;
+}
+
+body .user-section-heading {
+	border-bottom-color:rgb(var(--page-background-color-rgb));
+}
+
+body .profile-info-container div {
+	color:rgb(var(--page-border-background-color-rgb));
+}
+
+stickya {
+pointer-events:none;
+}
+
+stickya > * {
+	pointer-events:auto!important;
+}

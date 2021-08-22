@@ -1,14 +1,14 @@
 {
 	"name": "Tunic",
-	"version": "1.0",
-	"author": "Gabriel Wicke, Timwi and HoodWiki",
+	"version": "2.0",
+	"author": "Gabriel Wicke, HM100, Timwi and HoodWiki",
 	"url": "https://www.mediawiki.org/wiki/Skin:Tunic",
 	"descriptionmsg": "tunic-desc",
 	"namemsg": "skinname-tunic",
 	"license-name": "GPL-2.0-or-later",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.35.0"
+		"MediaWiki": ">= 1.36.0"
 	},
 	"ValidSkinNames": {
 		"tunic": {
@@ -37,9 +37,6 @@
 			"i18n"
 		]
 	},
-	"ThemeModules": {
-		"tunic": [ "blue", "green", "dark", "pink" ]
-	},
 	"ResourceModules": {
 		"skins.tunic": {
 			"class": "ResourceLoaderSkinModule",
@@ -52,14 +49,20 @@
 				"logo": true
 			},
 			"styles": {
+				"resources/CPE.css": {
+					"media": "screen"
+				},
+				"resources/Icons.css": {
+					"media": "screen"
+				},
 				"resources/screen-common.less": {
 					"media": "screen"
 				},
-				"resources/screen-desktop.less": {
-					"media": "screen and (min-width: 751px)"
+				"resources/Tunic.css": {
+					"media": "screen"
 				},
-				"resources/screen-mobile.less": {
-					"media": "screen and (max-width: 750px)"
+				"resources/OOUI.css": {
+					"media": "screen"
 				},
 				"resources/print.css": {
 					"media": "print"
@@ -70,34 +73,15 @@
 			"scripts": [
 				"resources/main.js"
 			]
-		},
-		"themeloader.skins.tunic.blue": {
-			"styles": {
-				"resources/blue/style.css": {
-					"media": "screen"
-				}
-			}
-		},
-		"themeloader.skins.tunic.pink": {
-			"styles": {
-				"resources/pink/style.css": {
-					"media": "screen"
-				}
-			}
-		},
-		"themeloader.skins.tunic.greeen": {
-			"styles": {
-				"resources/green/style.css": {
-					"media": "screen"
-				}
-			}
-		},
-		"themeloader.skins.tunic.dark": {
-			"styles": {
-				"resources/dark/style.css": {
-					"media": "screen"
-				}
-			}
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "Tunic"
+	},
+	"ResourceModuleSkinStyles": {
+		"tunic": {
+			"+ext.echo.styles.badge": "resources/extensions/echo.styles.badge.less"
 		}
 	},
 	"manifest_version": 1
