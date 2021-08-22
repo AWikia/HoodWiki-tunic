@@ -1,7 +1,7 @@
 {
 	"@metadata": {
-		"authors": [ "Gabriel Wicke, Timwi and HoodWiki" ]
+		"authors": [ "Gabriel Wicke, HM100, Timwi and HoodWiki" ]
 	},
 	"skinname-tunic": "Tunic",
-	"tunic-desc": "A mobile skin loosely based on MonoBook"
+	"tunic-desc": "A mobile skin loosely based on MonoBook that is based on CPE language and more enhancements to the retired Chick skin."
 }
