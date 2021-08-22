@@ -48,6 +48,10 @@ html body {
 	--community-background-color-rgb:var(--page-background-color-rgb);
 }
 
+.body-community-background {
+	display:none;
+}
+
 container {
 	padding:0.3em;
 	box-sizing:border-box;
