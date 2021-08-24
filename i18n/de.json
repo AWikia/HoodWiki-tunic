@@ -7,5 +7,13 @@
 	"tunic-theme": "Thema",
 	"tunic-themes": "Themen",
 	"tunic-standard": "Standard",
-	"tunic-visual-colors": "Visuelle Farben"
+	"tunic-visual-colors": "Visuelle Farben",
+	"tunic-color-factorycolors": "Fabrik",
+	"tunic-color-lunacolors": "XP Luna",
+	"tunic-color-classicforced": "Windows Erzwungen",
+	"tunic-color-campbellforced": "Cambell Erzwungen",
+	"tunic-color-forced": "Evelution OS Erzwungen",
+	"tunic-color-tangoforced": "Tango Erzwungen",
+	"tunic-color-rgbcolors": "RGB-Feier",
+	"tunic-color-retro": "Retro"
 }
