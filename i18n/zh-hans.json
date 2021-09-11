@@ -18,5 +18,9 @@
     "tunic-color-tangoforced": "Tango 强制色",
     "tunic-color-rgbcolors": "RGB 集合",
     "tunic-color-retro": "复古",
-    "tunic-color-fandomcolors": "Fandom 2021"
+    "tunic-color-fandomcolors": "Fandom 2021",
+	"tunic-color-candycrush": "Candy Crush",
+	"tunic-color-discord": "Discord",
+	"tunic-darkmode": "暗色模式",
+	"tunic-lightmode": "亮色模式"
 }

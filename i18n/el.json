@@ -16,5 +16,10 @@
     "tunic-color-tangoforced": "Εξαναγκάσμένα Tango",
     "tunic-color-rgbcolors": "Γιωρτής RGB",
     "tunic-color-retro": "Ρετρό",
-    "tunic-color-fandomcolors": "Fandom 2021"
+    "tunic-color-fandomcolors": "Fandom 2021",
+	"tunic-color-candycrush": "Candy Crush",
+	"tunic-color-discord": "Discord",
+	"tunic-darkmode": "Σκουρόχρωμη λειτουργεία",
+	"tunic-lightmode": "Ανοιχτόχρωμη λειτουργεία",
+	"tunic-colormodes": "Μορφές Χρώματος"
 }

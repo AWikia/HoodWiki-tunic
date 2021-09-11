@@ -16,5 +16,11 @@
     "tunic-color-tangoforced": "Tango Forced",
     "tunic-color-rgbcolors": "RGB Celebration",
     "tunic-color-retro": "Retro",
-    "tunic-color-fandomcolors": "Fandom 2021"
+    "tunic-color-fandomcolors": "Fandom 2021",
+	"tunic-color-candycrush": "Candy Crush",
+	"tunic-color-discord": "Discord",
+	"tunic-darkmode": "Dark mode",
+	"tunic-lightmode": "Light mode",
+	"tunic-colormodes": "Color modes",
+	"tunic-colormodes": "Color modes"
 }

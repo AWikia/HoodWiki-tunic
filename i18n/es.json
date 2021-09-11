@@ -7,5 +7,7 @@
 	"tunic-theme": "Tema",
 	"tunic-themes": "Temas",
     "tunic-standard": "Estándar",
-    "tunic-visual-colors": "Colores visuales"
+    "tunic-visual-colors": "Colores visuales",
+	"tunic-darkmode": "Modo oscuro",
+	"tunic-lightmode": "Modo de luz"
 }

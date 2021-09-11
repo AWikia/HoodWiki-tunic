@@ -15,5 +15,10 @@
 	"tunic-color-forced": "Evelution OS Erzwungen",
 	"tunic-color-tangoforced": "Tango Erzwungen",
 	"tunic-color-rgbcolors": "RGB-Feier",
-	"tunic-color-retro": "Retro"
+	"tunic-color-retro": "Retro",
+	"tunic-color-candycrush": "Candy Crush",
+	"tunic-color-discord": "Discord",
+	"tunic-darkmode": "Dunkelmodus",
+	"tunic-lightmode": "Lichtmodus",
+	"tunic-colormodes": "Farbemodusen"
 }

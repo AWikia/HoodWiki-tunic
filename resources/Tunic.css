@@ -1,4 +1,4 @@
-.theme-A[visualcolors="standard"] {
+[theme="A"][visualcolors="standard"] {
 --community-background-image:url("");
 --community-background-color:#767676;
 --community-background-size:contain;
@@ -11,7 +11,7 @@
 --toolbar-background-color:#ababab;
 }
 
-.theme-B[visualcolors="standard"] {
+[theme="B"][visualcolors="standard"] {
 --community-background-image:url("");
 --community-background-color:#a13bc9;
 --community-background-size:contain;
@@ -24,7 +24,7 @@
 --toolbar-background-color:#7e73a5;
 }
 
-.theme-C[visualcolors="standard"] {
+[theme="C"][visualcolors="standard"] {
 --community-background-image:url("");
 --community-background-color:#000000;
 --community-background-size:contain;
@@ -37,7 +37,7 @@
 --toolbar-background-color:#879289;
 }
 
-.theme-D[visualcolors="standard"] {
+[theme="D"][visualcolors="standard"] {
 --community-background-image:url("");
 --community-background-color:#180052;
 --community-background-size:contain;
@@ -117,17 +117,17 @@ container {
 
 /* Theming for tunic  */
 a, a.external { color: rgb(var(--anchor-background-color-rgb)); }
-a:visited { color: var(--article-link-background-color-hover); }
-a:hover, a:active, a.external:hover { color: var(--article-link-background-color-hover); }
+a:visited { color: rgb(var(--anchor-background-color-rgb)); }
+a:hover, a:active, a.external:hover { color: var(--anchor-background-color-hover-dledlen); }
 a.stub { color: var(--message-background-color); }
 a.new,
 #p-personal a.new { color:var(--alert-background-color); }
 a.new:hover,
-#p-personal a.new:hover { color:var(--article-new-link-background-color-hover); }
+#p-personal a.new:hover { color:var(--alert-background-color-hover-dledlen); }
 a.new:visited,
 #p-personal a.new:visited { color:var(--alert-background-color); }
 a.new:visited:hover,
-#p-personal a.new:visited:hover { color:var(--article-new-link-background-color-hover); }
+#p-personal a.new:visited:hover { color:var(--alert-background-color-hover-dledlen); }
 
 
 hr {
@@ -141,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 fieldset, textarea, select, pre {
-	border-color:var(--anchor-gradient-color-hover);
+	border-color:var(--anchor-background-color);
 }
 
 code, pre, .catlinks, #toc,  div.thumbinner, .toccolours {
@@ -180,7 +180,7 @@ body > container #footer {
 
 head:first-child + body input {
     visibility: visible;
-    border-color: var(--anchor-gradient-color);
+    border-color: var(--accent-background-color);
     color: rgb(var(--page-text-background-color-rgb));
     background-color: rgb(var(--page-background-color-rgb));
 }

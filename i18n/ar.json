@@ -7,5 +7,7 @@
 	"tunic-theme": "سمة",
 	"tunic-themes": "ثيمات",
     "tunic-standard": "معيار",
-    "tunic-visual-colors": "الألوان المرئية"
+    "tunic-visual-colors": "الألوان المرئية",
+	"tunic-darkmode": "الوضع الداكن",
+	"tunic-lightmode": "الوضع الخفيف"
 }

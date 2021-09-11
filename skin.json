@@ -1,6 +1,6 @@
 {
 	"name": "Tunic",
-	"version": "2.8.0",
+	"version": "3.0.0",
 	"author": "Gabriel Wicke, Timwi and HoodWiki",
 	"url": "https://www.mediawiki.org/wiki/Skin:Tunic",
 	"descriptionmsg": "tunic-desc",
@@ -25,6 +25,9 @@
 					"tunic-theme",
 					"tunic-visual-colors",
 					"tunic-standard",
+					"tunic-darkmode",
+					"tunic-lightmode",
+					"tunic-colormodes",
 					"sitetitle",
 					"search",
 					"tagline",
@@ -89,7 +92,9 @@
 			"tunic-color-tangoforced",         
 			"tunic-color-rgbcolors",         
 			"tunic-color-retro",         
-			"tunic-color-fandomcolors"
+			"tunic-color-fandomcolors",
+			"tunic-color-candycrush",
+			"tunic-color-discord"
 		   ],
 			"scripts": [
 				"resources/main.js"

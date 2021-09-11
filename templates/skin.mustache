@@ -79,6 +79,19 @@
 					</div>
 				</div>
 			</div>
+			<div id="color-modes">
+				<div role="navigation" id="p-color-modes" class="mw-portlet mw-portlet-color-modes" title="" aria-labelledby="p-color-modes-label">
+					<h3 id="p-color-modes-label">{{msg-tunic-colormodes}}</h3>
+					<div class="mw-portlet-body">
+						<ul>
+							<li><a onclick="colortheme('auto')">{{msg-tunic-lightmode}} (Duo)</a></li>
+							<li><a onclick="colortheme('auto-r')">{{msg-tunic-darkmode}} (Duo)</a></li>
+							<li><a onclick="colortheme('light')">{{msg-tunic-lightmode}} (Solo)</a></li>
+							<li><a onclick="colortheme('dark')">{{msg-tunic-darkmode}} (Solo)</a></li>
+						</ul>		
+					</div>
+				</div>
+			</div>
 			{{#data-search-box}}
 			<form action="{{form-action}}" role="search" class="mw-portlet" id="p-search">
 				<input type="hidden" name="title" value="{{page-title}}">

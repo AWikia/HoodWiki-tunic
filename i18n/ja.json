@@ -7,5 +7,7 @@
 	"tunic-theme": "テーマ",
 	"tunic-themes": "テーマ",
 	"tunic-standard": "スタンダード",
-	"tunic-visual-colors": "ビジュアルカラー"
+	"tunic-visual-colors": "ビジュアルカラー",
+	"tunic-darkmode": "ダークモード",
+	"tunic-lightmode": "ライトモード"
 }

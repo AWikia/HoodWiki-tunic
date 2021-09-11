@@ -27,6 +27,16 @@ $(' .cpe-dropdown.cpe-select .cpe-dropdown__content .cpe-list li:not(.cpe-dropdo
 }
 
 
+function UpdateRange() {
+	$('input[type="range"]').css( "--range-percent", function( ) {
+		return (($(this).val() * 100) / $(this).attr('max')) + '%';
+	});
+}
+
+function UpdateRangeInputs() {
+	UpdateRange();
+	$("input[type='range']").on("input", function(e) { UpdateRange(); } );
+}
 
 /* Enable New Global Navigation - No exception for now */
 window.MW18newnavblock=false;
@@ -75,6 +85,7 @@ window.MW18newnavblock=false;
 	$(' container > main').attr('toolbar', toolbar_full );
 	$(' container > main').attr('nav', nav_full );
 	$(' container > main').attr('rail', rail_full );
+	UpdateRangeInputs();
 	DropDownUpdate();
 	if (window.MW18newnavblock === true) {
 		return
@@ -214,12 +225,16 @@ if  ($(".evelution-rail-wrapper .activity-module.evelution-module").length)  {
 if  ($(".evelution-rail-wrapper .info-module.evelution-module").length)  {
 	var oldc2 = $('.evelution-rail-wrapper .info-module.evelution-module .evelution-module-content').text();
 	$('.evelution-rail-wrapper .info-module.evelution-module .evelution-module-content').html( oldc2 );
+
 }
+	var c = $('.raw-parser').text();
+	$('.raw-parser').html( c ).removeClass('raw-parser').addClass('raw-parser-done');
+	$('.evelution-navigation .mw-socialprofile-avatar').addClass('cpe-icon').addClass('cpe-avatar');
 
 
 RemoveEmptyMenus();
 initializeViews();
-	$(".evelution-sidebar.evelution-toolbox .link.toggle-size")
+	$(".evelution-floating-actions .cpe-floating-button.toggle-size")
 						.click( function(e) { 
 							e.preventDefault(); 
 							ToggleWidth(); 
@@ -240,7 +255,7 @@ initializeViews();
 							e.preventDefault(); 
 							ToggleRail(); 
 						});
-	$(".evelution-community-header .link.dark-mode, .evelution-sticky-header .link.dark-mode")
+	$(".evelution-floating-actions .cpe-floating-button.dark-mode")
 						.click( function(e) { 
 							e.preventDefault(); 
 							ToggleMode(); 
@@ -458,7 +473,7 @@ function initializeViews() {
 	);
 	
 	// Edit
-	$(".evelution-page-header-contribution-buttons .actions > li#ca-edit > a, .evelution-page-header-contribution-buttons .actions > li#ca-ve-edit > a, .evelution-page-header-contribution-buttons .actions > li#ca-create > a").prepend(
+	$(".evelution-page-header-contribution-buttons .actions > li#ca-edit > a, .evelution-page-header-contribution-buttons .actions > li#ca-ve-edit > a, .evelution-page-header-contribution-buttons .actions > li#ca-create > a, .evelution-page-header-contribution-buttons .actions > li#ca-formedit > a").prepend(
 	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
 	'								edit' +
 	'							</span>'
@@ -521,6 +536,10 @@ function initializeViews() {
 }
 
 function RemoveEmptyMenus() {
+// Remove Miraheze elements
+	if (!window.location.host.includes('miraheze.org')) {
+		$('.miraheze-only').remove();
+	}
 // Remove the Language Dropdown, if no languages exist
 	var langmenu = document.querySelector(".evelution-navigation.evelution-sidebar .language-menu");
 	var langmenuM = document.querySelector(".evelution-mobile-global-navigation.evelution-sidebar .language-menu");

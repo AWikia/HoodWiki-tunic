@@ -374,10 +374,10 @@ Aleo = Latin
 :root {
 font-family:Trebuchet MS;
 /* Base Foreground Colors */
---light-theme-foreground-color:#1e0c1b;
---dark-theme-foreground-color:#ffffff;
---light-theme-text-background-color:#3a3a3a;
---dark-theme-text-background-color:#e6e6e6;
+--light-theme-foreground-color:#092344;
+--dark-theme-foreground-color:#f2f6fa;
+--light-theme-text-background-color:#39424d;
+--dark-theme-text-background-color:#e6ebf2;
 /* Aliases */
 --page-border-background-color:auto;
 --page-text-background-color:auto;
@@ -485,7 +485,7 @@ body {
     --theme-page-headings-font: var(--secondary-font);
     --theme-link-color: rgb(var(--anchor-background-color-rgb));
     --theme-link-color--rgb: var(--anchor-background-color-rgb);
-    --theme-link-color--hover: var(--anchor-background-color-hover);
+    --theme-link-color--hover: var(--anchor-background-color-hover-dledlen);
     --theme-link-label-color: var(--anchor-foreground-color);
     --theme-accent-color: rgb(var(--accent-background-color-rgb));
     --theme-accent-color--rgb: var(--accent-background-color-rgb);
@@ -495,7 +495,7 @@ body {
     --theme-border-color--rgb: var(--page-border-background-color-rgb);
     --theme-alert-color: var(--alert-background-color);
     --theme-alert-color--rgb: var(--alert-background-color-rgb);
-    --theme-alert-color--hover: var(--alert-background-color-hover);
+    --theme-alert-color--hover: var(--alert-background-color-hover-dledlen);
     --theme-alert-label: var(--alert-foreground-color);
     --theme-warning-color: var(--warning-background-color);
     --theme-warning-label: var(--warning-foreground-color);
@@ -505,7 +505,7 @@ body {
     --theme-message-color: var(--message-background-color);
     --theme-message-label: var(--message-foreground-color);
 	--theme-community-header-color:rgb(var(--community-header-text-color-rgb));
-	--theme-community-header-color-hover:var(--community-header-text-color-hover);
+	--theme-community-header-color--hover:var(--community-header-text-color-hover);
 	--theme-background-image-opacity:var(--community-background-image-opacity);
 }
 
@@ -536,9 +536,9 @@ body {
   --cpe-help-cursor:url("Windows/help.cur"), help;
   --cpe-text-cursor:url("Windows/text.cur"), text;
   --cpe-hand-cursor:url("Windows/hand.cur"), pointer;
-  --global-filter:none;
 	scrollbar-color:var(--scrollbar-thumb-color-1) var(--scrollbar-track-color-1);
 	--header-size:160px;
+	--dropdown-opacity:0.7;
 /** Scrollbar Styling **/
 	/* Width */
 	--scrollbar-width:17px;
@@ -582,7 +582,6 @@ container {
 	display:block;
 	height:100vh;
 	z-index:1;
-	filter:var(--global-filter);
 }
 
 
@@ -611,9 +610,6 @@ container {
 	max-width:calc(var(--max-width) - var(--extra-size));
 	image-rendering:initial;                  /* CSS4 Proposed  */
 	-qq-image-blurring:tick;                  /* 4x4 Web 1-2    */
-	filter:var(--global-filter);
-
-
 }
 
  .body-community-background-color {
@@ -632,8 +628,6 @@ container {
 	max-width:calc(var(--max-width) - var(--extra-size));
 	image-rendering:initial;                  /* CSS4 Proposed  */
 	-qq-image-blurring:tick;                  /* 4x4 Web 1-2    */
-	filter:var(--global-filter);
-
 }
 
 body[community-background-mode="full"] .body-community-background,
@@ -697,11 +691,17 @@ body[community-background-mode="full"] .gradient-overlay {
   image-rendering:initial;                  /* CSS4 Proposed  */
   -qq-image-blurring:tick;                  /* 4x4 Web 1-2    */
 	max-width:var(--max-width);
-	filter:var(--global-filter);
 }
 
 
+.raw-parser {
+	display:contents;
+	font-size:0;
+}
 
+.raw-parser-done {
+	display:contents;
+}
 
 
 
@@ -896,7 +896,7 @@ color:rgb(var(--anchor-background-color-rgb));
 a:hover,
 body a:hover,
 body a:visited:hover {
-color:var(--article-link-background-color-hover);
+color:var(--anchor-background-color-hover-dledlen);
 cursor:var(--cpe-hand-cursor);
 }
 
@@ -947,10 +947,18 @@ body[dark-mode="false"] .darkmode-on {
 	display:none!important;
 }
 
-body[inverted-colors="true"] .systemdarkmode-off,
+body[inverted-="true"] .systemdarkmode-off,
 body[inverted-colors="false"] .systemdarkmode-on {
 	display:none!important;
 }
+
+body[wikitheme="light"] .solo-on,
+body[wikitheme="dark"] .solo-on,
+body[wikitheme="auto"] .solo-off,
+body[wikitheme="auto-r"] .solo-off {
+	display:none!important;
+}
+
 
 body[liatch="true"]  .invertion-on {
 	filter:invert(1) hue-rotate(180deg);
@@ -1061,6 +1069,121 @@ body .wikitable > * > tr > td {
 	margin:1px 0;
 /*	text-align:center; */
 }
+
+
+/* Begin Tooltips */
+[cpe-tooltip] {
+	position:relative;
+	justify-content:center;
+}
+
+[cpe-tooltip]:hover:before,
+[cpe-tooltip]:hover:after {
+	display:block;
+}
+
+[cpe-tooltip]:before {
+	transform:rotate(-90deg);
+	top:calc(25% + 8px);
+	bottom:auto;
+	left:auto;
+	right:-2px;
+	content:'';
+	display:none;
+	height:0;
+	width:0;
+	position:absolute;
+	z-index:100;
+	border:8px solid transparent;
+	border-color:var(--page-border-background-color);
+    -webkit-mask: url("Arrow.svg") no-repeat;
+    mask: url("Arrow.svg") no-repeat;
+    -webkit-mask-size: 48px;
+    mask-size: 48px;
+    -webkit-mask-position: bottom;
+    mask-position: bottom;
+	margin-left:-8px;
+	pointer-events:none;
+}
+
+[cpe-tooltip]:after {
+	position:absolute;
+	display:none;
+	white-space:nowrap;
+	content:attr(cpe-tooltip);
+	left:calc(100% + 1px);
+	top:calc(25% + 5px);
+	bottom:auto;
+	z-index:99;
+	padding:2px;
+	font-weight:normal;
+	text-transform:none;
+	text-shadow:none;
+	font-size:12px;
+	-webkit-backdrop-filter:var(--backdrop-filter);
+	backdrop-filter:var(--backdrop-filter);
+	border:1px solid var(--page-border-background-color);
+	border-radius:var(--border-radius);
+	background-color:rgba(var(--page-secondary-background-color-rgb),var(--dropdown-opacity));
+	color:var(--page-text-background-color);
+	box-shadow:0 0 4px 1px rgba(var(--page-text-background-color-rgb), 0.5);
+	line-height:17px;
+	pointer-events:none;
+
+}
+
+[cpe-tooltip-position="reverse"][cpe-tooltip]:before {
+	transform:rotate(90deg);
+	right:auto;
+	left:6px;
+}
+
+[cpe-tooltip-position="reverse"][cpe-tooltip]:after {
+	right:calc(100% + 1px);
+	left:auto;
+}
+
+[cpe-tooltip-position="top"][cpe-tooltip]:before {
+	transform:rotate(180deg);
+	left:50%;
+	right:auto;
+	bottom:auto;
+	top:-2px;
+}
+
+[cpe-tooltip-position="top"][cpe-tooltip]:after {
+	bottom:calc(100% + 1px);
+	left:auto;
+	right:auto;
+	top:auto;
+}
+
+[cpe-tooltip-position="bottom"][cpe-tooltip]:before {
+	transform:rotate(0deg);
+	left:50%;
+	right:auto;
+	top:auto;
+	bottom:-2px;
+}
+
+[cpe-tooltip-position="bottom"][cpe-tooltip]:after {
+	top:calc(100% + 1px);
+	left:auto;
+	right:auto;
+	bottom:auto;
+}
+
+.cpe-floating-button[cpe-tooltip]:not([cpe-tooltip-position="top"]):not([cpe-tooltip-position="bottom"]):after {
+    top: 20%;
+}
+
+.cpe-floating-button[cpe-tooltip]:not([cpe-tooltip-position="top"]):not([cpe-tooltip-position="bottom"]):before {
+    top: 30%;
+}
+
+
+
+/* End Tooltips */
 
 
 /* Input Boxes */
@@ -1209,6 +1332,10 @@ select.cpe-input {
     color:var(--accent-foreground-color);
 }
 
+.cpe-button:visited:active {
+    color:var(--accent-foreground-color-inverted);
+}
+
 
 a.cpe-button, button.cpe-button {
   cursor:var(--cpe-hand-cursor);
@@ -1234,6 +1361,7 @@ a.cpe-button, button.cpe-button {
     outline-color:transparent;
     outline-offset:0px;
     text-decoration:none;
+	color:var(--accent-foreground-color-inverted);
 }
 
 .cpe-button:focus:not(:active):not(.is-active) {
@@ -1274,20 +1402,20 @@ a.cpe-button, button.cpe-button {
 }
 
 .cpe-button.is-secondary:visited:hover {
-    color:var(--accent-background-color-hover);
+    color:var(--accent-background-color-hover-dledlen);
 }
 
 .cpe-button.is-secondary:visited:active {
-    color:var(--accent-background-color-active);
+    color:var(--accent-background-color-active-dledlen);
 }
 
 
 
 .cpe-button.is-secondary:hover {
-    border-color:var(--accent-background-color-hover);
+    border-color:var(--accent-background-color-hover-dledlen);
     background-color:var(--accent-background-color-page-background-color-mix-light); 
     background-color:var(--page-background-color);
-    color:var(--accent-background-color-hover);
+    color:var(--accent-background-color-hover-dledlen);
     box-shadow:0 0 1.5px 1.5px var(--accent-background-color-page-background-color-mix-light);
     box-shadow:0 0 1.5px 1.5px currentColor;
 }
@@ -1297,17 +1425,17 @@ a.cpe-button, button.cpe-button {
 .selected .cpe-button.is-secondary,
 .cpe-dropdown:focus > .cpe-button.is-secondary,
 .cpe-dropdown:focus-within > .cpe-button.is-secondary {
-    border-color:var(--button-border-dark-super);
+    border-color:var(--accent-background-color-active-dledlen);
     background-color:var(--accent-background-color-page-background-color-mix);
     background-color:var(--page-background-color);
-    color:var(--accent-background-color-active); /* color:var(--accent-background-color-active); */ 
+    color:var(--accent-background-color-active-dledlen); /* color:var(--accent-background-color-active); */ 
     box-shadow:0 0 1.5px 1.5px var(--accent-background-color-page-background-color-mix);
     box-shadow:0 0 1.5px 1.5px currentColor;
 }
 
 .cpe-button.is-secondary:focus:not(:active):not(.is-active) {
   background-color:var(--page-background-color); 
-  color:var(--accent-background-color-active); 
+  color:var(--accent-background-color-active-dledlen); 
 }
 
 .cpe-dropdown:focus > .cpe-button.is-secondary,
@@ -1318,7 +1446,7 @@ a.cpe-button, button.cpe-button {
 .selected .cpe-button.is-secondary:active,
 .cpe-button.is-secondary.is-active {
 	background-color:var(--page-background-color); 
-	color:var(--accent-background-color-active);
+	color:var(--accent-background-color-active-dledlen);
 }
 
 
@@ -1335,7 +1463,7 @@ a.cpe-button, button.cpe-button {
 }
 
 .cpe-button.is-text:visited:hover {
-    color:var(--accent-background-color-hover);
+    color:var(--accent-background-color-hover-dledlen);
 }
 
 .cpe-button.is-text:visited:active {
@@ -1345,13 +1473,13 @@ a.cpe-button, button.cpe-button {
 
 .cpe-button.is-text:hover {
   border-color:transparent;
-  color:var(--accent-background-color-hover);
+  color:var(--accent-background-color-hover-dledlen);
   background-color:transparent;
 }
 
 .cpe-button.is-text:active {
   border-color:transparent;
-  color:var(--accent-background-color-active);
+  color:var(--accent-background-color-active-dledlen);
   background-color:transparent;
 }
 
@@ -1365,6 +1493,8 @@ a.cpe-button, button.cpe-button {
   --accent-background-color-rgb:var(--anchor-background-color-rgb);
   --accent-background-color-hover:var(--anchor-background-color-hover);
   --accent-background-color-active:var(--anchor-background-color-active);
+  --accent-background-color-hover-dledlen:var(--anchor-background-color-hover-dledlen);
+  --accent-background-color-active-dledlen:var(--anchor-background-color-active-dledlen);
   --accent-foreground-color:var(--anchor-foreground-color);
   --accent-foreground-color-hover:var(--anchor-foreground-color-hover);
   --accent-foreground-color-inverted:var(--anchor-foreground-color-inverted);
@@ -1379,6 +1509,8 @@ a.cpe-button, button.cpe-button {
   --accent-background-color-rgb:var(--page-border-background-color-rgb);
   --accent-background-color-hover:var(--page-border-background-color-hover);
   --accent-background-color-active:var(--page-border-background-color-active);
+  --accent-background-color-hover-dledlen:var(--page-border-background-color-hover-dledlen);
+  --accent-background-color-active-dledlen:var(--page-border-background-color-active-dledlen);
   --accent-foreground-color:var(--page-border-foreground-color);
   --accent-foreground-color-hover:var(--page-border-foreground-color-hover);
   --accent-foreground-color-inverted:var(--page-border-foreground-color-inverted);
@@ -1393,6 +1525,8 @@ a.cpe-button, button.cpe-button {
   --accent-background-color-rgb:var(--community-background-color-rgb);
   --accent-background-color-hover:var(--community-background-color-hover);
   --accent-background-color-active:var(--community-background-color-active);
+  --accent-background-color-hover-dledlen:var(--community-background-color-hover-dledlen);
+  --accent-background-color-active-dledlen:var(--community-background-color-active-dledlen);
   --accent-foreground-color:var(--community-foreground-color);
   --accent-foreground-color-hover:var(--community-foreground-color-hover);
   --accent-foreground-color-inverted:var(--community-foreground-color-inverted);
@@ -1408,6 +1542,8 @@ a.cpe-button, button.cpe-button {
   --accent-background-color-rgb:var(--sticky-header-background-color-rgb);
   --accent-background-color-hover:var(--sticky-header-background-color-hover);
   --accent-background-color-active:var(--sticky-header-background-color-active);
+  --accent-background-color-hover-dledlen:var(--sticky-header-background-color-hover-dledlen);
+  --accent-background-color-active-dledlen:var(--sticky-header-background-color-active-dledlen);
   --accent-foreground-color:var(--sticky-header-foreground-color);
   --accent-foreground-color-hover:var(--sticky-header-foreground-color-hover);
   --accent-foreground-color-inverted:var(--sticky-header-foreground-color-inverted);
@@ -1422,6 +1558,8 @@ a.cpe-button, button.cpe-button {
   --accent-background-color-rgb:var(--page-text-background-color-rgb);
   --accent-background-color-hover:var(--page-text-background-color-hover);
   --accent-background-color-active:var(--page-text-background-color-active);
+  --accent-background-color-hover-dledlen:var(--page-text-background-color-hover-dledlen);
+  --accent-background-color-active-dledlen:var(--page-text-background-color-active-dledlen);
   --accent-foreground-color:var(--page-text-foreground-color);
   --accent-foreground-color-hover:var(--page-text-foreground-color-hover);
   --accent-foreground-color-inverted:var(--page-text-foreground-color-inverted);
@@ -1436,6 +1574,8 @@ a.cpe-button, button.cpe-button {
   --accent-background-color-rgb:var(--toolbar-background-color-rgb);
   --accent-background-color-hover:var(--toolbar-background-color-hover);
   --accent-background-color-active:var(--toolbar-background-color-active);
+  --accent-background-color-hover-dledlen:var(--toolbar-background-color-hover-dledlen);
+  --accent-background-color-active-dledlen:var(--toolbar-background-color-active-dledlen);
   --accent-foreground-color:var(--toolbar-foreground-color);
   --accent-foreground-color-hover:var(--toolbar-foreground-color-hover);
   --accent-foreground-color-inverted:var(--toolbar-foreground-color-inverted);
@@ -1450,6 +1590,8 @@ a.cpe-button, button.cpe-button {
   --accent-background-color-rgb:var(--alert-background-color-rgb);
   --accent-background-color-hover:var(--alert-background-color-hover);
   --accent-background-color-active:var(--alert-background-color-active);
+  --accent-background-color-hover-dledlen:var(--alert-background-color-hover-dledlen);
+  --accent-background-color-active-dledlen:var(--alert-background-color-active-dledlen);
   --accent-foreground-color:var(--alert-foreground-color);
   --accent-foreground-color-hover:var(--alert-foreground-color-hover);
   --accent-foreground-color-inverted:var(--alert-foreground-color-inverted);
@@ -1464,6 +1606,8 @@ a.cpe-button, button.cpe-button {
   --accent-background-color-rgb:var(--warning-background-color-rgb);
   --accent-background-color-hover:var(--warning-background-color-hover);
   --accent-background-color-active:var(--warning-background-color-active);
+  --accent-background-color-hover-dledlen:var(--warning-background-color-hover-dledlen);
+  --accent-background-color-active-dledlen:var(--warning-background-color-active-dledlen);
   --accent-foreground-color:var(--warning-foreground-color);
   --accent-foreground-color-hover:var(--warning-foreground-color-hover);
   --accent-foreground-color-inverted:var(--warning-foreground-color-inverted);
@@ -1478,6 +1622,8 @@ a.cpe-button, button.cpe-button {
   --accent-background-color-rgb:var(--success-background-color-rgb);
   --accent-background-color-hover:var(--success-background-color-hover);
   --accent-background-color-active:var(--success-background-color-active);
+  --accent-background-color-hover-dledlen:var(--success-background-color-hover-dledlen);
+  --accent-background-color-active-dledlen:var(--success-background-color-active-dledlen);
   --accent-foreground-color:var(--success-foreground-color);
   --accent-foreground-color-hover:var(--success-foreground-color-hover);
   --accent-foreground-color-inverted:var(--success-foreground-color-inverted);
@@ -1493,6 +1639,8 @@ a.cpe-button, button.cpe-button {
   --accent-background-color-rgb:var(--message-background-color-rgb);
   --accent-background-color-hover:var(--message-background-color-hover);
   --accent-background-color-active:var(--message-background-color-active);
+  --accent-background-color-hover-dledlen:var(--message-background-color-hover-dledlen);
+  --accent-background-color-active-dledlen:var(--message-background-color-active-dledlen);
   --accent-foreground-color:var(--message-foreground-color);
   --accent-foreground-color-hover:var(--message-foreground-color-hover);
   --accent-foreground-color-inverted:var(--message-foreground-color-inverted);
@@ -1598,6 +1746,18 @@ margin-left:6px;
   font-size:calc(24px * var(--icon-size))!important;
   transform:scale(var(--icon-scale)) rotate(var(--icon-rotate));
 }
+
+.cpe-avatar {
+width:calc(24px * var(--icon-size, 1))!important;
+height:calc(24px * var(--icon-size, 1))!important;
+transform:none;
+border:2px solid currentcolor;
+-webkit-box-decoration-break:clone;
+box-decoration-break:clone;
+border-radius:50%;
+  image-rendering:initial;                  /* CSS4 Proposed  */
+}
+
 
 
 
@@ -1794,7 +1954,6 @@ margin-left:0;
 
 /* Level A */
 .cpe-dropdown__content{
-	--dropdown-opacity:0.7;
 background-color:rgba(var(--page-secondary-background-color-rgb),var(--dropdown-opacity));
 color:var(--page-text-background-color);
 border:1px solid var(--page-border-background-color);
@@ -2201,7 +2360,7 @@ opacity:1;
   --floating-button-color-hover:var(--page-text-background-color-hover);
   --floating-button-background-color:var(--page-background-color);
   --floating-button-hover-background-color:var(--page-text-background-color-page-background-color-mix-light);
-  text-decoration:none;
+  text-decoration:none!important;
   align-items: center;
   background-image:none;
   background-color:var(--floating-button-background-color);
@@ -2263,14 +2422,14 @@ opacity:1;
 
 .cpe-floating-button.critical {
   --floating-button-color:var(--alert-background-color);
-  --floating-button-color-hover:var(--alert-background-color-hover);
+  --floating-button-color-hover:var(--alert-background-color-hover-dledlen);
   --floating-button-hover-background-color:var(--alert-background-color-page-background-color-mix-light);
 }
 
 .cpe-floating-button.accent {
-  --floating-button-color:var(--page-border-background-color);
-  --floating-button-color-hover:var(--page-border-background-color-hover);
-  --floating-button-hover-background-color:var(--page-border-background-color-page-background-color-mix-light);
+  --floating-button-color:var(--anchor-background-color);
+  --floating-button-color-hover:var(--anchor-background-color-hover-dledlen);
+  --floating-button-hover-background-color:var(--anchor-background-color-page-background-color-mix-light);
 }
 
 .cpe-floating-button.no-flex {
@@ -2636,146 +2795,129 @@ input[type="checkbox"]:indeterminate:active  {
   color:var(--checkbox-active-bg);
 }
 
-/* Ranges */
+/** Ranges **/
+
+/* Base */
 input[type="range"] {
+  --range-percent:0%;
   color: var(--page-text-background-color);
   margin: 0 auto;
   background-color: transparent;
-  height: 30px;
+  height: 35px;
   min-width: 175px;
   -webkit-appearance: none;
   appearance:none;
   cursor:inherit;
 }
+
+/* Thumb */
 input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   background-color: var(--anchor-background-color);
-  box-shadow: 0 0 0 8px rgba(var(--anchor-gradient-color-rgb), 0.5);
+  box-shadow:0 0 0 1px rgba(var(--page-secondary-background-color-rgb),0.5);
   border: 0;
   -webkit-appearance: none;
   appearance:none;
-  width: 10px;
-  height: 10px;
-  margin-top: -2.5px;
+  width: 25px;
+  height: 25px;
+  margin-top: -6.25px;
   /* Hack for Chrome and Safari */
   overflow: visible;
 }
+
 input[type="range"]::-moz-range-thumb {
   border-radius: 50%;
   background-color: var(--anchor-background-color);
-  box-shadow: 0 0 0 8px rgba(var(--anchor-gradient-color-rgb), 0.5);
+  box-shadow:0 0 0 1px rgba(var(--page-secondary-background-color-rgb),0.5);
   border: 0;
   -webkit-appearance: none;
   appearance:none;
-  width: 10px;
-  height: 10px;
+  width: 25px;
+  height: 25px;
   vertical-align: middle;
+  margin-top: 0px;
 }
-input[type="range"]:active::-webkit-slider-thumb {
-  box-shadow: 0 0 0 8px rgba(var(--anchor-gradient-color-hover-rgb), 0.6);
+
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background-color: var(--anchor-background-color-hover);
+  box-shadow:0 0 0 2px rgba(var(--page-secondary-background-color-rgb),0.5);
 }
-input[type="range"]:active::-moz-range-thumb {
-  box-shadow: 0 0 0 8px rgba(var(--anchor-gradient-color-hover-rgb), 0.6);
+
+input[type="range"]::-moz-range-thumb:hover {
+  background-color: var(--anchor-background-color-hover);
+  box-shadow:0 0 0 2px rgba(var(--page-secondary-background-color-rgb),0.5);
 }
+
+
+input[type="range"]::-webkit-slider-thumb:active {
+  background-color: var(--anchor-background-color-active);
+  box-shadow:0 0 0 3px rgba(var(--page-secondary-background-color-rgb),0.5);
+}
+
+input[type="range"]::-moz-range-thumb:active {
+  background-color: var(--anchor-background-color-active);
+  box-shadow:0 0 0 3px rgba(var(--page-secondary-background-color-rgb),0.5);
+}
+
+
+/* Runnable Track */
 input[type="range"]::-webkit-slider-runnable-track {
-  border: 0;
+	--range-filler-color:var(--anchor-background-color);
+  border:0;
   padding: 0;
   background-color: var(--page-text-background-color);
+  background-image:linear-gradient(90deg,var(--range-filler-color) var(--range-percent),var(--page-text-background-color) var(--range-percent));
   color: transparent;
-  height: 5px;
+  height: 12.5px;
   -webkit-appearance: none;
   appearance:none;
   vertical-align: middle;
+  border-radius:var(--border-radius);
+  box-shadow:0 0 0 1px rgba(var(--page-secondary-background-color-rgb),0.5) inset;
 }
+
 input[type="range"]::-moz-range-track {
+	--range-filler-color:var(--anchor-background-color);
   border: 0;
   padding: 0;
   background-color: var(--page-text-background-color);
+  background-image:linear-gradient(90deg,var(--range-filler-color) var(--range-percent),var(--page-text-background-color) var(--range-percent)); /* Unused on Firefox */
   color: transparent;
-  height: 5px;
+  height: 12.5px;
   -webkit-appearance: none;
   appearance:none;
   vertical-align: middle;
+  border-radius:var(--border-radius);
+  box-shadow:0 0 0 1px rgba(var(--page-secondary-background-color-rgb),0.5) inset;
 }
-input[type="range"]::-webkit-slider-track {
-  background-color: var(--anchor-background-color);
-  border: 0;
-  height: 5px;
+
+/*
+input[type="range"]::-webkit-slider-runnable-track:hover {
+	--range-filler-color:var(--anchor-background-color-hover);
 }
+
+input[type="range"]::-moz-range-track:hover {
+	--range-filler-color:var(--anchor-background-color-hover);
+}
+
+input[type="range"]::-webkit-slider-runnable-track:active {
+	--range-filler-color:var(--anchor-background-color-active);
+}
+
+input[type="range"]::-moz-range-track:active {
+	--range-filler-color:var(--anchor-background-color-active);
+}
+*/
+/* Filler */
 input[type="range"]::-moz-range-progress {
-  background-color: var(--anchor-background-color);
+  background-color: transparent;
   border: 0;
-  height: 5px;
-}
-input[type="range"]::-qq-slider-filler {
-  background-color: var(--anchor-background-color);
-  border: 0;
-  height: 5px;
+  height: 12.5px;
+  display:none;
 }
 
 
-/* For Touch Devices or Phones */
-.phone input[type="range"], .xo input[type="range"], input[type="range"].big {
-  height: 35px;
-  min-width: 150px;
-  line-height:0;
-}
-.phone input[type="range"]::-webkit-slider-thumb, .xo input[type="range"]::-webkit-slider-thumb, input[type="range"].big::-webkit-slider-thumb {
-  width: 20px;
-  height: 20px;
-  margin-top: -5px;
-  /* Hack for Chrome and Safari */
-}
-.phone input[type="range"]::-moz-range-thumb, .xo input[type="range"]::-moz-range-thumb, input[type="range"].big::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-}
-.phone input[type="range"]::-webkit-slider-runnable-track, .xo input[type="range"]::-webkit-slider-runnable-track, input[type="range"].big::-webkit-slider-runnable-track {
-  height: 10px;
-}
-.phone input[type="range"]::-moz-range-track, .xo input[type="range"]::-moz-range-track,  input[type="range"].big::-moz-range-track {
-  height: 10px;
-}
-.phone input[type="range"]::-webkit-slider-track, .xo input[type="range"]::-webkit-slider-track, input[type="range"].big::-webkit-slider-track {
-  height: 10px;
-}
-.phone input[type="range"]::-moz-range-progress, .xo input[type="range"]::-moz-range-progress, input[type="range"].big::-moz-range-progress {
-  height: 10px;
-}
-.phone input[type="range"]::-qq-slider-filler, .xo input[type="range"]::-qq-slider-filler, input[type="range"].big::-qq-slider-filler {
-  height: 10px;
-}
-
-
-/* Color Filters */
-[colorfilter="invert"] {
-	--global-filter:invert(1);
-}
-
-[colorfilter="night"] {
-	--global-filter:invert(1) hue-rotate(180deg);
-}
-
-[colorfilter="gray"] {
-	--global-filter:grayscale(1);
-}
-
-[colorfilter="darkgray"] {
-	--global-filter:invert(1) grayscale(1);
-}
-
-
-[colorfilter="darkgray"] {
-	--global-filter:invert(1) grayscale(1);
-}
-
-[colorfilter="yelblk"] {
-	--global-filter:sepia(1) hue-rotate(200deg) invert(1);
-}
-
-[colorfilter="bluwht"] {
-	--global-filter:sepia(1) hue-rotate(200deg);
-}
 
 /** Themed Cursors **/
 /* Apple */

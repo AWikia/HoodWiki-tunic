@@ -6,6 +6,8 @@
 	"tunic-desc": "پێستێکی مۆبایل بە شل لەسەر بنەمای مۆنۆبوک",
 	"tunic-theme": "ڕووکار",
 	"tunic-themes": "ڕووکارەکان",
-    "evelution-standard": "ستاندارد",
-    "evelution-visual-colors": "ڕەنگی بینراو"
+    "tunic-standard": "ستاندارد",
+    "tunic-visual-colors": "ڕەنگی بینراو",
+	"tunic-darkmode": "دۆخی تاریک",
+	"tunic-lightmode": "دۆخی کاڵ"
 }

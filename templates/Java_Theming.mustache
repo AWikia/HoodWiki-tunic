@@ -2,19 +2,20 @@
 window.MW18autoDark = false;
 window.MW18darkmode = false;
 window.MW18ContrastNotice = false;
+window.MW18ForcedTheme = false;
 
 /* Visual Themes */
 var visualThemes = ['basic', 'contrast', 'simple','classic']
 var visualThemeNames = ['Basic','High Contrast','Simple','Classic'];
 var contrastVisual = 1;
 /* Visual Colors */
-var visualColors = ['factorycolors','lunacolors','classicforced','campbellforced','forced','tangoforced','rgbcolors','retro','retro2','retro3','retro4','retro5','retro6','retro7','fandomcolors'];
-var visualColorNames = ['Factory', 'XP Luna', 'Windows Forced', 'Campbell Forced', 'evelution OSX Forced', 'Tango Forced','RGB Celebration','Retro','Retro II','Retro III','Retro IV','Retro V','Retro VI','Retro VII','Fandom 2021'];
+var visualColors = ['factorycolors','lunacolors','classicforced','campbellforced','forced','tangoforced','rgbcolors','retro','retro2','retro3','retro4','retro5','retro6','retro7','fandomcolors','candycrush','candycrush2','discord'];
+var visualColorNames = ['Factory', 'XP Luna', 'Windows Forced', 'Campbell Forced', 'evelution OSX Forced', 'Tango Forced','RGB Celebration','Retro','Retro II','Retro III','Retro IV','Retro V','Retro VI','Retro VII','Fandom 2021', 'Candy Crush', 'Candy Crush II', 'Discord'];
 
 (function () {
 	// Evelution Specific
-	if (getKey('theme-active') === '-1') {
-		insertKey('theme-active', 'theme-A' );
+	if (getKey('theme-selected') === '-1') {
+		insertKey('theme-selected', 'A' );
 	}
 	if (getKey('style-active') === '-1') {
 		if ( ( window.matchMedia('(forced-colors: active)').matches ) ) {
@@ -32,7 +33,7 @@ var visualColorNames = ['Factory', 'XP Luna', 'Windows Forced', 'Campbell Forced
 	if (getKey('color-mode') === '-1') {
 		insertKey('color-mode', 'auto' );
 	}
-	var theme_active = getKey('theme-active');
+	var theme_selected = getKey('theme-selected');
 	var style_active = getKey('style-active');
 	var color_active = getKey('color-active');
 	var filter_active = getKey('filter-active');
@@ -47,25 +48,25 @@ var visualColorNames = ['Factory', 'XP Luna', 'Windows Forced', 'Campbell Forced
 					case 'theme-A':
 					case 'A':
 					case '0':
-						theme_active = 'theme-A'
+						theme_selected = 'A'
 						break;
 					case 'theme-B':
 					case 'B':
 					case '1':
-						theme_active = 'theme-B'
+						theme_selected = 'B'
 						break;
 					case 'theme-C':
 					case 'C':
 					case '2':
-						theme_active = 'theme-C'
+						theme_selected = 'C'
 						break;
 					case 'theme-D':
 					case 'D':
 					case '3':
-						theme_active = 'theme-D'
+						theme_selected = 'D'
 						break;
 					default:
-						theme_active = 'theme-D'
+						theme_selected = 'A'
 						break;
 				}
 				console.info('Active theme settings overriden')
@@ -78,20 +79,15 @@ var visualColorNames = ['Factory', 'XP Luna', 'Windows Forced', 'Campbell Forced
 				color_active = visualColors.indexOf(value);
 				console.info('Active visual colors settings overriden')
                 break;
-            case 'usefilter':
-				filter_active = value;
-				console.info('Active color filter settings overriden');
-                break;
             case 'usecolormode':
 				color_mode = value;
 				console.info('Color mode settings overriden');
                 break;
         }
     });
-	// End Evelution Specific
-	document.querySelector('html').className += " " + theme_active; // We begin with the first theme selected
+	$('html').attr('theme',theme_selected);
 	$(".cpe-dropdown .cpe-dropdown__content .cpe-list.cpe-themes li").removeClass('selected');
-	$(".cpe-dropdown .cpe-dropdown__content .cpe-list.cpe-themes li[data-theme-change='" + theme_active + "']").addClass('selected');
+	$(".cpe-dropdown .cpe-dropdown__content .cpe-list.cpe-themes li[data-theme-change='theme-" + theme_selected + "']").addClass('selected');
    	colortheme( color_mode,false,false);
 	ColorUpdate(true);
 	UpdateMisc();
@@ -124,7 +120,6 @@ var visualColorNames = ['Factory', 'XP Luna', 'Windows Forced', 'Campbell Forced
 		VisualStyle(style_active,false);
 		VisualColor(color_active,false);
 		ContrastBanner(); // Notice
-		ColorFilter(filter_active,false);
 		SocialCompile();
 //		$('body').click( function(e) { e.preventDefault; CheckTheme(); } );
 		CheckDeprecation();
@@ -162,15 +157,6 @@ function SupportsColorMix() {
 	return CSS.supports("color","color-mix(in srgb, #34c9eb 70%, white)") || CSS.supports("color:color-mix(in srgb, #34c9eb 70%, white)") 
 }
 
-/* Color Filter */
-function ColorFilter(filt,save=true) {
-	$('body').attr("colorfilter", filt);
-	$(".cpe-dropdown .cpe-dropdown__content .cpe-list.cpe-color-filters li").removeClass('selected');
-	$(".cpe-dropdown .cpe-dropdown__content .cpe-list.cpe-color-filters li#f-" + filt).addClass('selected');
-	if (save) {
-	insertKey('filter-active', filt );
-	}
-}
 
 
 /* Visual Styles */
@@ -484,16 +470,16 @@ function ToggleMode() {
 	}
 }
 
-function ColorMode(m1='auto', m2='auto-r') {
+function ColorMode() {
 	var theme = $('body').attr("wikitheme");
 	if (theme === 'auto') {
-		colortheme(m1);
+		colortheme('light');
 	} else 	if (theme === 'auto-r') {
-		colortheme(m2);
+		colortheme('dark');
 	} else 	if (theme === 'light') {
-		colortheme(m1);
+		colortheme('auto');
 	} else 	if (theme === 'dark') {
-		colortheme(m2);
+		colortheme('auto-r');
 	}
 }
 
@@ -1547,7 +1533,7 @@ function DownloadTheme(full=false) {
 				 '--sticky-header-foreground-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-foreground-color-hover-rgb")  + ';\n' +
 				 '--sticky-header-foreground-color-inverted-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-foreground-color-inverted-rgb")  + ';\n' +
 				 '--sticky-header-foreground-color-hover-inverted-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-foreground-color-hover-inverted-rgb")  + ';\n' +
-				 // Τoolbar Color
+				 // ?oolbar Color
 				 '--toolbar-background-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-background-color")  + ';\n' +
 				 '--toolbar-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-background-color-hover")  + ';\n' +
 				 '--toolbar-background-color-active:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-background-color-active")  + ';\n' +
@@ -1660,9 +1646,29 @@ function DownloadTheme(full=false) {
 				 '--logo-filter-hover:' + wordfilter2  + ';\n' +
 				 '--logo-filter-duration:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--logo-filter-duration")  + ';\n' +
 				 '--logo-filter-delay:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--logo-filter-delay")  + ';\n' +
-				 '--article-link-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--article-secondary-link-background-color-hover")  + ';\n' +
-				 '--article-secondary-link-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--article-link-background-color-hover")  + ';\n' +
-				 '--article-new-link-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--article-new-link-background-color-hover")  + ';\n' +
+				 '--anchor-background-color-hover-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-background-color-hover-dledlen")  + ';\n' +
+				 '--anchor-background-color-active-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-background-color-active-dledlen")  + ';\n' +
+				 '--accent-background-color-hover-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-background-color-hover-dledlen")  + ';\n' +
+				 '--accent-background-color-active-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-background-color-active-dledlen")  + ';\n' +
+				 '--page-border-background-color-hover-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-background-color-hover-dledlen")  + ';\n' +
+				 '--page-border-background-color-active-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-background-color-active-dledlen")  + ';\n' +
+				 '--community-background-color-hover-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-background-color-hover-dledlen")  + ';\n' +
+				 '--community-background-color-active-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-background-color-active-dledlen")  + ';\n' +
+				 '--sticky-header-background-color-hover-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-background-color-hover-dledlen")  + ';\n' +
+				 '--sticky-header-background-color-active-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-background-color-active-dledlen")  + ';\n' +
+				 '--page-text-background-color-hover-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-background-color-hover-dledlen")  + ';\n' +
+				 '--page-text-background-color-active-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-background-color-active-dledlen")  + ';\n' +
+				 '--toolbar-background-color-hover-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-background-color-hover-dledlen")  + ';\n' +
+				 '--toolbar-background-color-active-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-background-color-active-dledlen")  + ';\n' +
+				 '--alert-background-color-hover-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-background-color-hover-dledlen")  + ';\n' +
+				 '--alert-background-color-active-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-background-color-active-dledlen")  + ';\n' +
+				 '--warning-background-color-hover-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-background-color-hover-dledlen")  + ';\n' +
+				 '--warning-background-color-active-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-background-color-active-dledlen")  + ';\n' +
+				 '--success-background-color-hover-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-background-color-hover-dledlen")  + ';\n' +
+				 '--success-background-color-active-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-background-color-active-dledlen")  + ';\n' +
+				 '--message-background-color-hover-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-background-color-hover-dledlen")  + ';\n' +
+				 '--message-background-color-active-dledlen:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-background-color-active-dledlen")  + ';\n' +
+
 				 '}' // Ending
 	} else { // For use with Theme Management
 		result = '.theme-A[visualcolors="standard"] {\n' + // Beginning
@@ -1805,17 +1811,17 @@ function UpdateMisc() {
 
 /* Begin Color Parsers */
 function ColorTestTwin(color,color2,intensity=1,inter='hsl') {
-	return chroma.mix(color,color2,0.3*intensity, inter);
+	return chroma.mix(color,color2,0.5*intensity, inter);
 }
 
-function GetHoverColor(color1='#ffffff',color2='#000000',inter='hsl',steps=4) {
+function GetHoverColor(color1='#ffffff',color2='#000000',inter='hsl',steps=4,modi=1) {
 	colors = chroma.scale([color1, color2]).mode(inter).colors(steps);
-	return colors[1];
+	return colors[modi];
 }
 
-function GetActiveColor(color1='#ffffff',color2='#000000',inter='hsl',steps=4) {
-	colors = chroma.scale([GetHoverColor(color1,color2,inter,steps), color2]).mode(inter).colors(steps);
-	return colors[1];
+function GetActiveColor(color1='#ffffff',color2='#000000',inter='hsl',steps=4,modi=1) {
+	colors = chroma.scale([GetHoverColor(color1,color2,inter,steps,modi), color2]).mode(inter).colors(steps);
+	return colors[modi];
 }
 
 
@@ -1834,9 +1840,9 @@ function ColorTest(color,text=false,inv=false,dledlen=false) { // Regular Colors
 			}
 		} else {
 			if (inv === false) {
-				return GetHoverColor(color, '#000000');
+				return GetHoverColor(color, '#000000','hsl',11,4);
 			} else {
-				return GetHoverColor(color, '#ffffff');
+				return GetHoverColor(color, '#ffffff','hsl',11,4);
 			}
 		}
 	} else {
@@ -1848,9 +1854,9 @@ function ColorTest(color,text=false,inv=false,dledlen=false) { // Regular Colors
 			}
 		} else {
 			if (inv === true) {
-				return GetHoverColor(color, '#000000');
+				return GetHoverColor(color, '#000000','hsl',11,4);
 			} else {
-				return GetHoverColor(color, '#ffffff');
+				return GetHoverColor(color, '#ffffff','hsl',11,4);
 			}
 		}
 	}
@@ -1858,11 +1864,16 @@ function ColorTest(color,text=false,inv=false,dledlen=false) { // Regular Colors
 
 }
 
-function SuperColorTest(color) { // Double Amount
-	if (isLightColor(color)) {
-		return GetActiveColor(color, '#000000');
+function SuperColorTest(color,dledlen=false) { // Double Amount
+	if (dledlen === true) {
+		var color2 = getComputedStyle(document.querySelector('container')).getPropertyValue("--page-background-color");
 	} else {
-		return GetActiveColor(color, '#ffffff');
+		var color2 = color;
+	}
+	if (isLightColor(color2)) {
+		return GetActiveColor(color, '#000000','hsl',11,4);
+	} else {
+		return GetActiveColor(color, '#ffffff','hsl',11,4);
 	}
 }
 
@@ -1898,13 +1909,13 @@ function Color3(r=0,g=0,b=0) {
 	return chroma('rgb(' + r + ',' + g + ',' + b + ')' ).get('hex');
 }
 
-
 function isLightColor(color) {
-	return ((chroma.contrast(getComputedStyle(document.querySelector('html')).getPropertyValue("--light-theme-foreground-color"), color)) > 5);
+	return ((chroma.contrast('#000000', color)) > 5);
 }
 
+
 function isSuperLightColor(color) {
-	return ((chroma.contrast(getComputedStyle(document.querySelector('html')).getPropertyValue("--light-theme-foreground-color"), color)) > 6);
+	return ((chroma.contrast('#000000', color)) > 6);
 }
 
 
@@ -2162,17 +2173,17 @@ if ((getComputedStyle(document.querySelector('body')).getPropertyValue("--page-t
 }
 
 if (isLightColor(content_color)) {
-	var dropdowncolor = chroma.mix(content_color,getComputedStyle(document.querySelector('html')).getPropertyValue("--light-theme-text-background-color"),0.2, 'hsv');
+	var dropdowncolor = chroma.mix(content_color,'#000000',0.2, 'hsv');
 	if ((getComputedStyle(document.querySelector('body')).getPropertyValue("--page-border-background-color") === 'auto')  ) {
-		var dropdowncolor2 = chroma.mix(content_color,getComputedStyle(document.querySelector('html')).getPropertyValue("--light-theme-text-background-color"),0.4, 'hsv');
+		var dropdowncolor2 = chroma.mix(content_color,'#1a1a1a',0.4, 'hsv');
 	} else {
 		var dropdowncolor2 = 'inherit';
 	}
 
 } else {
-	var dropdowncolor = chroma.mix(content_color,getComputedStyle(document.querySelector('html')).getPropertyValue("--dark-theme-text-background-color"),0.2, 'hsv');
+	var dropdowncolor = chroma.mix(content_color,'#ffffff',0.2, 'hsv');
 	if ((getComputedStyle(document.querySelector('body')).getPropertyValue("--page-border-background-color") === 'auto')  ) {
-		var dropdowncolor2 = chroma.mix(content_color,getComputedStyle(document.querySelector('html')).getPropertyValue("--dark-theme-text-background-color"),0.4, 'hsv');
+		var dropdowncolor2 = chroma.mix(content_color,'#e5e5e5',0.4, 'hsv');
 	} else {
 		var dropdowncolor2 = 'inherit';
 	}
@@ -2805,10 +2816,33 @@ document.querySelector('body').style.setProperty("--message-gradient-color-hover
 
 
 /* Article Link Colors */
-document.querySelector('body').style.setProperty("--article-link-background-color-hover", ColorTest(link_color,false,false,true));
-document.querySelector('body').style.setProperty("--article-secondary-link-background-color-hover", ColorTest(button_color,false,false,true));
-document.querySelector('body').style.setProperty("--article-new-link-background-color-hover", ColorTest(alert_color,false,false,true));
-
+document.querySelector('body').style.setProperty("--anchor-background-color-hover-dledlen", ColorTest(link_color,false,false,true));
+document.querySelector('body').style.setProperty("--anchor-background-color-active-dledlen", SuperColorTest(link_color,true));
+document.querySelector('body').style.setProperty("--accent-background-color-hover-dledlen", ColorTest(button_color,false,false,true));
+document.querySelector('body').style.setProperty("--accent-background-color-active-dledlen", SuperColorTest(button_color,true));
+document.querySelector('body').style.setProperty("--page-border-background-color-hover-dledlen", ColorTest(border_color,false,false,true));
+document.querySelector('body').style.setProperty("--page-border-background-color-active-dledlen", SuperColorTest(border_color,true));
+document.querySelector('body').style.setProperty("--community-background-color-hover-dledlen", ColorTest(head_color,false,false,true));
+document.querySelector('body').style.setProperty("--community-background-color-active-dledlen", SuperColorTest(head_color,true));
+document.querySelector('body').style.setProperty("--sticky-header-background-color-hover-dledlen", ColorTest(header_color,false,false,true));
+document.querySelector('body').style.setProperty("--sticky-header-background-color-active-dledlen", SuperColorTest(header_color,true));
+if ((getComputedStyle(document.querySelector('body')).getPropertyValue("--page-text-background-color") != 'auto') || (window.MW18darkmode === true) ) {
+	document.querySelector('body').style.setProperty("--page-text-background-color-hover-dledlen", ColorTest(content_text,false,false,true));
+	document.querySelector('body').style.setProperty("--page-text-background-color-active-dledlen", SuperColorTest(content_text,true));
+} else {
+	document.querySelector('body').style.setProperty("--page-text-background-color-hover-dledlen", ColorTest(dropdowncolor3,false,false,true));
+	document.querySelector('body').style.setProperty("--page-text-background-color-active-dledlen", SuperColorTest(dropdowncolor3,true));
+}
+document.querySelector('body').style.setProperty("--toolbar-background-color-hover-dledlen", ColorTest(floating_color,false,false,true));
+document.querySelector('body').style.setProperty("--toolbar-background-color-active-dledlen", SuperColorTest(floating_color,true));
+document.querySelector('body').style.setProperty("--alert-background-color-hover-dledlen", ColorTest(alert_color,false,false,true));
+document.querySelector('body').style.setProperty("--alert-background-color-active-dledlen", SuperColorTest(alert_color,true));
+document.querySelector('body').style.setProperty("--warning-background-color-hover-dledlen", ColorTest(warning_color,false,false,true));
+document.querySelector('body').style.setProperty("--warning-background-color-active-dledlen", SuperColorTest(warning_color,true));
+document.querySelector('body').style.setProperty("--success-background-color-hover-dledlen", ColorTest(success_color,false,false,true));
+document.querySelector('body').style.setProperty("--success-background-color-active-dledlen", SuperColorTest(success_color,true));
+document.querySelector('body').style.setProperty("--message-background-color-hover-dledlen", ColorTest(message_color,false,false,true));
+document.querySelector('body').style.setProperty("--message-background-color-active-dledlen", SuperColorTest(message_color,true));
 
 ThemeColorMetaTag();
 
@@ -3387,66 +3421,46 @@ if (left.checked) {
 /* Toggles Theme */
 function HCa() {
     var x = document.querySelector('html');
-    if (x.className.indexOf("theme-A") == -1) {
-        x.className += " theme-A";
-    }
-        x.className = x.className.replace(" theme-B", "");
-        x.className = x.className.replace(" theme-C", "");
-        x.className = x.className.replace(" theme-D", "");
+		$('html').attr('theme','A');
 		ColorUpdate(true,true);
 		CheckDeprecation();
 		UpdateMisc();
-		insertKey('theme-active', 'theme-A' );
+		insertKey('theme-selected', 'A' );
 		$(".cpe-dropdown .cpe-dropdown__content .cpe-list.cpe-themes li").removeClass('selected');
-		$(".cpe-dropdown .cpe-dropdown__content .cpe-themes li[data-theme-change='" + getKey('theme-active') + "']").addClass('selected');
+		$(".cpe-dropdown .cpe-dropdown__content .cpe-themes li[data-theme-change='theme-" + getKey('theme-selected') + "']").addClass('selected');
 }
 
 function HCb() {
     var x = document.querySelector('html');
-    if (x.className.indexOf("theme-B") == -1) {
-        x.className += " theme-B";
-		}
-        x.className = x.className.replace(" theme-A", "");
-        x.className = x.className.replace(" theme-C", "");
-        x.className = x.className.replace(" theme-D", "");
+		$('html').attr('theme','B');
 		ColorUpdate(true,true);
 		CheckDeprecation();
 		UpdateMisc();
-		insertKey('theme-active', 'theme-B' );
+		insertKey('theme-selected', 'B' );
 		$(".cpe-dropdown .cpe-dropdown__content .cpe-list.cpe-themes li").removeClass('selected');
-		$(".cpe-dropdown .cpe-dropdown__content .cpe-themes li[data-theme-change='" + getKey('theme-active') + "']").addClass('selected');
+		$(".cpe-dropdown .cpe-dropdown__content .cpe-themes li[data-theme-change='theme-" + getKey('theme-selected') + "']").addClass('selected');
 }
 
 function HCc() {
     var x = document.querySelector('html');
-    if (x.className.indexOf("theme-C") == -1) {
-        x.className += " theme-C";
-    }
-        x.className = x.className.replace(" theme-A", "");
-        x.className = x.className.replace(" theme-B", "");
-        x.className = x.className.replace(" theme-D", "");
+		$('html').attr('theme','C');
 		ColorUpdate(true,true);
 		CheckDeprecation();
 		UpdateMisc();
-		insertKey('theme-active', 'theme-C' );
+		insertKey('theme-selected', 'C' );
 		$(".cpe-dropdown .cpe-dropdown__content .cpe-list.cpe-themes li").removeClass('selected');
-		$(".cpe-dropdown .cpe-dropdown__content .cpe-themes li[data-theme-change='" + getKey('theme-active') + "']").addClass('selected');
+		$(".cpe-dropdown .cpe-dropdown__content .cpe-themes li[data-theme-change='theme-" + getKey('theme-selected') + "']").addClass('selected');
 }
 
 function HCd() {
     var x = document.querySelector('html');
-    if (x.className.indexOf("theme-D") == -1) {
-        x.className += " theme-D";
-    }
-        x.className = x.className.replace(" theme-A", "");
-        x.className = x.className.replace(" theme-B", "");
-        x.className = x.className.replace(" theme-C", "");
+		$('html').attr('theme','D');
 		ColorUpdate(true,true);
 		CheckDeprecation();
 		UpdateMisc();
-		insertKey('theme-active', 'theme-D' );
+		insertKey('theme-selected', 'D' );
 		$(".cpe-dropdown .cpe-dropdown__content .cpe-list.cpe-themes li").removeClass('selected');
-		$(".cpe-dropdown .cpe-dropdown__content .cpe-themes li[data-theme-change='" + getKey('theme-active') + "']").addClass('selected');
+		$(".cpe-dropdown .cpe-dropdown__content .cpe-themes li[data-theme-change='theme-" + getKey('theme-selected') + "']").addClass('selected');
 }
 
 function UpdateFont() {
