@@ -92,17 +92,9 @@ var visualColorNames = ['Factory', 'XP Luna', 'Windows Forced', 'Campbell Forced
 	ColorUpdate(true);
 	SheShe = 'auto'; // Allowed Values ('auto', true, false) 
 	if (SheShe == 'auto') {
-		SheShe = ($("body.server").length != 0);
+		SheShe = ($("body.server-mode").length != 0);
 	}
 	$('html').attr("she-she", SheShe);
-	if ( ($("body.evelution-2018").length) || ($("body.evelution-2018-mobile").length)) {
-		$("head").append(
-		'<link rel="manifest" href="manifest.json" crossorigin="use-credentials">' +
-		'<link rel="shortcut icon" href="favicon.ico">' +
-		'<link rel="icon" href="favicon.ico">' +
-		'<link rel="favicon" href="favicon.ico">'
-		);	
-	}
 		$("head").append(
 		'<meta name="color-scheme" content="light dark">'
 		);	
@@ -114,7 +106,7 @@ var visualColorNames = ['Factory', 'XP Luna', 'Windows Forced', 'Campbell Forced
 		VisualStyle(style_active,false);
 		VisualColor(color_active,false);
 		ContrastBanner(); // Notice
-		SocialCompile();
+//		SocialCompile();
 //		$('body').click( function(e) { e.preventDefault; CheckTheme(); } );
 		CheckDeprecation();
 		$('html').addClass('theming-loaded');
@@ -268,7 +260,7 @@ function CursorT(theme) {
 	Called on body element only */
 function CheckTheme() {
 	/* Wiki theme */
-//	ColorUpdate(true);
+	ColorUpdate(true);
 	ThemeColorMetaTag();
 ManagerRows();
 ContrastBanner();
@@ -306,8 +298,8 @@ if ($("body.tskmngr").length) {
 
 function ContrastBanner() {
 
-/* For evelutionSkin2 (Obsolete) or Evelution */
-if  ( ($("body.evelution-2018").length) || ($("body.skin-Evelution").length) ) {
+/* For Evelution */
+if  ( ($("body.skin-evelution").length) ) {
 	if ( ( window.matchMedia('(forced-colors: active)').matches ) && (window.MW18ContrastNotice === false)  && ($('html').attr("visualtheme") !== 'contrast'  ) ) {
 		window.MW18ContrastNotice = true;
 		AddFloatingBanner("You're currently using a high contrast theme on your device. You may want to use the <a onclick='RemoveBanner(); VisualStyle(" + contrastVisual + ")'>High Contrast</a> visual style so as to have a consistent high contrast experience.",'message','contrastbanner')  
@@ -570,8 +562,6 @@ function DownloadTheme(full=false) {
 				 '--community-background-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-background-color")  + ';\n' +
 				 '--community-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-background-color-hover")  + ';\n' +
 				 '--community-background-color-active:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-background-color-active")  + ';\n' +
-				 '--community-gradient-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-gradient-color")  + ';\n' +
-				 '--community-gradient-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-gradient-color-hover")  + ';\n' +
 				 '--community-foreground-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-foreground-color")  + ';\n' +
 				 '--community-foreground-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-foreground-color-hover")  + ';\n' +
 				 '--community-foreground-color-inverted:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-foreground-color-inverted")  + ';\n' +
@@ -582,17 +572,15 @@ function DownloadTheme(full=false) {
 				 '--community-background-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-background-color-rgb")  + ';\n' +
 				 '--community-background-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-background-color-hover-rgb")  + ';\n' +
 				 '--community-background-color-active-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-background-color-active-rgb")  + ';\n' +
-				 '--community-gradient-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-gradient-color-rgb")  + ';\n' +
-				 '--community-gradient-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-gradient-color-hover-rgb")  + ';\n' +
 				 '--community-foreground-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-foreground-color-rgb")  + ';\n' +
 				 '--community-foreground-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-foreground-color-hover-rgb")  + ';\n' +
 				 '--community-foreground-color-inverted-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-foreground-color-inverted-rgb")  + ';\n' +
 				 '--community-foreground-color-hover-inverted-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-foreground-color-hover-inverted-rgb")  + ';\n' +
 				// Community Text Color
-				 '--community-background-text-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-background-text-color")  + ';\n' +
-				 '--community-background-text-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-background-text-color-hover")  + ';\n' +
-				 '--community-background-text-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-background-text-color-rgb")  + ';\n' +
-				 '--community-background-text-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-background-text-color-hover-rgb")  + ';\n' +
+				 '--community-header-text-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-header-text-color")  + ';\n' +
+				 '--community-header-text-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-header-text-color-hover")  + ';\n' +
+				 '--community-header-text-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-header-text-color-rgb")  + ';\n' +
+				 '--community-header-text-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-header-text-color-hover-rgb")  + ';\n' +
 				// Community BG Settings
 				 '--community-background-mode:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-background-mode")  + ';\n' +
 				 '--community-background-horizontal-alignment:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--community-background-horizontal-alignment")  + ';\n' +
@@ -604,8 +592,6 @@ function DownloadTheme(full=false) {
 				 '--anchor-background-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-background-color")  + ';\n' +
 				 '--anchor-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-background-color-hover")  + ';\n' +
 				 '--anchor-background-color-active:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-background-color-active")  + ';\n' +
-				 '--anchor-gradient-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-gradient-color")  + ';\n' +
-				 '--anchor-gradient-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-gradient-color-hover")  + ';\n' +
 				 '--anchor-foreground-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-foreground-color")  + ';\n' +
 				 '--anchor-foreground-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-foreground-color-hover")  + ';\n' +
 				 '--anchor-foreground-color-inverted:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-foreground-color-inverted")  + ';\n' +
@@ -615,8 +601,6 @@ function DownloadTheme(full=false) {
 				 '--anchor-background-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-background-color-rgb")  + ';\n' +
 				 '--anchor-background-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-background-color-hover-rgb")  + ';\n' +
 				 '--anchor-background-color-active-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-background-color-active-rgb")  + ';\n' +
-				 '--anchor-gradient-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-gradient-color-rgb")  + ';\n' +
-				 '--anchor-gradient-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-gradient-color-hover-rgb")  + ';\n' +
 				 '--anchor-foreground-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-foreground-color-rgb")  + ';\n' +
 				 '--anchor-foreground-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-foreground-color-hover-rgb")  + ';\n' +
 				 '--anchor-foreground-color-inverted-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--anchor-foreground-color-inverted-rgb")  + ';\n' +
@@ -628,12 +612,18 @@ function DownloadTheme(full=false) {
 				 '--page-secondary-background-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-secondary-background-color")  + ';\n' +
 				 '--page-secondary-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-secondary-background-color-hover")  + ';\n' +
 				 '--page-secondary-background-color-active:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-secondary-background-color-active")  + ';\n' +
+
+				 '--page-background-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-background-color-rgb")  + ';\n' +
+				 '--page-background-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-background-color-hover-rgb")  + ';\n' +
+				 '--page-background-color-active-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-background-color-active-rgb")  + ';\n' +
+				 '--page-secondary-background-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-secondary-background-color-rgb")  + ';\n' +
+				 '--page-secondary-background-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-secondary-background-color-hover-rgb")  + ';\n' +
+				 '--page-secondary-background-color-active-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-secondary-background-color-active-rgb")  + ';\n' +
+
 				 // Page Border Color
 				 '--page-border-background-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-background-color")  + ';\n' +
 				 '--page-border-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-background-color-hover")  + ';\n' +
 				 '--page-border-background-color-active:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-background-color-active")  + ';\n' +
-				 '--page-border-gradient-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-gradient-color")  + ';\n' +
-				 '--page-border-gradient-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-gradient-color-hover")  + ';\n' +
 				 '--page-border-foreground-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-foreground-color")  + ';\n' +
 				 '--page-border-foreground-color-inverted:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-foreground-color-inverted")  + ';\n' +
 				 '--page-border-foreground-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-foreground-color-hover")  + ';\n' +
@@ -642,8 +632,6 @@ function DownloadTheme(full=false) {
 				 '--page-border-background-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-background-color-rgb")  + ';\n' +
 				 '--page-border-background-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-background-color-hover-rgb")  + ';\n' +
 				 '--page-border-background-color-active-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-background-color-active-rgb")  + ';\n' +
-				 '--page-border-gradient-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-gradient-color-rgb")  + ';\n' +
-				 '--page-border-gradient-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-gradient-color-hover-rgb")  + ';\n' +
 				 '--page-border-foreground-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-foreground-color-rgb")  + ';\n' +
 				 '--page-border-foreground-color-inverted-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-foreground-color-inverted-rgb")  + ';\n' +
 				 '--page-border-foreground-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-border-foreground-color-hover-rgb")  + ';\n' +
@@ -651,8 +639,6 @@ function DownloadTheme(full=false) {
 				 '--page-text-background-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-background-color")  + ';\n' +
 				 '--page-text-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-background-color-hover")  + ';\n' +
 				 '--page-text-background-color-active:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-background-color-active")  + ';\n' +
-				 '--page-text-gradient-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-gradient-color")  + ';\n' +
-				 '--page-text-gradient-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-gradient-color-hover")  + ';\n' +
 				 '--page-text-foreground-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-foreground-color")  + ';\n' +
 				 '--page-text-foreground-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-foreground-color-hover")  + ';\n' +
 				 '--page-text-foreground-color-inverted:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-foreground-color-inverted")  + ';\n' +
@@ -662,8 +648,6 @@ function DownloadTheme(full=false) {
 				 '--page-text-background-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-background-color-rgb")  + ';\n' +
 				 '--page-text-background-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-background-color-hover-rgb")  + ';\n' +
 				 '--page-text-background-color-active-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-background-color-active-rgb")  + ';\n' +
-				 '--page-text-gradient-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-gradient-color-rgb")  + ';\n' +
-				 '--page-text-gradient-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-gradient-color-hover-rgb")  + ';\n' +
 				 '--page-text-foreground-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-foreground-color-rgb")  + ';\n' +
 				 '--page-text-foreground-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-foreground-color-hover-rgb")  + ';\n' +
 				 '--page-text-foreground-color-inverted-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-foreground-color-inverted-rgb")  + ';\n' +
@@ -672,8 +656,6 @@ function DownloadTheme(full=false) {
 				 '--accent-background-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-background-color")  + ';\n' +
 				 '--accent-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-background-color-hover")  + ';\n' +
 				 '--accent-background-color-active:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-background-color-active")  + ';\n' +
-				 '--accent-gradient-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-gradient-color")  + ';\n' +
-				 '--accent-gradient-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-gradient-color-hover")  + ';\n' +
 				 '--accent-foreground-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-foreground-color")  + ';\n' +
 				 '--accent-foreground-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-foreground-color-hover")  + ';\n' +
 				 '--accent-foreground-color-inverted:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-foreground-color-inverted")  + ';\n' +
@@ -683,8 +665,6 @@ function DownloadTheme(full=false) {
 				 '--accent-background-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-background-color-rgb")  + ';\n' +
 				 '--accent-background-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-background-color-hover-rgb")  + ';\n' +
 				 '--accent-background-color-active-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-background-color-active-rgb")  + ';\n' +
-				 '--accent-gradient-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-gradient-color-rgb")  + ';\n' +
-				 '--accent-gradient-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-gradient-color-hover-rgb")  + ';\n' +
 				 '--accent-foreground-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-foreground-color-rgb")  + ';\n' +
 				 '--accent-foreground-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-foreground-color-hover-rgb")  + ';\n' +
 				 '--accent-foreground-color-inverted-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--accent-foreground-color-inverted-rgb")  + ';\n' +
@@ -693,8 +673,6 @@ function DownloadTheme(full=false) {
 				 '--sticky-header-background-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-background-color")  + ';\n' +
 				 '--sticky-header-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-background-color-hover")  + ';\n' +
 				 '--sticky-header-background-color-active:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-background-color-active")  + ';\n' +
-				 '--sticky-header-gradient-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-gradient-color")  + ';\n' +
-				 '--sticky-header-gradient-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-gradient-color-hover")  + ';\n' +
 				 '--sticky-header-foreground-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-foreground-color")  + ';\n' +
 				 '--sticky-header-foreground-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-foreground-color-hover")  + ';\n' +
 				 '--sticky-header-foreground-color-inverted:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-foreground-color-inverted")  + ';\n' +
@@ -705,8 +683,6 @@ function DownloadTheme(full=false) {
 				 '--sticky-header-background-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-background-color-rgb")  + ';\n' +
 				 '--sticky-header-background-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-background-color-hover-rgb")  + ';\n' +
 				 '--sticky-header-background-color-active-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-background-color-active-rgb")  + ';\n' +
-				 '--sticky-header-gradient-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-gradient-color-rgb")  + ';\n' +
-				 '--sticky-header-gradient-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-gradient-color-hover-rgb")  + ';\n' +
 				 '--sticky-header-foreground-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-foreground-color-rgb")  + ';\n' +
 				 '--sticky-header-foreground-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-foreground-color-hover-rgb")  + ';\n' +
 				 '--sticky-header-foreground-color-inverted-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--sticky-header-foreground-color-inverted-rgb")  + ';\n' +
@@ -715,8 +691,6 @@ function DownloadTheme(full=false) {
 				 '--toolbar-background-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-background-color")  + ';\n' +
 				 '--toolbar-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-background-color-hover")  + ';\n' +
 				 '--toolbar-background-color-active:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-background-color-active")  + ';\n' +
-				 '--toolbar-gradient-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-gradient-color")  + ';\n' +
-				 '--toolbar-gradient-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-gradient-color-hover")  + ';\n' +
 				 '--toolbar-foreground-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-foreground-color")  + ';\n' +
 				 '--toolbar-foreground-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-foreground-color-hover")  + ';\n' +
 				 '--toolbar-foreground-color-inverted:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-foreground-color-inverted")  + ';\n' +
@@ -726,8 +700,6 @@ function DownloadTheme(full=false) {
 				 '--toolbar-background-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-background-color-rgb")  + ';\n' +
 				 '--toolbar-background-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-background-color-hover-rgb")  + ';\n' +
 				 '--toolbar-background-color-active-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-background-color-active-rgb")  + ';\n' +
-				 '--toolbar-gradient-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-gradient-color-rgb")  + ';\n' +
-				 '--toolbar-gradient-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-gradient-color-hover-rgb")  + ';\n' +
 				 '--toolbar-foreground-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-foreground-color-rgb")  + ';\n' +
 				 '--toolbar-foreground-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-foreground-color-hover-rgb")  + ';\n' +
 				 '--toolbar-foreground-color-inverted-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--toolbar-foreground-color-inverted-rgb")  + ';\n' +
@@ -736,8 +708,6 @@ function DownloadTheme(full=false) {
 				 '--alert-background-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-background-color")  + ';\n' +
 				 '--alert-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-background-color-hover")  + ';\n' +
 				 '--alert-background-color-active:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-background-color-active")  + ';\n' +
-				 '--alert-gradient-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-gradient-color")  + ';\n' +
-				 '--alert-gradient-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-gradient-color-hover")  + ';\n' +
 				 '--alert-foreground-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-foreground-color")  + ';\n' +
 				 '--alert-foreground-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-foreground-color-hover")  + ';\n' +
 				 '--alert-foreground-color-inverted:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-foreground-color-inverted")  + ';\n' +
@@ -747,8 +717,6 @@ function DownloadTheme(full=false) {
 				 '--alert-background-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-background-color-rgb")  + ';\n' +
 				 '--alert-background-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-background-color-hover-rgb")  + ';\n' +
 				 '--alert-background-color-active-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-background-color-active-rgb")  + ';\n' +
-				 '--alert-gradient-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-gradient-color-rgb")  + ';\n' +
-				 '--alert-gradient-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-gradient-color-hover-rgb")  + ';\n' +
 				 '--alert-foreground-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-foreground-color-rgb")  + ';\n' +
 				 '--alert-foreground-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-foreground-color-hover-rgb")  + ';\n' +
 				 '--alert-foreground-color-inverted-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--alert-foreground-color-inverted-rgb")  + ';\n' +
@@ -757,8 +725,6 @@ function DownloadTheme(full=false) {
 				 '--warning-background-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-background-color")  + ';\n' +
 				 '--warning-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-background-color-hover")  + ';\n' +
 				 '--warning-background-color-active:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-background-color-active")  + ';\n' +
-				 '--warning-gradient-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-gradient-color")  + ';\n' +
-				 '--warning-gradient-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-gradient-color-hover")  + ';\n' +
 				 '--warning-foreground-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-foreground-color")  + ';\n' +
 				 '--warning-foreground-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-foreground-color-hover")  + ';\n' +
 				 '--warning-foreground-color-inverted:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-foreground-color-inverted")  + ';\n' +
@@ -768,8 +734,6 @@ function DownloadTheme(full=false) {
 				 '--warning-background-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-background-color-rgb")  + ';\n' +
 				 '--warning-background-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-background-color-hover-rgb")  + ';\n' +
 				 '--warning-background-color-active-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-background-color-active-rgb")  + ';\n' +
-				 '--warning-gradient-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-gradient-color-rgb")  + ';\n' +
-				 '--warning-gradient-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-gradient-color-hover-rgb")  + ';\n' +
 				 '--warning-foreground-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-foreground-color-rgb")  + ';\n' +
 				 '--warning-foreground-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-foreground-color-hover-rgb")  + ';\n' +
 				 '--warning-foreground-color-inverted-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--warning-foreground-color-inverted-rgb")  + ';\n' +
@@ -778,8 +742,6 @@ function DownloadTheme(full=false) {
 				 '--success-background-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-background-color")  + ';\n' +
 				 '--success-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-background-color-hover")  + ';\n' +
 				 '--success-background-color-active:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-background-color-active")  + ';\n' +
-				 '--success-gradient-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-gradient-color")  + ';\n' +
-				 '--success-gradient-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-gradient-color-hover")  + ';\n' +
 				 '--success-foreground-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-foreground-color")  + ';\n' +
 				 '--success-foreground-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-foreground-color-hover")  + ';\n' +
 				 '--success-foreground-color-inverted:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-foreground-color-inverted")  + ';\n' +
@@ -789,8 +751,6 @@ function DownloadTheme(full=false) {
 				 '--success-background-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-background-color-rgb")  + ';\n' +
 				 '--success-background-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-background-color-hover-rgb")  + ';\n' +
 				 '--success-background-color-active-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-background-color-active-rgb")  + ';\n' +
-				 '--success-gradient-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-gradient-color-rgb")  + ';\n' +
-				 '--success-gradient-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-gradient-color-hover-rgb")  + ';\n' +
 				 '--success-foreground-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-foreground-color-rgb")  + ';\n' +
 				 '--success-foreground-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-foreground-color-hover-rgb")  + ';\n' +
 				 '--success-foreground-color-inverted-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--success-foreground-color-inverted-rgb")  + ';\n' +
@@ -799,8 +759,6 @@ function DownloadTheme(full=false) {
 				 '--message-background-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-background-color")  + ';\n' +
 				 '--message-background-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-background-color-hover")  + ';\n' +
 				 '--message-background-color-active:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-background-color-active")  + ';\n' +
-				 '--message-gradient-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-gradient-color")  + ';\n' +
-				 '--message-gradient-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-gradient-color-hover")  + ';\n' +
 				 '--message-foreground-color:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-foreground-color")  + ';\n' +
 				 '--message-foreground-color-hover:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-foreground-color-hover")  + ';\n' +
 				 '--message-foreground-color-inverted:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-foreground-color-inverted")  + ';\n' +
@@ -810,8 +768,6 @@ function DownloadTheme(full=false) {
 				 '--message-background-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-background-color-rgb")  + ';\n' +
 				 '--message-background-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-background-color-hover-rgb")  + ';\n' +
 				 '--message-background-color-active-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-background-color-active-rgb")  + ';\n' +
-				 '--message-gradient-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-gradient-color-rgb")  + ';\n' +
-				 '--message-gradient-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-gradient-color-hover-rgb")  + ';\n' +
 				 '--message-foreground-color-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-foreground-color-rgb")  + ';\n' +
 				 '--message-foreground-color-hover-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-foreground-color-hover-rgb")  + ';\n' +
 				 '--message-foreground-color-inverted-rgb:' + getComputedStyle(document.querySelector('container')).getPropertyValue("--message-foreground-color-inverted-rgb")  + ';\n' +
@@ -971,6 +927,26 @@ function SuperColorTest(color,dledlen=false) { // Double Amount
 	}
 }
 
+function AutopickColor(color1,color2,attr="light-page-text",inv=false) { // Double Amount
+	if (isLightColor(color1)) {
+		if (inv == false) {
+			$('body').attr(attr, 'true');
+			return color1;
+		} else {
+			return color2;
+		}
+		$('body').attr(attr, 'true');
+	} else {
+		if (inv == true) {
+			return color1;
+		} else {
+			$('body').attr(attr, 'false');
+			return color2;
+		}
+	}
+}
+
+
 
 function ColorInvert(color) {
 	var r = 1 - Color(color).getRed();
@@ -1019,11 +995,15 @@ function GetContrast(color1,color2) {
 
 
 function isSuitableColor(color,color2) {
-return ((chroma.contrast(color, color2)) > 3)
+return ((chroma.contrast(color, color2)) >= 3)
 }
 
 function isSuitableColor2(color,color2) {
-return ((chroma.contrast(color, color2)) > 1.25) // For Border Color
+return ((chroma.contrast(color, color2)) >= 1.25) // For Border Color
+}
+
+function isSuitableColor3(color,color2) {
+return ((chroma.contrast(color, color2)) >= 1.05) // For Border Color
 }
 
 
@@ -1150,18 +1130,6 @@ document.querySelector('body').style.setProperty("--page-secondary-background-co
 
 document.querySelector('container').style.setProperty("--page-border-background-color", dropdowncolor2);
 
-if (isLightColor( getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-background-color") )) {
-document.querySelector('body').style.setProperty("--page-text-gradient-color", getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-background-color"));
-document.querySelector('body').style.setProperty("--page-text-gradient-color-hover", content_text2);
-$('body').attr("light-page-text", 'true');
-} else {
-document.querySelector('body').style.setProperty("--page-text-gradient-color", content_text2);
-document.querySelector('body').style.setProperty("--page-text-gradient-color-hover", getComputedStyle(document.querySelector('container')).getPropertyValue("--page-text-background-color"));
-$('body').attr("light-page-text", 'false');
-}
-
-
-
 
 document.querySelector('body').style.setProperty("--page-background-color-hover", content_color2);
 document.querySelector('body').style.setProperty("--page-background-color-active", content_color3); // Scrollbar
@@ -1188,8 +1156,6 @@ document.querySelector('body').style.setProperty("--page-text-foreground-color-r
 document.querySelector('body').style.setProperty("--page-text-foreground-color-hover-rgb", Color2(content_text5));
 document.querySelector('body').style.setProperty("--page-text-foreground-color-inverted-rgb", Color2(content_text4I));
 document.querySelector('body').style.setProperty("--page-text-foreground-color-hover-inverted-rgb", Color2(content_text5I));
-document.querySelector('body').style.setProperty("--page-text-gradient-color-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--page-text-gradient-color") ));
-document.querySelector('body').style.setProperty("--page-text-gradient-color-hover-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--page-text-gradient-color-hover") ));
 
 
 /** Button Color **/
@@ -1220,15 +1186,7 @@ var buttoncolor2tI = ColorTest(buttoncolor2I,false);
 var buttoncolor3 = SuperColorTest(button_color); // Scrollbar
 
 
-if (isLightColor(button_color)) {
-document.querySelector('body').style.setProperty("--accent-gradient-color", button_color);
-document.querySelector('body').style.setProperty("--accent-gradient-color-hover", buttoncolor1);
-$('body').attr("light-accent", 'true');
-} else {
-document.querySelector('body').style.setProperty("--accent-gradient-color", buttoncolor1);
-document.querySelector('body').style.setProperty("--accent-gradient-color-hover", button_color);
-$('body').attr("light-accent", 'false');
-}
+
 
 buttonmixl = GetHoverColor(content_color,button_color);
 buttonmix = GetActiveColor(content_color,button_color);
@@ -1251,8 +1209,6 @@ document.querySelector('body').style.setProperty("--accent-foreground-color-rgb"
 document.querySelector('body').style.setProperty("--accent-foreground-color-hover-rgb", Color2(buttoncolor2t));
 document.querySelector('body').style.setProperty("--accent-foreground-color-inverted-rgb", Color2(buttoncolor2I));
 document.querySelector('body').style.setProperty("--accent-foreground-color-hover-inverted-rgb", Color2(buttoncolor2tI));
-document.querySelector('body').style.setProperty("--accent-gradient-color-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--accent-gradient-color") ));
-document.querySelector('body').style.setProperty("--accent-gradient-color-hover-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--accent-gradient-color-hover") ));
 
 
 /** Header Color **/
@@ -1272,15 +1228,6 @@ var headercolor2t = ColorTest(headercolor2,false);
 var headercolor2tI = ColorTest(headercolor2I,false);
 var headercolor3 = SuperColorTest(header_color); // Scrollbar
 
-if (isLightColor(header_color)) {
-document.querySelector('body').style.setProperty("--sticky-header-gradient-color", header_color);
-document.querySelector('body').style.setProperty("--sticky-header-gradient-color-hover", headercolor1);
-$('body').attr("light-sticky-header", 'true');
-} else {
-document.querySelector('body').style.setProperty("--sticky-header-gradient-color", headercolor1);
-document.querySelector('body').style.setProperty("--sticky-header-gradient-color-hover", header_color);
-$('body').attr("light-sticky-header", 'false');
-}
 
 headermixl = GetHoverColor(content_color,header_color);
 headermix = GetActiveColor(content_color,header_color);
@@ -1304,8 +1251,6 @@ document.querySelector('body').style.setProperty("--sticky-header-foreground-col
 document.querySelector('body').style.setProperty("--sticky-header-foreground-color-hover-rgb", Color2(headercolor2t));
 document.querySelector('body').style.setProperty("--sticky-header-foreground-color-inverted-rgb", Color2(headercolor2I));
 document.querySelector('body').style.setProperty("--sticky-header-foreground-color-hover-inverted-rgb", Color2(headercolor2tI));
-document.querySelector('body').style.setProperty("--sticky-header-gradient-color-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--sticky-header-gradient-color") ));
-document.querySelector('body').style.setProperty("--sticky-header-gradient-color-hover-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--sticky-header-gradient-color-hover") ));
 
 
 /** Link Color **/
@@ -1336,15 +1281,6 @@ var linkcolor3 = SuperColorTest(link_color); // Scrollbar
 
 
 
-if (isLightColor(link_color)) {
-document.querySelector('body').style.setProperty("--anchor-gradient-color", link_color);
-document.querySelector('body').style.setProperty("--anchor-gradient-color-hover", linkcolor1);
-$('body').attr("light-anchor", 'true');
-} else {
-document.querySelector('body').style.setProperty("--anchor-gradient-color", linkcolor1);
-document.querySelector('body').style.setProperty("--anchor-gradient-color-hover", link_color);
-$('body').attr("light-anchor", 'false');
-}
 
 linkmixl = GetHoverColor(content_color,link_color);
 linkmix = GetActiveColor(content_color,link_color);
@@ -1367,8 +1303,6 @@ document.querySelector('body').style.setProperty("--anchor-foreground-color-rgb"
 document.querySelector('body').style.setProperty("--anchor-foreground-color-hover-rgb", Color2(linkcolor2t));
 document.querySelector('body').style.setProperty("--anchor-foreground-color-inverted-rgb", Color2(linkcolor2I));
 document.querySelector('body').style.setProperty("--anchor-foreground-color-hover-inverted-rgb", Color2(linkcolor2tI));
-document.querySelector('body').style.setProperty("--anchor-gradient-color-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--anchor-gradient-color") ));
-document.querySelector('body').style.setProperty("--anchor-gradient-color-hover-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--anchor-gradient-color-hover") ));
 
 /** Content Border **/
 /* Set Vars */
@@ -1400,15 +1334,6 @@ var bordercolor2I = ColorTest(border_color,true,true);
 var bordercolor2t = ColorTest(bordercolor2,false);
 var bordercolor2tI = ColorTest(bordercolor2I,false);
 
-if (isLightColor(border_color)) {
-document.querySelector('body').style.setProperty("--page-border-gradient-color", border_color);
-document.querySelector('body').style.setProperty("--page-border-gradient-color-hover", bordercolor1);
-$('body').attr("light-page-border", 'true');
-} else {
-document.querySelector('body').style.setProperty("--page-border-gradient-color", bordercolor1);
-document.querySelector('body').style.setProperty("--page-border-gradient-color-hover", border_color);
-$('body').attr("light-page-border", 'false');
-}
 
 bordermixl = GetHoverColor(content_color,border_color);
 bordermix = GetActiveColor(content_color,border_color);
@@ -1430,8 +1355,6 @@ document.querySelector('body').style.setProperty("--page-border-foreground-color
 document.querySelector('body').style.setProperty("--page-border-foreground-color-hover-rgb", Color2(bordercolor2t));
 document.querySelector('body').style.setProperty("--page-border-foreground-color-inverted-rgb", Color2(bordercolor2I));
 document.querySelector('body').style.setProperty("--page-border-foreground-color-hover-inverted-rgb", Color2(bordercolor2tI));
-document.querySelector('body').style.setProperty("--page-border-gradient-color-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--page-border-gradient-color") ));
-document.querySelector('body').style.setProperty("--page-border-gradient-color-hover-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--page-border-gradient-color-hover") ));
 
 
 /** Body Bg **/
@@ -1451,15 +1374,6 @@ var headcolor2I = ColorTest(head_color,true,true);
 var headcolor2t = ColorTest(headcolor2,false);
 var headcolor2tI = ColorTest(headcolor2I,false);
 
-if (isLightColor(head_color)) {
-document.querySelector('body').style.setProperty("--community-gradient-color", head_color);
-document.querySelector('body').style.setProperty("--community-gradient-color-hover", headcolor1);
-$('body').attr("light-community", 'true');
-} else {
-document.querySelector('body').style.setProperty("--community-gradient-color", headcolor1);
-document.querySelector('body').style.setProperty("--community-gradient-color-hover", head_color);
-$('body').attr("light-community", 'false');
-}
 
 headmixl = GetHoverColor(content_color,head_color);
 headmix = GetActiveColor(content_color,head_color);
@@ -1481,8 +1395,6 @@ document.querySelector('body').style.setProperty("--community-foreground-color-r
 document.querySelector('body').style.setProperty("--community-foreground-color-hover-rgb", Color2(headcolor2t));
 document.querySelector('body').style.setProperty("--community-foreground-color-inverted-rgb", Color2(headcolor2I));
 document.querySelector('body').style.setProperty("--community-foreground-color-hover-inverted-rgb", Color2(headcolor2tI));
-document.querySelector('body').style.setProperty("--community-gradient-color-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--community-gradient-color") ));
-document.querySelector('body').style.setProperty("--community-gradient-color-hover-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--community-gradient-color-hover") ));
 
 /** Community Header text color **/
 if ((getComputedStyle(document.querySelector('body')).getPropertyValue("--community-header-text-color") !== 'auto')  ) {
@@ -1535,15 +1447,6 @@ var floatingcolor2I = ColorTest(floating_color,true,true);
 var floatingcolor2t = ColorTest(floatingcolor2,false);
 var floatingcolor2tI = ColorTest(floatingcolor2I,false);
 
-if (isLightColor(floating_color)) {
-document.querySelector('body').style.setProperty("--toolbar-gradient-color", floating_color);
-document.querySelector('body').style.setProperty("--toolbar-gradient-color-hover", floatingcolor1);
-$('body').attr("light-toolbar", 'true');
-} else {
-document.querySelector('body').style.setProperty("--toolbar-gradient-color", floatingcolor1);
-document.querySelector('body').style.setProperty("--toolbar-gradient-color-hover", floating_color);
-$('body').attr("light-toolbar", 'false');
-}
 
 floatmixl = GetHoverColor(content_color,floating_color);
 floatmix = GetActiveColor(content_color,floating_color);
@@ -1566,8 +1469,6 @@ document.querySelector('body').style.setProperty("--toolbar-foreground-color-rgb
 document.querySelector('body').style.setProperty("--toolbar-foreground-color-hover-rgb", Color2(floatingcolor2t));
 document.querySelector('body').style.setProperty("--toolbar-foreground-color-inverted-rgb", Color2(floatingcolor2I));
 document.querySelector('body').style.setProperty("--toolbar-foreground-color-hover-inverted-rgb", Color2(floatingcolor2tI));
-document.querySelector('body').style.setProperty("--toolbar-gradient-color-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--toolbar-gradient-color") ));
-document.querySelector('body').style.setProperty("--toolbar-gradient-color-hover-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--toolbar-gradient-color-hover") ));
 
 
 /* This goes before compiling Generic Colors or else they will think the theme is light */
@@ -1589,15 +1490,6 @@ var alertcolor2tI = ColorTest(alertcolor2I,false);
 var alertcolor3 = SuperColorTest(alert_color); // Scrollbar
 
 
-if (isLightColor(alert_color)) {
-document.querySelector('body').style.setProperty("--alert-gradient-color", alert_color);
-document.querySelector('body').style.setProperty("--alert-gradient-color-hover", alertcolor1);
-$('body').attr("light-alert", 'true');
-} else {
-document.querySelector('body').style.setProperty("--alert-gradient-color", alertcolor1);
-document.querySelector('body').style.setProperty("--alert-gradient-color-hover", alert_color);
-$('body').attr("light-alert", 'false');
-}
 
 alertmixl = GetHoverColor(content_color,alert_color);
 alertmix = GetActiveColor(content_color,alert_color);
@@ -1620,8 +1512,6 @@ document.querySelector('body').style.setProperty("--alert-foreground-color-rgb",
 document.querySelector('body').style.setProperty("--alert-foreground-color-hover-rgb", Color2(alertcolor2t));
 document.querySelector('body').style.setProperty("--alert-foreground-color-inverted-rgb", Color2(alertcolor2I));
 document.querySelector('body').style.setProperty("--alert-foreground-color-hover-inverted-rgb", Color2(alertcolor2tI));
-document.querySelector('body').style.setProperty("--alert-gradient-color-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--alert-gradient-color") ));
-document.querySelector('body').style.setProperty("--alert-gradient-color-hover-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--alert-gradient-color-hover") ));
 
 
 /** Warning Color **/
@@ -1635,15 +1525,6 @@ var warningcolor2tI = ColorTest(warningcolor2I,false);
 var warningcolor3 = SuperColorTest(warning_color); // Scrollbar
 
 
-if (isLightColor(warning_color)) {
-document.querySelector('body').style.setProperty("--warning-gradient-color", warning_color);
-document.querySelector('body').style.setProperty("--warning-gradient-color-hover", warningcolor1);
-$('body').attr("light-warning", 'true');
-} else {
-document.querySelector('body').style.setProperty("--warning-gradient-color", warningcolor1);
-document.querySelector('body').style.setProperty("--warning-gradient-color-hover", warning_color);
-$('body').attr("light-warning", 'false');
-}
 
 warningmixl = GetHoverColor(content_color,warning_color);
 warningmix = GetActiveColor(content_color,warning_color);
@@ -1666,8 +1547,6 @@ document.querySelector('body').style.setProperty("--warning-foreground-color-rgb
 document.querySelector('body').style.setProperty("--warning-foreground-color-hover-rgb", Color2(warningcolor2t));
 document.querySelector('body').style.setProperty("--warning-foreground-color-inverted-rgb", Color2(warningcolor2I));
 document.querySelector('body').style.setProperty("--warning-foreground-color-hover-inverted-rgb", Color2(warningcolor2tI));
-document.querySelector('body').style.setProperty("--warning-gradient-color-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--warning-gradient-color") ));
-document.querySelector('body').style.setProperty("--warning-gradient-color-hover-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--warning-gradient-color-hover") ));
 
 
 /** Success Color **/
@@ -1681,15 +1560,6 @@ var successcolor2tI = ColorTest(successcolor2I,false);
 var successcolor3 = SuperColorTest(success_color); // Scrollbar
 
 
-if (isLightColor(success_color)) {
-document.querySelector('body').style.setProperty("--success-gradient-color", success_color);
-document.querySelector('body').style.setProperty("--success-gradient-color-hover", successcolor1);
-$('body').attr("light-success", 'true');
-} else {
-document.querySelector('body').style.setProperty("--success-gradient-color", successcolor1);
-document.querySelector('body').style.setProperty("--success-gradient-color-hover", success_color);
-$('body').attr("light-success", 'false');
-}
 
 successmixl = GetHoverColor(content_color,success_color);
 successmix = GetActiveColor(content_color,success_color);
@@ -1712,8 +1582,6 @@ document.querySelector('body').style.setProperty("--success-foreground-color-rgb
 document.querySelector('body').style.setProperty("--success-foreground-color-hover-rgb", Color2(successcolor2t));
 document.querySelector('body').style.setProperty("--success-foreground-color-inverted-rgb", Color2(successcolor2I));
 document.querySelector('body').style.setProperty("--success-foreground-color-hover-inverted-rgb", Color2(successcolor2tI));
-document.querySelector('body').style.setProperty("--success-gradient-color-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--success-gradient-color") ));
-document.querySelector('body').style.setProperty("--success-gradient-color-hover-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--success-gradient-color-hover") ));
 
 
 /** Message Color **/
@@ -1727,15 +1595,6 @@ var messagecolor2tI = ColorTest(messagecolor2I,false);
 var messagecolor3 = SuperColorTest(message_color); // Scrollbar
 
 
-if (isLightColor(message_color)) {
-document.querySelector('body').style.setProperty("--message-gradient-color", message_color);
-document.querySelector('body').style.setProperty("--message-gradient-color-hover", messagecolor1);
-$('body').attr("light-message", 'true');
-} else {
-document.querySelector('body').style.setProperty("--message-gradient-color", messagecolor1);
-document.querySelector('body').style.setProperty("--message-gradient-color-hover", message_color);
-$('body').attr("light-message", 'false');
-}
 
 messagemixl = GetHoverColor(content_color,message_color);
 messagemix = GetActiveColor(content_color,message_color);
@@ -1758,8 +1617,6 @@ document.querySelector('body').style.setProperty("--message-foreground-color-rgb
 document.querySelector('body').style.setProperty("--message-foreground-color-hover-rgb", Color2(messagecolor2t));
 document.querySelector('body').style.setProperty("--message-foreground-color-inverted-rgb", Color2(messagecolor2I));
 document.querySelector('body').style.setProperty("--message-foreground-color-hover-inverted-rgb", Color2(messagecolor2tI));
-document.querySelector('body').style.setProperty("--message-gradient-color-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--message-gradient-color") ));
-document.querySelector('body').style.setProperty("--message-gradient-color-hover-rgb", Color2( getComputedStyle(document.querySelector('body')).getPropertyValue("--message-gradient-color-hover") ));
 
 
 /* Article Link Colors */
@@ -1835,6 +1692,10 @@ function CheckColorSuitability(refresh) {
 		}
 		// Link Color
 		if ( !(isSuitableColor(color1b, color2)) ) {
+			var uns = true;
+			var suit1 = true;
+		}
+		if ( !(isSuitableColor3(color1b, color1a)) ) {
 			var uns = true;
 			var suit1 = true;
 		}

@@ -3,6 +3,30 @@ if (navigator.userAgent.match("Mobile")) {
 document.querySelector("body").className += " phone"
 }
 
+/* Local Storage */
+function getKey(key) {
+var str = window.localStorage,
+    result = str.getItem('-evelution-pref-'+key);
+if (!result) {
+   return '-1';
+}
+return result;
+}
+
+function insertKey(key,value) {
+	window.localStorage.setItem('-evelution-pref-' + key, '' + value);
+}
+
+function getParams() {
+	if (window.location.search != "") {
+		var params = window.location.search.split("?")[1].split("&");
+    } else {
+		var params = []
+    }
+	return params
+}
+
+
 /* Dropdowns */
 // Calls the function on all toggles
 function DropDownUpdate() {
@@ -39,7 +63,6 @@ function UpdateRangeInputs() {
 }
 
 /* Enable New Global Navigation - No exception for now */
-window.MW18newnavblock=false;
 (function () {
 	AliasFandomComponents();
 	if (getKey('content-full') === '-1') {
@@ -87,36 +110,8 @@ window.MW18newnavblock=false;
 	$(' container > main').attr('rail', rail_full );
 	UpdateRangeInputs();
 	DropDownUpdate();
-	if (window.MW18newnavblock === true) {
-		return
-	}
-/*
-	if ($("body.evelution-2018").length || $("body.evelution-discuss-2018").length) {
-		document.querySelector('.evelution-gnav[style]').className += " newnav";
-		document.querySelector('.evelution-gnav:not([style])').className += " newnav";
-	}
-*/
 })();
 
-
-/* Module Toggle */
-function ToggleModule() {
-
-		$('.evelution-module')
-				.click(function() {
-						var $this = $(this);
-						if ($this.hasClass("hidden-module")) {
-							$this.removeClass("hidden-module");
-						} else {
-							$this.addClass("hidden-module");
-						}
-
-						$('.evelution-module').off( "click" );
-
-
-			});
-
-}
 
 /* Aliases all components with the .wds prefix to the ones from .cpe ones */
 function AliasFandomComponents() {
@@ -184,9 +179,9 @@ function AddFloatingBanner(content='Sample Content',kind='message',extraclass=''
 				'</span>' +
 			  '</div>' +
 			  '<span class="cpe-banner-notification__text">' + content + '</span>' +
-			  '<svg onclick="RemoveBanner()" xmlns="http://www.w3.org/2000/svg" class="cpe-banner-notification__close cpe-icon cpe-icon-tiny">' +
-				'<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cpe-icons-cross-tiny" />' +
-			  '</svg>' +
+			  '<span onclick="RemoveBanner()" class="cpe-banner-notification__close">' +
+				'<span class="cpe-icon cpe-icon-tiny cpe-icon-large material-icons">close</span>' +
+			  '</span>' +
 			'</div>' 
 	);
 
@@ -234,53 +229,6 @@ if  ($(".evelution-rail-wrapper .info-module.evelution-module").length)  {
 
 RemoveEmptyMenus();
 initializeViews();
-	$(".evelution-floating-actions .cpe-floating-button.toggle-size")
-						.click( function(e) { 
-							e.preventDefault(); 
-							ToggleWidth(); 
-						});
-	$(".evelution-sidebar.full-toolbar .link.bar-switch, .evelution-sidebar.col-toolbar .link.bar-switch")
-						.click( function(e) { 
-							e.preventDefault(); 
-							ToggleBar(); 
-						});
-
-	$(".evelution-sticky-header.full-nav .link.nav-switch, .evelution-sticky-header.col-nav .link.nav-switch")
-						.click( function(e) { 
-							e.preventDefault(); 
-							ToggleNav(); 
-						});
-	$(".evelution-page-header .toggle-rail-button")
-						.click( function(e) { 
-							e.preventDefault(); 
-							ToggleRail(); 
-						});
-	$(".evelution-floating-actions .cpe-floating-button.dark-mode")
-						.click( function(e) { 
-							e.preventDefault(); 
-							ToggleMode(); 
-						});
-
-	$(".cpe-dropdown__content .cpe-list .ThemeA")
-						.click( function(e) { 
-							e.preventDefault(); 
-							HCa(); 
-						});
-	$(".cpe-dropdown__content .cpe-list  .ThemeB")
-						.click( function(e) { 
-							e.preventDefault(); 
-							HCb(); 
-						});
-	$(".cpe-dropdown__content .cpe-list  .ThemeC")
-						.click( function(e) { 
-							e.preventDefault(); 
-							HCc(); 
-						});
-	$(".cpe-dropdown__content .cpe-list .ThemeD")
-						.click( function(e) { 
-							e.preventDefault(); 
-							HCd(); 
-						});
 
 })();
 
@@ -326,220 +274,23 @@ function ToggleRail() {
 
 
 function initializeViews() {
-	$(".evelution-page-header-contribution-buttons .actions > li > a").attr('class','cpe-button'); // Add the CPE button class
-	$(".evelution-page-header-contribution-buttons .views > li > a").attr('class','cpe-button'); // Add the CPE button class
+	$(".evelution-page-header-contribution .actions > li > a").attr('class','cpe-button').attr('has-icon','true'); // Add the CPE button class
+	$(".evelution-page-header-contribution .views > li > a").attr('class','cpe-button').attr('has-icon','true');; // Add the CPE button class
 
 	$(".evelution-community-header .mobile-header .local-navigation .cpe-dropdown:first-child:not(:only-child) .cpe-dropdown__content").addClass('is-left-aligned'); // Add the CPE button class
 	$(".evelution-community-header .mobile-header .local-navigation .cpe-dropdown:last-child:not(:only-child) .cpe-dropdown__content").addClass('is-right-aligned'); // Add the CPE button class
 
-/* Views */
-
-	// Talk Pages
-	$(".evelution-page-header-contribution-buttons .views > li#ca-talk > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								chat_bubble_outlined' +
-	'							</span>'
-	);
-
-	// Translation (Translate Extension), Translations Extension
-	$(".evelution-page-header-contribution-buttons .views > li#ca-translate > a, .evelution-page-header-contribution-buttons .views > li#ca-nstab-translations > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								translate' +
-	'							</span>'
-	);
-
-
-	// Manage Message Groups (Translate Extension)
-	$(".evelution-page-header-contribution-buttons .views > li#ca-managemessagegroups > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								dashboard' +
-	'							</span>'
-	);
-
-	// Aggregate Groups (Translate Extension)
-	$(".evelution-page-header-contribution-buttons .views > li#ca-aggregategroups > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								group_work' +
-	'							</span>'
-	);
-
-
-	// Mainspace
-	$(".evelution-page-header-contribution-buttons .views > li#ca-nstab-main > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								article' +
-	'							</span>'
-	);
-	
-	// Projectspace
-	$(".evelution-page-header-contribution-buttons .views > li#ca-nstab-project > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								description' +
-	'							</span>'
-	);
-
-	// Special Pages, MediaWiki, Extension
-	$(".evelution-page-header-contribution-buttons .views > li#ca-nstab-special > a, .evelution-page-header-contribution-buttons .views > li#ca-nstab-mediawiki > a , .evelution-page-header-contribution-buttons .views > li#ca-nstab-extension > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								settings' +
-	'							</span>'
-	);
-
-	// API
-	$(".evelution-page-header-contribution-buttons .views > li#ca-nstab-api > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								api' +
-	'							</span>'
-	);
-
-	// Userspace
-	$(".evelution-page-header-contribution-buttons .views > li#ca-nstab-user > a, .evelution-page-header-contribution-buttons .views > li#ca-nstab-user-profile > a, .evelution-page-header-contribution-buttons .views > li#ca-nstab-userwiki > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								person' +
-	'							</span>'
-	);
-	
-	// Filespace
-	$(".evelution-page-header-contribution-buttons .views > li#ca-nstab-image > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								image' +
-	'							</span>'
-	);
-	
-	// Help
-	$(".evelution-page-header-contribution-buttons .views > li#ca-nstab-help > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								help_outline' +
-	'							</span>'
-	);
-	
-	// Templates, Modules
-	$(".evelution-page-header-contribution-buttons .views > li#ca-nstab-template > a, .evelution-page-header-contribution-buttons .views > li#ca-nstab-module > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								bookmark_border' +
-	'							</span>'
-	);
-	
-	// Categories
-	$(".evelution-page-header-contribution-buttons .views > li#ca-nstab-category > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								grid_view' +
-	'							</span>'
-	);
-	
-	// Manual
-	$(".evelution-page-header-contribution-buttons .views > li#ca-nstab-manual > a, .evelution-page-header-contribution-buttons .views > li#ca-nstab-tutorial > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								build' +
-	'							</span>'
-	);
-	
-	// Thread, Topic, Forum
-	$(".evelution-page-header-contribution-buttons .views > li#ca-nstab-thread > a, .evelution-page-header-contribution-buttons .views > li#ca-nstab-topic > a, .evelution-page-header-contribution-buttons .views > li#ca-nstab-forum > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								question_answer' +
-	'							</span>'
-	);
-	
-	// Skin
-	$(".evelution-page-header-contribution-buttons .views > li#ca-nstab-skin > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								palette' +
-	'							</span>'
-	);
-	
-	// Newsletter, User Blog
-	$(".evelution-page-header-contribution-buttons .views > li#ca-nstab-newsletter > a, .evelution-page-header-contribution-buttons .views > li#ca-nstab-user-blog > a, .evelution-page-header-contribution-buttons .views > li#ca-nstab-user_blog > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								feed' +
-	'							</span>'
-	);
-
-	// Newsletter, User Blog
-	$(".evelution-page-header-contribution-buttons .views > li#ca-nstab-widget > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								widgets' +
-	'							</span>'
-	);
-
-
-/* Actions */
-
-	// View
-	$(".evelution-page-header-contribution-buttons .actions > li#ca-view > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								description' +
-	'							</span>'
-	);
-	
-	// Edit
-	$(".evelution-page-header-contribution-buttons .actions > li#ca-edit > a, .evelution-page-header-contribution-buttons .actions > li#ca-ve-edit > a, .evelution-page-header-contribution-buttons .actions > li#ca-create > a, .evelution-page-header-contribution-buttons .actions > li#ca-formedit > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								edit' +
-	'							</span>'
-	);
-
-	// Add section
-	$(".evelution-page-header-contribution-buttons .actions > li#ca-addsection > a").html(
-	'<span class="cpe-icon cpe-icon-small material-icons">' +
-	'								add' +
-	'							</span>'
-	);
-
-	
-	// View Source
-	$(".evelution-page-header-contribution-buttons .actions > li#ca-viewsource > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								lock' +
-	'							</span>'
-	);
-
-	// Foreign View, Lanaguage Stats (Translate Extension)
-	$(".evelution-page-header-contribution-buttons .actions > li#ca-view-foreign > a, .evelution-page-header-contribution-buttons .actions > li#ca-lstats > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								flag' +
-	'							</span>'
-	);
-
-	// History
-	$(".evelution-page-header-contribution-buttons .actions > li#ca-history > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								history' +
-	'							</span>'
-	);
-
-	// Group Statistics (Translate Extension)
-	$(".evelution-page-header-contribution-buttons .actions > li#ca-mstats > a, .evelution-page-header-contribution-buttons .actions > li#ca-translationstats > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								trending_up' +
-	'							</span>'
-	);
-
-
-	// Supported Languages (Translate Extension)
-	$(".evelution-page-header-contribution-buttons .actions > li#ca-supportedlanguages > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								translate' +
-	'							</span>'
-	);
-
-
-
-	// Export
-	$(".evelution-page-header-contribution-buttons .actions > li#ca-export > a").prepend(
-	'<span class="cpe-icon cpe-icon-small margined material-icons">' +
-	'								file_download' +
-	'							</span>'
-	);
 
 
 }
 
 function RemoveEmptyMenus() {
 // Remove Miraheze elements
-	if (!window.location.host.includes('miraheze.org')) {
+	if (!$("#footer-icons img[alt='Miraheze Wiki Hosting']").length) { // Check if an image with the Miraheze Wiki hosting alt exists
 		$('.miraheze-only').remove();
 	}
+	$('#footer-places .footer-places-darkmode-toggle').remove(); // Evelution has its dark mode so this is unneded
+	$('html').removeClass('client-dark-mode'); // Evelution has its dark mode so this is unneded
 // Remove the Language Dropdown, if no languages exist
 	var langmenu = document.querySelector(".evelution-navigation.evelution-sidebar .language-menu");
 	var langmenuM = document.querySelector(".evelution-mobile-global-navigation.evelution-sidebar .language-menu");
