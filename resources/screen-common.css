@@ -346,6 +346,7 @@ a.external { color: #3366bb; }
 div#footer { text-align: center; }
 ul#f-list li { list-style: none;  text-align: center; }
 div.portlet { margin: 0.5em 0; }
+div.mw-portlet-body ul li.selected a { color:inherit; cursor:inherit; font-weight:bold; text-decoration:inherit; }
 
 .redirectText {
 	font-size:150%;

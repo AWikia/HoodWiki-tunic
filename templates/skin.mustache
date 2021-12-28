@@ -42,23 +42,6 @@
 			</div>
 			{{{html-after-content}}}
 		</div>
-	<script>
-	/* Jquery JS */
-
-	{{>Java_Query}}
-
-	/* Chroma JS */
-
-	{{>Java_Chroma}}
-
-	/* Theming JS */
-
-	{{>Java_Theming}}
-
-	/* Base JS */
-
-	{{>Java_Base}}
-	</script>
 		<div id="mw-navigation">
 			<h2>{{msg-navigation-heading}}</h2>
 			<div id="p-logo" class="mw-portlet" role="banner">
@@ -70,25 +53,19 @@
 				{{/data-logos}}
 				</a>
 			</div>
-			<div id="visual-colors">
-				<div role="navigation" id="p-visual-colors" class="mw-portlet mw-portlet-visual-colors" title="" aria-labelledby="p-visual-colors-label">
-					<h3 id="p-visual-colors-label">{{msg-tunic-visual-colors}}</h3>
+			<div id="contrast-modes">
+				<div role="navigation" id="p-contrast-modes" class="mw-portlet mw-portlet-contrast-modes" title="" aria-labelledby="p-contrast-modes-label">
+					<h3 id="p-contrast-modes-label">{{msg-tunic-contrast-modes}}</h3>
 					<div class="mw-portlet-body">
 						<ul>
-							<li id="colorS"><a onclick="VisualColor('S')">{{msg-tunic-standard}}</a></li>
-						</ul>		
-					</div>
-				</div>
-			</div>
-			<div id="wiki-themes">
-				<div role="navigation" id="p-themes" class="mw-portlet mw-portlet-themes" title="" aria-labelledby="p-themes-label">
-					<h3 id="p-themes-label">{{msg-tunic-themes}}</h3>
-					<div class="mw-portlet-body">
-						<ul>
-							<li><a onclick="HCa()">{{msg-tunic-theme}} A</a></li>
-							<li><a onclick="HCb()">{{msg-tunic-theme}} B</a></li>
-							<li><a onclick="HCc()">{{msg-tunic-theme}} C</a></li>
-							<li><a onclick="HCd()">{{msg-tunic-theme}} D</a></li>
+							<li data-contrast-mode="auto"><a onclick="contrastmode('auto')">{{msg-tunic-auto}}</a></li>
+							<li data-contrast-mode="low"><a onclick="contrastmode('low')">Low</a></li>
+							<li data-contrast-mode="med-low"><a onclick="contrastmode('med-low')">Low-Med</a></li>
+							<li data-contrast-mode="med"><a onclick="contrastmode('med')">Med</a></li>
+							<li data-contrast-mode="med-hi"><a onclick="contrastmode('med-hi')">Med-High</a></li>
+							<li data-contrast-mode="hi"><a onclick="contrastmode('hi')">High</a></li>
+							<li data-contrast-mode="hi-vhi"><a onclick="contrastmode('hi-vhi')">High-VHigh</a></li>
+							<li data-contrast-mode="vhi"><a onclick="contrastmode('vhi')">VHigh</a></li>
 						</ul>		
 					</div>
 				</div>
@@ -98,10 +75,49 @@
 					<h3 id="p-color-modes-label">{{msg-tunic-colormodes}}</h3>
 					<div class="mw-portlet-body">
 						<ul>
-							<li><a onclick="colortheme('auto')">{{msg-tunic-lightmode}} (Duo)</a></li>
-							<li><a onclick="colortheme('auto-r')">{{msg-tunic-darkmode}} (Duo)</a></li>
-							<li><a onclick="colortheme('light')">{{msg-tunic-lightmode}} (Solo)</a></li>
-							<li><a onclick="colortheme('dark')">{{msg-tunic-darkmode}} (Solo)</a></li>
+							<li data-color-mode="auto"><a onclick="colortheme('auto')">{{msg-tunic-lightmode}} (Duo)</a></li>
+							<li data-color-mode="auto-r"><a onclick="colortheme('auto-r')">{{msg-tunic-darkmode}} (Duo)</a></li>
+							<li data-color-mode="light"><a onclick="colortheme('light')">{{msg-tunic-lightmode}} (Solo)</a></li>
+							<li data-color-mode="dark"><a onclick="colortheme('dark')">{{msg-tunic-darkmode}} (Solo)</a></li>
+							<li data-color-mode="gray"><a onclick="colortheme('gray')">{{msg-tunic-whitemode}} (Duo)</a></li>
+							<li data-color-mode="gray-4"><a onclick="colortheme('gray-r')">{{msg-tunic-blackmode}} (Duo)</a></li>
+							<li data-color-mode="white"><a onclick="colortheme('white')">{{msg-tunic-whitemode}} (Solo)</a></li>
+							<li data-color-mode="black"><a onclick="colortheme('black')">{{msg-tunic-blackmode}} (Solo)</a></li>
+							<li data-color-mode="reversed-r"><a onclick="colortheme('reversed-r')">{{msg-tunic-lightmode}} (Reversi)</a></li>
+							<li data-color-mode="reversed"><a onclick="colortheme('reversed')">{{msg-tunic-darkmode}} (Reversi)</a></li>
+							<li data-color-mode="blu-wht"><a onclick="colortheme('blu-wht')">{{msg-tunic-lightmode}} (Tint)</a></li>
+							<li data-color-mode="yel-blk"><a onclick="colortheme('yel-blk')">{{msg-tunic-darkmode}} (Tint)</a></li>
+							<li data-color-mode="temp"><a onclick="colortheme('temp')">{{msg-tunic-lightmode}} (Temperature)</a></li>
+							<li data-color-mode="temp-r"><a onclick="colortheme('temp-r')">{{msg-tunic-darkmode}} (Temperature)</a></li>
+							<li data-color-mode="rtemp"><a onclick="colortheme('rtemp')">{{msg-tunic-lightmode}} (Reversi Temperature)</a></li>
+							<li data-color-mode="rtemp-r"><a onclick="colortheme('rtemp-r')">{{msg-tunic-darkmode}} (Reversi Temperature)</a></li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+			<div id="visual-colors">
+				<div role="navigation" id="p-visual-colors" class="mw-portlet mw-portlet-visual-colors" title="" aria-labelledby="p-visual-colors-label">
+					<h3 id="p-visual-colors-label">{{msg-tunic-visual-colors}}</h3>
+					<div class="mw-portlet-body">
+						<ul>
+							<li data-visual-color="standard"><a onclick="VisualColor('standard')">{{msg-tunic-standard}}</a></li>
+						</ul>		
+					</div>
+				</div>
+			</div>
+			<div id="wiki-themes">
+				<div role="navigation" id="p-themes" class="mw-portlet mw-portlet-themes" title="" aria-labelledby="p-themes-label">
+					<h3 id="p-themes-label">{{msg-tunic-themes}}</h3>
+					<div class="mw-portlet-body">
+						<ul>
+							<li data-theme-change="theme-A"><a onclick="ToggleTheme('A')">{{msg-tunic-theme}} A</a></li>
+							<li data-theme-change="theme-B"><a onclick="ToggleTheme('B')">{{msg-tunic-theme}} B</a></li>
+							<li data-theme-change="theme-C"><a onclick="ToggleTheme('C')">{{msg-tunic-theme}} C</a></li>
+							<li data-theme-change="theme-D"><a onclick="ToggleTheme('D')">{{msg-tunic-theme}} D</a></li>
+							<li data-theme-change="theme-E"><a onclick="ToggleTheme('E')">{{msg-tunic-theme}} E</a></li>
+							<li data-theme-change="theme-F"><a onclick="ToggleTheme('F')">{{msg-tunic-theme}} F</a></li>
+							<li data-theme-change="theme-G"><a onclick="ToggleTheme('G')">{{msg-tunic-theme}} G</a></li>
+							<li data-theme-change="theme-H"><a onclick="ToggleTheme('H')">{{msg-tunic-theme}} H</a></li>
 						</ul>		
 					</div>
 				</div>
@@ -146,3 +162,20 @@
 		</div>
 	</div>
 </container>
+	<script>
+	/* Jquery JS */
+
+	{{>Java_Query}}
+
+	/* Chroma JS */
+
+	{{>Java_Chroma}}
+
+	/* Theming JS */
+
+	{{>Java_Theming}}
+
+	/* Base JS */
+
+	{{>Java_Base}}
+	</script>

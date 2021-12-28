@@ -8,17 +8,11 @@
 	"tunic-themes": "Themen",
 	"tunic-standard": "Standard",
 	"tunic-visual-colors": "Visuelle Farben",
-	"tunic-color-factorycolors": "Fabrik",
-	"tunic-color-lunacolors": "XP Luna",
-	"tunic-color-classicforced": "Windows Erzwungen",
-	"tunic-color-campbellforced": "Cambell Erzwungen",
-	"tunic-color-forced": "Evelution OS Erzwungen",
-	"tunic-color-tangoforced": "Tango Erzwungen",
-	"tunic-color-rgbcolors": "RGB-Feier",
-	"tunic-color-retro": "Retro",
-	"tunic-color-candycrush": "Candy Crush",
-	"tunic-color-discord": "Discord",
 	"tunic-darkmode": "Dunkel",
 	"tunic-lightmode": "Licht",
-	"tunic-colormodes": "Farbemodusen"
+	"tunic-whitemode": "Weiß",
+	"tunic-blackmode": "Schwartz",
+	"tunic-colormodes": "Farbemodusen",
+	"tunic-contrast-modes": "Kontrastmodi",
+	"tunic-auto": "Automatisch"
 }

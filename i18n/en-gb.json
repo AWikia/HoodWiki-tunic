@@ -7,20 +7,12 @@
 	"tunic-theme": "Theme",
 	"tunic-themes": "Themes",
     "tunic-standard": "Standard",
-    "tunic-visual-colors": "Visual colours",
-    "tunic-color-factorycolors": "Factory",
-    "tunic-color-lunacolors": "XP Luna",
-    "tunic-color-classicforced": "Windows Forced",
-    "tunic-color-campbellforced": "Cambell Forced",
-    "tunic-color-forced": "Evelution OS Forced",
-    "tunic-color-tangoforced": "Tango Forced",
-    "tunic-color-rgbcolors": "RGB Celebration",
-    "tunic-color-retro": "Retro",
-    "tunic-color-fandomcolors": "Fandom 2021",
-	"tunic-color-candycrush": "Candy Crush",
-	"tunic-color-discord": "Discord",
 	"tunic-darkmode": "Dark",
 	"tunic-lightmode": "Light",
-	"tunic-colormodes": "Colour modes"
+	"tunic-whitemode": "White",
+	"tunic-blackmode": "Black",
+	"tunic-colormodes": "Colour modes",
+	"tunic-contrast-modes": "Contrast modes",
+	"tunic-auto": "Automatic"
 
 }

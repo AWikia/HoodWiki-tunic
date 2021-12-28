@@ -1,6 +1,6 @@
 {
 	"name": "Tunic",
-	"version": "4.0.0",
+	"version": "5.0.0",
 	"author": "Gabriel Wicke, Timwi and HoodWiki",
 	"url": "https://www.mediawiki.org/wiki/Skin:Tunic",
 	"descriptionmsg": "tunic-desc",
@@ -10,13 +10,18 @@
 	"requires": {
 		"MediaWiki": ">= 1.36.0"
 	},
+	"AutoloadClasses": {
+		"SkinTunic": "SkinTunic.php"
+	},
 	"ValidSkinNames": {
 		"tunic": {
-			"class": "SkinMustache",
+			"class": "SkinTunic",
+			"services": [
+				"LocalServerObjectCache"	
+			],
 			"args": [ {
 				"name": "tunic",
 				"responsive": true,
-				"templateDirectory": "skins/Tunic/templates",
 				"styles": [
 					"skins.tunic"
 				],
@@ -27,7 +32,11 @@
 					"tunic-standard",
 					"tunic-darkmode",
 					"tunic-lightmode",
+					"tunic-blackmode",
+					"tunic-whitemode",
 					"tunic-colormodes",
+					"tunic-contrast-modes",
+					"tunic-auto",
 					"sitetitle",
 					"search",
 					"tagline",
@@ -84,17 +93,6 @@
 		},
 		"skins.tunic.js": {
 		  "messages": [
-			"tunic-color-factorycolors",         
-			"tunic-color-lunacolors",         
-			"tunic-color-classicforced",         
-			"tunic-color-campbellforced",         
-			"tunic-color-forced",         
-			"tunic-color-tangoforced",         
-			"tunic-color-rgbcolors",         
-			"tunic-color-retro",         
-			"tunic-color-fandomcolors",
-			"tunic-color-candycrush",
-			"tunic-color-discord"
 		   ],
 			"scripts": [
 				"resources/main.js"
