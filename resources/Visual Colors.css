@@ -1,11 +1,11 @@
 ﻿/** Color Schemes **/
 
 /* Factory/OOBE */
-[visualcolors="factorycolors"] {
+.visualcolors-factorycolors {
 	--system-visual-style:simple;
 }
 
-[theme="A"][visualcolors="factorycolors"] {
+.theme-A.visualcolors-factorycolors {
 --desktop-background-image:url("");
 --desktop-background-color:#f4f4f4;
 --desktop-text-background-color:#1b2a34;
@@ -20,7 +20,7 @@
 --border-radius:10px;
 }
 
-[theme="B"][visualcolors="factorycolors"] {
+.theme-B.visualcolors-factorycolors {
 --desktop-background-image:url("");
 --desktop-background-color:#f4f4f4;
 --desktop-text-background-color:#0a1327;
@@ -35,7 +35,7 @@
 --border-radius:10px;
 }
 
-[theme="C"][visualcolors="factorycolors"] {
+.theme-C.visualcolors-factorycolors {
 --desktop-background-image:url("");
 --desktop-background-color:#0a1327;
 --desktop-text-background-color:#f4f4f4;
@@ -50,7 +50,7 @@
 --border-radius:10px;
 }
 
-[theme="D"][visualcolors="factorycolors"] {
+.theme-D.visualcolors-factorycolors {
 --desktop-background-image:url("");
 --desktop-background-color:#0a1327;
 --desktop-text-background-color:#eeeeee;
@@ -65,7 +65,7 @@
 --border-radius:10px;
 }
 
-[theme="E"][visualcolors="factorycolors"] {
+.theme-E.visualcolors-factorycolors {
 --desktop-background-image:url("");
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#1b2a34;
@@ -80,7 +80,7 @@
 --border-radius:10px;
 }
 
-[theme="F"][visualcolors="factorycolors"] {
+.theme-F.visualcolors-factorycolors {
 --desktop-background-image:url("");
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#0a1327;
@@ -95,7 +95,7 @@
 --border-radius:10px;
 }
 
-[theme="G"][visualcolors="factorycolors"] {
+.theme-G.visualcolors-factorycolors {
 --desktop-background-image:url("");
 --desktop-background-color:#000000;
 --desktop-text-background-color:#f4f4f4;
@@ -110,7 +110,7 @@
 --border-radius:10px;
 }
 
-[theme="H"][visualcolors="factorycolors"] {
+.theme-H.visualcolors-factorycolors {
 --desktop-background-image:url("");
 --desktop-background-color:#000000;
 --desktop-text-background-color:#eeeeee;
@@ -126,12 +126,12 @@
 }
 
 /* Forced */
-[visualcolors="forced"] {
+.visualcolors-forced {
 	--system-visual-style:contrast;
 }
 
 
-[theme="A"][visualcolors="forced"] {
+.theme-A.visualcolors-forced {
 --desktop-background-image:url("");
 --desktop-background-color:#000000;
 --desktop-text-background-color:#ffffff;
@@ -144,7 +144,7 @@
 --inactive-title-background-color:#68c3e2;
 }
 
-[theme="B"][visualcolors="forced"] {
+.theme-B.visualcolors-forced {
 --desktop-background-image:url("");
 --desktop-background-color:#000000;
 --desktop-text-background-color:#ffffff;
@@ -157,7 +157,7 @@
 --inactive-title-background-color:#8a12a8;
 }
 
-[theme="C"][visualcolors="forced"] {
+.theme-C.visualcolors-forced {
 --desktop-background-image:url("");
 --desktop-background-color:#000000;
 --desktop-text-background-color:#ffffff;
@@ -170,7 +170,7 @@
 --inactive-title-background-color:#1e5aa8;
 }
 
-[theme="D"][visualcolors="forced"] {
+.theme-D.visualcolors-forced {
 --desktop-background-image:url("");
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#000000;
@@ -183,7 +183,7 @@
 --inactive-title-background-color:#ffffff;
 }
 
-[theme="E"][visualcolors="forced"] {
+.theme-E.visualcolors-forced {
 --desktop-background-image:url("");
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#000000;
@@ -196,7 +196,7 @@
 --inactive-title-background-color:#923978;
 }
 
-[theme="F"][visualcolors="forced"] {
+.theme-F.visualcolors-forced {
 --desktop-background-image:url("");
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#000000;
@@ -209,7 +209,7 @@
 --inactive-title-background-color:#fcac00;
 }
 
-[theme="G"][visualcolors="forced"] {
+.theme-G.visualcolors-forced {
 --desktop-background-image:url("");
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#000000;
@@ -222,7 +222,7 @@
 --inactive-title-background-color:#d3359d;
 }
 
-[theme="H"][visualcolors="forced"] {
+.theme-H.visualcolors-forced {
 --desktop-background-image:url("");
 --desktop-background-color:#000000;
 --desktop-text-background-color:#ffffff;
@@ -232,17 +232,17 @@
 --highlight-background-color:#d3359d;
 --hyperlink-background-color:#fcac00;
 --active-title-background-color:#646464;
---quaternary-tertiary-accent-background-color:#000000;
+--inactive-title-background-color:#000000;
 }
 
 
 /* Techno */
-[visualcolors="techno"] {
+.visualcolors-techno {
 	--system-visual-style:basic;
 }
 
 
-[theme="A"][visualcolors="techno"] {
+.theme-A.visualcolors-techno {
 --desktop-background-image:url("banner.png");
 --desktop-background-color:#58ab41;
 --desktop-text-background-color:#ffff80;
@@ -253,9 +253,10 @@
 --hyperlink-background-color:#3cb371;
 --active-title-background-color:#78fc78;
 --inactive-title-background-color:#ffffff;
+--system-acryllic-opacity:0.7;
 }
 
-[theme="B"][visualcolors="techno"] {
+.theme-B.visualcolors-techno {
 --desktop-background-image:url("banner.png");
 --desktop-background-color:#58ab41;
 --desktop-text-background-color:#e0ffb0;
@@ -266,9 +267,10 @@
 --hyperlink-background-color:#00852b;
 --active-title-background-color:#add9a8;
 --inactive-title-background-color:#e0ffb0;
+--system-acryllic-opacity:0.7;
 }
 
-[theme="C"][visualcolors="techno"] {
+.theme-C.visualcolors-techno {
 --desktop-background-image:url("banner2.png");
 --desktop-background-color:#58ab41;
 --desktop-text-background-color:#e2f99a;
@@ -279,9 +281,10 @@
 --hyperlink-background-color:#58ab41;
 --active-title-background-color:#e2f99a;
 --inactive-title-background-color:#000000;
+--system-acryllic-opacity:0.7;
 }
 
-[theme="D"][visualcolors="techno"] {
+.theme-D.visualcolors-techno {
 --desktop-background-image:url("banner2.png");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#58ab41;
@@ -293,9 +296,10 @@
 --hyperlink-background-color:#78fc78;
 --active-title-background-color:#c0ff00;
 --inactive-title-background-color:#00451a;
+--system-acryllic-opacity:0.7;
 }
 
-[theme="E"][visualcolors="techno"] {
+.theme-E.visualcolors-techno {
 --desktop-background-image:url("banner.png");
 --desktop-background-color:#58ab41;
 --desktop-text-background-color:#ffff80;
@@ -306,9 +310,10 @@
 --hyperlink-background-color:#58ab41;
 --active-title-background-color:#78fc78;
 --inactive-title-background-color:#ffffff;
+--system-acryllic-opacity:0.7;
 }
 
-[theme="F"][visualcolors="techno"] {
+.theme-F.visualcolors-techno {
 --desktop-background-image:url("banner.png");
 --desktop-background-color:#58ab41;
 --desktop-text-background-color:#e0ffb0;
@@ -319,9 +324,10 @@
 --hyperlink-background-color:#00451a;
 --active-title-background-color:#add9a8;
 --inactive-title-background-color:#e0ffb0;
+--system-acryllic-opacity:0.7;
 }
 
-[theme="G"][visualcolors="techno"] {
+.theme-G.visualcolors-techno {
 --desktop-background-image:url("banner2.png");
 --desktop-background-color:#58ab41;
 --desktop-text-background-color:#e2f99a;
@@ -332,9 +338,10 @@
 --hyperlink-background-color:#3cb371;
 --active-title-background-color:#e2f99a;
 --inactive-title-background-color:#000000;
+--system-acryllic-opacity:0.7;
 }
 
-[theme="H"][visualcolors="techno"] {
+.theme-H.visualcolors-techno {
 --desktop-background-image:url("banner2.png");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#58ab41;
@@ -346,17 +353,18 @@
 --hyperlink-background-color:#00852b;
 --active-title-background-color:#c0ff00;
 --inactive-title-background-color:#00451a;
+--system-acryllic-opacity:0.7;
 }
 
 
 /** Retro **/
-[visualcolors="retro"],
-[visualcolors="retro2"] {
+.visualcolors-retro,
+.visualcolors-retro2 {
 	--system-visual-style:classic;
 }
 
 /* First */
-[theme="A"][visualcolors="retro"] {
+.theme-A.visualcolors-retro {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#720012;
@@ -376,7 +384,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="B"][visualcolors="retro"] {
+.theme-B.visualcolors-retro {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#b0a06f;
@@ -396,7 +404,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="C"][visualcolors="retro"] {
+.theme-C.visualcolors-retro {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#671f81;
@@ -416,7 +424,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="D"][visualcolors="retro"] {
+.theme-D.visualcolors-retro {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#000000;
@@ -436,7 +444,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="E"][visualcolors="retro"] {
+.theme-E.visualcolors-retro {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#000000;
@@ -456,7 +464,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="F"][visualcolors="retro"] {
+.theme-F.visualcolors-retro {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#00451a;
@@ -476,7 +484,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="G"][visualcolors="retro"] {
+.theme-G.visualcolors-retro {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#543324;
@@ -496,7 +504,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="H"][visualcolors="retro"] {
+.theme-H.visualcolors-retro {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#352100;
@@ -517,7 +525,7 @@
 }
 
 /* Second */
-[theme="A"][visualcolors="retro2"] {
+.theme-A.visualcolors-retro2 {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#000000;
@@ -537,7 +545,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="B"][visualcolors="retro2"] {
+.theme-B.visualcolors-retro2 {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#19325a;
@@ -557,7 +565,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="C"][visualcolors="retro2"] {
+.theme-C.visualcolors-retro2 {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#7f7f7f;
@@ -577,7 +585,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="D"][visualcolors="retro2"] {
+.theme-D.visualcolors-retro2 {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#484d48;
@@ -597,7 +605,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="E"][visualcolors="retro2"] {
+.theme-E.visualcolors-retro2 {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#00451a;
@@ -617,7 +625,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="F"][visualcolors="retro2"] {
+.theme-F.visualcolors-retro2 {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#000000;
@@ -637,7 +645,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="G"][visualcolors="retro2"] {
+.theme-G.visualcolors-retro2 {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#00451a;
@@ -657,7 +665,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="H"][visualcolors="retro2"] {
+.theme-H.visualcolors-retro2 {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#00451a;
@@ -678,11 +686,11 @@
 }
 
 /* Neon Colors */
-[visualcolors="neon"] {
+.visualcolors-neon {
 	--system-visual-style:classiccontrast;
 }
 
-[theme="A"][visualcolors="neon"] {
+.theme-A.visualcolors-neon {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#000000;
@@ -700,9 +708,10 @@
 --icon-filter-hover:sepia(1) hue-rotate(240deg) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
 --icon-filter-delay:0ms;
+--system-acryllic-opacity:0.5;
 }
 
-[theme="B"][visualcolors="neon"] {
+.theme-B.visualcolors-neon {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#000000;
@@ -720,9 +729,10 @@
 --icon-filter-hover:sepia(1) hue-rotate(0deg) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
 --icon-filter-delay:0ms;
+--system-acryllic-opacity:0.5;
 }
 
-[theme="C"][visualcolors="neon"] {
+.theme-C.visualcolors-neon {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#000000;
@@ -740,9 +750,10 @@
 --icon-filter-hover:sepia(1) hue-rotate(90deg) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
 --icon-filter-delay:0ms;
+--system-acryllic-opacity:0.5;
 }
 
-[theme="D"][visualcolors="neon"] {
+.theme-D.visualcolors-neon {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#000000;
@@ -760,9 +771,10 @@
 --icon-filter-hover:sepia(1) hue-rotate(180deg) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
 --icon-filter-delay:0ms;
+--system-acryllic-opacity:0.5;
 }
 
-[theme="E"][visualcolors="neon"] {
+.theme-E.visualcolors-neon {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#000000;
@@ -780,9 +792,10 @@
 --icon-filter-hover:sepia(1) hue-rotate(130deg) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
 --icon-filter-delay:0ms;
+--system-acryllic-opacity:0.5;
 }
 
-[theme="F"][visualcolors="neon"] {
+.theme-F.visualcolors-neon {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#000000;
@@ -800,9 +813,10 @@
 --icon-filter-hover:sepia(1) hue-rotate(200deg) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
 --icon-filter-delay:0ms;
+--system-acryllic-opacity:0.5;
 }
 
-[theme="G"][visualcolors="neon"] {
+.theme-G.visualcolors-neon {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#000000;
@@ -820,9 +834,10 @@
 --icon-filter-hover:sepia(1) hue-rotate(45deg) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
 --icon-filter-delay:0ms;
+--system-acryllic-opacity:0.5;
 }
 
-[theme="H"][visualcolors="neon"] {
+.theme-H.visualcolors-neon {
 --desktop-background-image:url("");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#000000;
@@ -840,14 +855,15 @@
 --icon-filter-hover:sepia(1) grayscale(1) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
 --icon-filter-delay:0ms;
+--system-acryllic-opacity:0.5;
 }
 
 /* Evelution */
-[visualcolors="evelution"] {
+.visualcolors-evelution {
 	--system-visual-style:lite;
 }
 
-[theme="A"][visualcolors="evelution"] {
+.theme-A.visualcolors-evelution {
 --desktop-background-image:url("Evelution.png");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#9dc3f7;
@@ -865,6 +881,7 @@
 --hyperlink-background-color:#1e5aa8;
 --active-title-background-color:#1e5aa8;
 --inactive-title-background-color:#ffffff;
+--custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
 --border-radius:3px;
 --icon-filter:opacity(1);
@@ -873,7 +890,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="B"][visualcolors="evelution"] {
+.theme-B.visualcolors-evelution {
 --desktop-background-image:url("Evelution.png");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#ffec6c;
@@ -891,6 +908,7 @@
 --hyperlink-background-color:#dbac34;
 --active-title-background-color:#dbac34;
 --inactive-title-background-color:#ffffff;
+--custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
 --border-radius:3px;
 --icon-filter:opacity(1);
@@ -899,7 +917,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="C"][visualcolors="evelution"] {
+.theme-C.visualcolors-evelution {
 --desktop-background-image:url("Evelution.png");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#78fc78;
@@ -917,6 +935,7 @@
 --hyperlink-background-color:#00852b;
 --active-title-background-color:#00852b;
 --inactive-title-background-color:#ffffff;
+--custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
 --border-radius:3px;
 --icon-filter:opacity(1);
@@ -925,7 +944,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="D"][visualcolors="evelution"] {
+.theme-D.visualcolors-evelution {
 --desktop-background-image:url("Evelution.png");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#f06d61;
@@ -943,6 +962,7 @@
 --hyperlink-background-color:#c91a09;
 --active-title-background-color:#c91a09;
 --inactive-title-background-color:#ffffff;
+--custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
 --border-radius:3px;
 --icon-filter:opacity(1);
@@ -951,7 +971,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="E"][visualcolors="evelution"] {
+.theme-E.visualcolors-evelution {
 --desktop-background-image:url("Evelution.png");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#8a12a8;
@@ -969,6 +989,7 @@
 --hyperlink-background-color:#a06eb9;
 --active-title-background-color:#a06eb9;
 --inactive-title-background-color:#ffffff;
+--custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
 --border-radius:3px;
 --icon-filter:opacity(1);
@@ -977,7 +998,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="F"][visualcolors="evelution"] {
+.theme-F.visualcolors-evelution {
 --desktop-background-image:url("Evelution.png");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#5f3109;
@@ -995,6 +1016,7 @@
 --hyperlink-background-color:#ad6140;
 --active-title-background-color:#ab6038;
 --inactive-title-background-color:#ffffff;
+--custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
 --border-radius:3px;
 --icon-filter:opacity(1);
@@ -1003,7 +1025,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="G"][visualcolors="evelution"] {
+.theme-G.visualcolors-evelution {
 --desktop-background-image:url("Evelution.png");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#aa4d8e;
@@ -1021,6 +1043,7 @@
 --hyperlink-background-color:#df6695;
 --active-title-background-color:#df6695;
 --inactive-title-background-color:#ffffff;
+--custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
 --border-radius:3px;
 --icon-filter:opacity(1);
@@ -1029,7 +1052,7 @@
 --icon-filter-delay:0ms;
 }
 
-[theme="H"][visualcolors="evelution"] {
+.theme-H.visualcolors-evelution {
 --desktop-background-image:url("Evelution.png");
 --desktop-background-image-opacity:100%;
 --desktop-background-color:#5b7590;
@@ -1047,6 +1070,7 @@
 --hyperlink-background-color:#6c96bf;
 --active-title-background-color:#6c96bf;
 --inactive-title-background-color:#ffffff;
+--custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
 --border-radius:3px;
 --icon-filter:opacity(1);

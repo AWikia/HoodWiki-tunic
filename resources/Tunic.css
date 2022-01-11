@@ -1,4 +1,4 @@
-[theme="A"][visualcolors="standard"] {
+.theme-A.visualcolors-standard {
 --desktop-background-image:url("Cubes1.png");
 --desktop-background-color:#d0d0d0;
 --desktop-text-background-color:#000000;
@@ -12,7 +12,7 @@
 --inactive-title-background-color:#dfc176;
 }
 
-[theme="B"][visualcolors="standard"] {
+.theme-B.visualcolors-standard {
 --desktop-background-image:url("Cubes2.png");
 --desktop-background-color:#fecccf;
 --desktop-text-background-color:#872b17;
@@ -26,7 +26,7 @@
 --inactive-title-background-color:#ff9ecd;
 }
 
-[theme="C"][visualcolors="standard"] {
+.theme-C.visualcolors-standard {
 --desktop-background-image:url("Cubes5.png");
 --desktop-background-color:#ffec6c;
 --desktop-text-background-color:#543324;
@@ -40,7 +40,7 @@
 --inactive-title-background-color:#dfc176;
 }
 
-[theme="D"][visualcolors="standard"] {
+.theme-D.visualcolors-standard {
 --desktop-background-image:url("Cubes6.png");
 --desktop-background-color:#e2f99a;
 --desktop-text-background-color:#237841;
@@ -54,7 +54,7 @@
 --inactive-title-background-color:#deea92;
 }
 
-[theme="E"][visualcolors="standard"] {
+.theme-E.visualcolors-standard {
 --desktop-background-image:url("Cubes3.png");
 --desktop-background-color:#1b2a34;
 --desktop-text-background-color:#f4f4f4;
@@ -68,7 +68,7 @@
 --inactive-title-background-color:#7f7f7f;
 }
 
-[theme="F"][visualcolors="standard"] {
+.theme-F.visualcolors-standard {
 --desktop-background-image:url("Cubes4.png");
 --desktop-background-color:#19325a;
 --desktop-text-background-color:#abd9ff;
@@ -83,7 +83,7 @@
 }
 
 
-[theme="G"][visualcolors="standard"] {
+.theme-G.visualcolors-standard {
 --desktop-background-image:url("Cubes7.png");
 --desktop-background-color:#352100;
 --desktop-text-background-color:#fdc383;
@@ -97,7 +97,7 @@
 --inactive-title-background-color:#fa9c1c;
 }
 
-[theme="H"][visualcolors="standard"] {
+.theme-H.visualcolors-standard {
 --desktop-background-image:url("Cubes8.png");
 --desktop-background-color:#720012;
 --desktop-text-background-color:#f06d61;
@@ -129,7 +129,7 @@ html body {
 }
 
 :root {
---max-width:1440px; /* Tunic is a Mobile Skin */
+--max-width:1500px; /* Tunic is a Mobile Skin */
 }
 
 
@@ -145,9 +145,11 @@ html body {
 container {
 /** Scrollbar Styling **/
 	/* Track */
-	--scrollbar-track-color-1:rgb(var(--canvas-background-color-rgb));
-	--scrollbar-track-color-2:var(--canvas-secondary-background-color-hover);
-	--scrollbar-track-text:rgb(var(--canvas-text-background-color-rgb));
+	--scrollbar-track-color-1:var(--canvas-background-color);
+	--scrollbar-track-color-2:var(--canvas-background-color-hover);
+	--scrollbar-thumb-color-1:var(--canvas-text-background-color);
+	--scrollbar-thumb-color-2:var(--canvas-text-background-color-hover);
+	--scrollbar-track-text:var(--canvas-text-background-color);
 	padding:0.3em;
 	box-sizing:border-box;
 	color:var(--canvas-text-background-color);
