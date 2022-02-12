@@ -6,10 +6,33 @@
 		<span class="fc-graytext" style="color:graytext;"></span>
 		<span class="fc-canvastext" style="color:canvastext;"></span>
 		<span class="fc-highlight" style="color:highlight;"></span>
+		<!-- Theming -->
+		<div class="cpe-theming visualcolors-standard theme-A"></div>
+		<div class="cpe-theming visualcolors-standard theme-B"></div>
+		<div class="cpe-theming visualcolors-standard theme-C"></div>
+		<div class="cpe-theming visualcolors-standard theme-D"></div>
+		<div class="cpe-theming visualcolors-standard theme-E"></div>
+		<div class="cpe-theming visualcolors-standard theme-F"></div>
+		<div class="cpe-theming visualcolors-standard theme-G"></div>
+		<div class="cpe-theming visualcolors-standard theme-H"></div>
+		<!-- Theming 2 -->
+		<div class="cpe-theming visualcolors-nocolormanagement theme-A"></div>
+		<div class="cpe-theming visualcolors-nocolormanagement theme-B"></div>
+		<div class="cpe-theming visualcolors-nocolormanagement theme-C"></div>
+		<div class="cpe-theming visualcolors-nocolormanagement theme-D"></div>
+		<div class="cpe-theming visualcolors-nocolormanagement theme-E"></div>
+		<div class="cpe-theming visualcolors-nocolormanagement theme-F"></div>
+		<div class="cpe-theming visualcolors-nocolormanagement theme-G"></div>
+		<div class="cpe-theming visualcolors-nocolormanagement theme-H"></div>
 	</div>
-	<div class="gradient-overlay" style="position:absolute; pointer-events:none;"></div>
-	<div class="invertion-on" style=" pointer-events: none; position: absolute; z-index: -2; width: 100%; height: 100%;"><div class="body-background " style="position:absolute; pointer-events:none;"></div></div>
-	<div class="body-background-color" style="position:absolute; pointer-events:none;"></div>
+	<div tabindex="-1" class="focus-overlay" style="pointer-events:none;"></div>
+	<div id="LunaLevit" style=" pointer-events: none; position: fixed; z-index: -2; width: 100%; height: 100%;">
+		<div id="LunaLevit2" class="gradient-overlay" style="pointer-events:none;"></div>
+		<div class="invertion-on" style=" pointer-events: none; position: fixed; z-index: -2; width: 100%; height: 100%;">
+			<div id="LunaLevit3" class="desktop-background fandom-community-header__background" style="position:absolute; pointer-events:none;" id="desktop-background">
+			</div>
+		</div>
+	</div>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -65,7 +88,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="color-modes">
+			<div id="color-modes" class="color-management-on">
 				<div role="navigation" id="p-color-modes" class="mw-portlet mw-portlet-color-modes" title="" aria-labelledby="p-color-modes-label">
 					<h3 id="p-color-modes-label">{{msg-tunic-colormodes}}</h3>
 					<div class="mw-portlet-body">
@@ -96,11 +119,12 @@
 					<div class="mw-portlet-body">
 						<ul>
 							<li data-visual-color="standard"><a onclick="VisualColor('standard')">{{msg-tunic-standard}}</a></li>
+							<li data-visual-color="nocolormanagement"><a onclick="VisualColor('nocolormanagement')">{{msg-tunic-nocolormanagement}}</a></li>
 						</ul>		
 					</div>
 				</div>
 			</div>
-			<div id="wiki-themes">
+			<div id="wiki-themes" class="color-management-on">
 				<div role="navigation" id="p-themes" class="mw-portlet mw-portlet-themes" title="" aria-labelledby="p-themes-label">
 					<h3 id="p-themes-label">{{msg-tunic-themes}}</h3>
 					<div class="mw-portlet-body">

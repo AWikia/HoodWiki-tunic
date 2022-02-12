@@ -14,5 +14,7 @@
 	"tunic-blackmode": "Schwartz",
 	"tunic-colormodes": "Farbemodusen",
 	"tunic-contrast-modes": "Kontrastmodi",
-	"tunic-auto": "Automatisch"
+	"tunic-auto": "Automatisch",
+	"tunic-nocolormanagement": "Keine Farbmanagement"
+
 }

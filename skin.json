@@ -1,6 +1,6 @@
 {
 	"name": "Tunic",
-	"version": "6.0.0",
+	"version": "7.0.0",
 	"author": "Gabriel Wicke, Timwi and HoodWiki",
 	"url": "https://www.mediawiki.org/wiki/Skin:Tunic",
 	"descriptionmsg": "tunic-desc",
@@ -37,6 +37,7 @@
 					"tunic-colormodes",
 					"tunic-contrast-modes",
 					"tunic-auto",
+					"tunic-nocolormanagement",
 					"sitetitle",
 					"search",
 					"tagline",

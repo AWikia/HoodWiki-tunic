@@ -14,5 +14,6 @@
 	"tunic-blackmode": "Μαύρη",
 	"tunic-colormodes": "Μορφές Χρώματος",
 	"tunic-contrast-modes": "Μορφές κοντράστ",
-	"tunic-auto": "Αυτόματο"
+	"tunic-auto": "Αυτόματο",
+	"tunic-nocolormanagement": "Χωρίς διαχείριση χρωμάτων"
 }

@@ -1,114 +1,105 @@
 .theme-A.visualcolors-standard {
---desktop-background-image:url("Cubes1.png");
---desktop-background-color:#d0d0d0;
---desktop-text-background-color:#000000;
---desktop-background-size:contain;
+--desktop-background-image:url("");
+--desktop-background-color:#ffcba4;
+--desktop-text-background-color:#2d383a;
 --canvas-background-color:#ffffff;
---inactive-text-background-color:#645a4c;
---canvas-text-background-color:#484d48;
---highlight-background-color:#656761;
---hyperlink-background-color:#897d62;
---active-title-background-color:#897d62;
---inactive-title-background-color:#dfc176;
+--inactive-text-background-color:#c8c8cd;
+--canvas-text-background-color:#2d383a;
+--highlight-background-color:#93ccea;
+--hyperlink-background-color:#1e5aa8;
+--active-title-background-color:#00755e;
+--inactive-title-background-color:#01786f;
 }
 
 .theme-B.visualcolors-standard {
---desktop-background-image:url("Cubes2.png");
---desktop-background-color:#fecccf;
---desktop-text-background-color:#872b17;
---desktop-background-size:contain;
---canvas-background-color:#f6a9bb;
---inactive-text-background-color:#96709f;
---canvas-text-background-color:#720012;
---highlight-background-color:#aa4d8e;
---hyperlink-background-color:#8a12a8;
---active-title-background-color:#8a12a8;
---inactive-title-background-color:#ff9ecd;
+--desktop-background-image:url("");
+--desktop-background-color:#ffcba4;
+--desktop-text-background-color:#2d383a;
+--canvas-background-color:#eed9c4;
+--inactive-text-background-color:#c88a65;
+--canvas-text-background-color:#2d383a;
+--highlight-background-color:#ff8833;
+--hyperlink-background-color:#664228;
+--active-title-background-color:#fe6f5e;
+--inactive-title-background-color:#ff7034;
 }
 
 .theme-C.visualcolors-standard {
---desktop-background-image:url("Cubes5.png");
---desktop-background-color:#ffec6c;
---desktop-text-background-color:#543324;
---desktop-background-size:contain;
---canvas-background-color:#ffff80;
---inactive-text-background-color:#dfc176;
---canvas-text-background-color:#352100;
---highlight-background-color:#f5cd2f;
---hyperlink-background-color:#aa7f2e;
---active-title-background-color:#543324;
---inactive-title-background-color:#dfc176;
+--desktop-background-image:url("");
+--desktop-background-color:#fbe7b2;
+--desktop-text-background-color:#614051;
+--canvas-background-color:#ffffff;
+--inactive-text-background-color:#8b8680;
+--canvas-text-background-color:#614051;
+--highlight-background-color:#6456b7;
+--hyperlink-background-color:#7070cc;
+--active-title-background-color:#0066ff;
+--inactive-title-background-color:#4570e6;
 }
 
 .theme-D.visualcolors-standard {
---desktop-background-image:url("Cubes6.png");
---desktop-background-color:#e2f99a;
---desktop-text-background-color:#237841;
---desktop-background-size:contain;
---canvas-background-color:#e0ffb0;
---inactive-text-background-color:#58ab41;
---canvas-text-background-color:#00451a;
---highlight-background-color:#58ab41;
---hyperlink-background-color:#00852b;
---active-title-background-color:#237841;
---inactive-title-background-color:#deea92;
+--desktop-background-image:url("");
+--desktop-background-color:#fbe7b2;
+--desktop-text-background-color:#614051;
+--canvas-background-color:#eed9c4;
+--inactive-text-background-color:#8d90a1;
+--canvas-text-background-color:#614051;
+--highlight-background-color:#664228;
+--hyperlink-background-color:#003366;
+--active-title-background-color:#926f5b;
+--inactive-title-background-color:#c88a65;
 }
 
 .theme-E.visualcolors-standard {
---desktop-background-image:url("Cubes3.png");
---desktop-background-color:#1b2a34;
---desktop-text-background-color:#f4f4f4;
---desktop-background-size:contain;
+--desktop-background-image:url("");
+--desktop-background-color:#af593e;
+--desktop-text-background-color:#eed9c4;
 --canvas-background-color:#000000;
---inactive-text-background-color:#646464;
---canvas-text-background-color:#fcfcfc;
---highlight-background-color:#545955;
---hyperlink-background-color:#c8c8c8;
---active-title-background-color:#bcb4a5;
---inactive-title-background-color:#7f7f7f;
+--inactive-text-background-color:#614051;
+--canvas-text-background-color:#eed9c4;
+--highlight-background-color:#1e5aa8;
+--hyperlink-background-color:#95e0e8;
+--active-title-background-color:#7ba05b;
+--inactive-title-background-color:#63b76c;
 }
 
 .theme-F.visualcolors-standard {
---desktop-background-image:url("Cubes4.png");
---desktop-background-color:#19325a;
---desktop-text-background-color:#abd9ff;
---desktop-background-size:contain;
---canvas-background-color:#0e3e9a;
---inactive-text-background-color:#6c96bf;
---canvas-text-background-color:#c1dff0;
---highlight-background-color:#4861ac;
---hyperlink-background-color:#aee9ef;
---active-title-background-color:#6babe4;
---inactive-title-background-color:#c1dff0;
+--desktop-background-image:url("");
+--desktop-background-color:#af593e;
+--desktop-text-background-color:#eed9c4;
+--canvas-background-color:#2d383a;
+--inactive-text-background-color:#8b8680;
+--canvas-text-background-color:#eed9c4;
+--highlight-background-color:#664228;
+--hyperlink-background-color:#ff8833;
+--active-title-background-color:#b33b24;
+--inactive-title-background-color:#d982b5;
 }
 
-
 .theme-G.visualcolors-standard {
---desktop-background-image:url("Cubes7.png");
---desktop-background-color:#352100;
---desktop-text-background-color:#fdc383;
---desktop-background-size:contain;
---canvas-background-color:#5f2d09;
---inactive-text-background-color:#cf8a47;
---canvas-text-background-color:#ffc995;
---highlight-background-color:#91501c;
---hyperlink-background-color:#fcac00;
---active-title-background-color:#d27744;
---inactive-title-background-color:#fa9c1c;
+--desktop-background-image:url("");
+--desktop-background-color:#805533;
+--desktop-text-background-color:#fdd5b1;
+--canvas-background-color:#000000;
+--inactive-text-background-color:#736a62;
+--canvas-text-background-color:#fdd5b1;
+--highlight-background-color:#7070cc;
+--hyperlink-background-color:#6456b7;
+--active-title-background-color:#1560bd;
+--inactive-title-background-color:#0066cc;
 }
 
 .theme-H.visualcolors-standard {
---desktop-background-image:url("Cubes8.png");
---desktop-background-color:#720012;
---desktop-text-background-color:#f06d61;
---desktop-background-size:contain;
---canvas-background-color:#872b17;
---inactive-text-background-color:#ab6038;
---canvas-text-background-color:#f9b7a5;
---highlight-background-color:#c91a09;
---hyperlink-background-color:#f06d61;
---active-title-background-color:#b40000;
---inactive-title-background-color:#f06d61;
+--desktop-background-image:url("");
+--desktop-background-color:#805533;
+--desktop-text-background-color:#fdd5b1;
+--canvas-background-color:#2d383a;
+--inactive-text-background-color:#926f5b;
+--canvas-text-background-color:#fdd5b1;
+--highlight-background-color:#000000;
+--hyperlink-background-color:#c88a65;
+--active-title-background-color:#7070cc;
+--inactive-title-background-color:#9999cc;
 }
 
 
@@ -122,6 +113,7 @@ html body {
 	font-family:"Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	margin:0;
 	padding:0;
+	background-color:var(--canvas-background-color);
 }
 
 :focus:not(:focus-visible) {
@@ -133,16 +125,16 @@ html body {
 }
 
 
-.body-background-color,
+#LunaLevit,
 .gradient-overlay {
 	--desktop-background-color:var(--canvas-background-color);
 }
 
-.body-background {
+.desktop-background {
 	display:none;
 }
 
-container {
+html {
 /** Scrollbar Styling **/
 	/* Track */
 	--scrollbar-track-color-1:var(--canvas-background-color);
@@ -150,6 +142,9 @@ container {
 	--scrollbar-thumb-color-1:var(--canvas-text-background-color);
 	--scrollbar-thumb-color-2:var(--canvas-text-background-color-hover);
 	--scrollbar-track-text:var(--canvas-text-background-color);
+}
+
+container {
 	padding:0.3em;
 	box-sizing:border-box;
 	color:var(--canvas-text-background-color);
@@ -182,6 +177,7 @@ h1, h2, h3, h4, h5, h6 {
 
 fieldset, textarea, select, pre {
 	border-color:var(--hyperlink-background-color);
+	color:var(--canvas-text-background-color);
 }
 
 code, pre, .catlinks, #toc,  div.thumbinner, .toccolours {
