@@ -1,14 +1,23 @@
 {
 	"name": "Tunic",
-	"version": "7.0.0",
-	"author": "Gabriel Wicke, Timwi and HoodWiki",
+	"version": "8.0.0",
+	"author": [
+    "Gabriel Wicke",
+    "Timwi",
+    "HoodWiki",
+    "HM100",
+    "..."
+	],
 	"url": "https://www.mediawiki.org/wiki/Skin:Tunic",
 	"descriptionmsg": "tunic-desc",
 	"namemsg": "skinname-tunic",
 	"license-name": "GPL-2.0-or-later",
 	"type": "skin",
 	"requires": {
-		"MediaWiki": ">= 1.36.0"
+		"MediaWiki": ">= 1.36.0",
+		"skins": {
+			"Evelution": ">= 66.0.0"
+		}
 	},
 	"AutoloadClasses": {
 		"SkinTunic": "SkinTunic.php"
@@ -29,6 +38,18 @@
 					"tunic-themes",
 					"tunic-theme",
 					"tunic-visual-colors",
+					"tunic-style-contrast",
+					"tunic-style-basic",
+					"tunic-style-basiccontrast",
+					"tunic-style-simple",
+					"tunic-style-classic",         
+					"tunic-style-classiccontrast",         
+					"tunic-color-cubes",         
+					"tunic-color-factory",         
+					"tunic-color-forced",         
+					"tunic-color-techno",         
+					"tunic-color-retro",         
+					"tunic-color-neon",         
 					"tunic-standard",
 					"tunic-darkmode",
 					"tunic-lightmode",
@@ -109,5 +130,5 @@
 			"+ext.echo.styles.badge": "resources/extensions/echo.styles.badge.less"
 		}
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }

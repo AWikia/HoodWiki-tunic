@@ -279,12 +279,14 @@
 
 
 .theme-A.visualcolors-forced {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#ffffff;
 --canvas-background-color:#000000;
+--canvas-secondary-background-color:#000000;
 --inactive-text-background-color:#bee64b;
 --canvas-text-background-color:#ffeb00;
+--canvas-text-secondary-background-color:#ffffff;
 --highlight-background-color:#00755e;
 --hyperlink-background-color:#9999cc;
 --active-title-background-color:#1560bd;
@@ -292,12 +294,14 @@
 }
 
 .theme-B.visualcolors-forced {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#ffffff;
 --canvas-background-color:#000000;
+--canvas-secondary-background-color:#000000;
 --inactive-text-background-color:#c8c8cd;
 --canvas-text-background-color:#bee64b;
+--canvas-text-secondary-background-color:#ffffff;
 --highlight-background-color:#0066ff;
 --hyperlink-background-color:#f653a6;
 --active-title-background-color:#2eb4e6;
@@ -305,12 +309,14 @@
 }
 
 .theme-C.visualcolors-forced {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#ffffff;
 --canvas-background-color:#000000;
+--canvas-secondary-background-color:#000000;
 --inactive-text-background-color:#bee64b;
 --canvas-text-background-color:#ffffff;
+--canvas-text-secondary-background-color:#ffffff;
 --highlight-background-color:#2eb4e6;
 --hyperlink-background-color:#ffeb00;
 --active-title-background-color:#803790;
@@ -318,12 +324,14 @@
 }
 
 .theme-D.visualcolors-forced {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#000000;
 --canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#ffffff;
 --inactive-text-background-color:#b33b24;
 --canvas-text-background-color:#000000;
+--canvas-text-secondary-background-color:#000000;
 --highlight-background-color:#803790;
 --hyperlink-background-color:#1560bd;
 --active-title-background-color:#000000;
@@ -331,12 +339,14 @@
 }
 
 .theme-E.visualcolors-forced {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#000000;
 --canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#ffffff;
 --inactive-text-background-color:#9e5b40;
 --canvas-text-background-color:#803790;
+--canvas-text-secondary-background-color:#000000;
 --highlight-background-color:#ffae42;
 --hyperlink-background-color:#ed0a3f;
 --active-title-background-color:#ffeb00;
@@ -344,12 +354,14 @@
 }
 
 .theme-F.visualcolors-forced {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#000000;
 --canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#ffffff;
 --inactive-text-background-color:#614051;
 --canvas-text-background-color:#1560bd;
+--canvas-text-secondary-background-color:#000000;
 --highlight-background-color:#d92121;
 --hyperlink-background-color:#8e3179;
 --active-title-background-color:#ed0a3f;
@@ -357,12 +369,14 @@
 }
 
 .theme-G.visualcolors-forced {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#000000;
 --canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#ffffff;
 --inactive-text-background-color:#614051;
 --canvas-text-background-color:#ed0a3f;
+--canvas-text-secondary-background-color:#000000;
 --highlight-background-color:#8e3179;
 --hyperlink-background-color:#1560bd;
 --active-title-background-color:#ffae42;
@@ -370,12 +384,14 @@
 }
 
 .theme-H.visualcolors-forced {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#ffffff;
 --canvas-background-color:#000000;
+--canvas-secondary-background-color:#000000;
 --inactive-text-background-color:#ed0a3f;
 --canvas-text-background-color:#2eb4e6;
+--canvas-text-secondary-background-color:#ffffff;
 --highlight-background-color:#f653a6;
 --hyperlink-background-color:#ffae42;
 --active-title-background-color:#614051;
@@ -516,10 +532,11 @@
 
 /* First */
 .theme-A.visualcolors-retro {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#b33b24;
 --desktop-text-background-color:#ddebec;
---canvas-background-color:#c9c0bb;
+--canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#c9c0bb;
 --inactive-text-background-color:#837050;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#837050;
@@ -536,10 +553,11 @@
 }
 
 .theme-B.visualcolors-retro {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#b5b35c;
 --desktop-text-background-color:#000000;
---canvas-background-color:#c8c8cd;
+--canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#c8c8cd;
 --inactive-text-background-color:#b5b35c;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#00cccc;
@@ -555,10 +573,11 @@
 }
 
 .theme-C.visualcolors-retro {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#733380;
 --desktop-text-background-color:#ddebec;
---canvas-background-color:#63b76c;
+--canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#63b76c;
 --inactive-text-background-color:#7ba05b;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#7ba05b;
@@ -575,10 +594,11 @@
 }
 
 .theme-D.visualcolors-retro {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#ddebec;
---canvas-background-color:#acace6;
+--canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#acace6;
 --inactive-text-background-color:#6b3fa0;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#6b3fa0;
@@ -595,10 +615,11 @@
 }
 
 .theme-E.visualcolors-retro {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#ddebec;
---canvas-background-color:#fbe7b2;
+--canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#fbe7b2;
 --inactive-text-background-color:#f2c649;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#f2c649;
@@ -615,10 +636,11 @@
 }
 
 .theme-F.visualcolors-retro {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#00755e;
 --desktop-text-background-color:#ddebec;
---canvas-background-color:#8fd8d8;
+--canvas-background-color:#ddebec;
+--canvas-secondary-background-color:#8fd8d8;
 --inactive-text-background-color:#63b76c;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#003366;
@@ -634,10 +656,11 @@
 }
 
 .theme-G.visualcolors-retro {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#87421f;
 --desktop-text-background-color:#ddebec;
---canvas-background-color:#b5b35c;
+--canvas-background-color:#eed9c4;
+--canvas-secondary-background-color:#b5b35c;
 --inactive-text-background-color:#926f5b;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#29ab87;
@@ -654,10 +677,11 @@
 }
 
 .theme-H.visualcolors-retro {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#664228;
 --desktop-text-background-color:#ddebec;
---canvas-background-color:#e6be8a;
+--canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#e6be8a;
 --inactive-text-background-color:#c88a65;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#803790;
@@ -675,10 +699,11 @@
 
 /* Second */
 .theme-A.visualcolors-retro2 {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#ddebec;
---canvas-background-color:#92926e;
+--canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#92926e;
 --inactive-text-background-color:#8359a3;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#8359a3;
@@ -695,10 +720,11 @@
 }
 
 .theme-B.visualcolors-retro2 {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#003366;
 --desktop-text-background-color:#ddebec;
---canvas-background-color:#c8c8cd;
+--canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#c8c8cd;
 --inactive-text-background-color:#c9c0bb;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#b33b24;
@@ -715,10 +741,11 @@
 }
 
 .theme-C.visualcolors-retro2 {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#8d90a1;
 --desktop-text-background-color:#000000;
---canvas-background-color:#ffb7d5;
+--canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#ffb7d5;
 --inactive-text-background-color:#a63a79;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#a63a79;
@@ -734,10 +761,11 @@
 }
 
 .theme-D.visualcolors-retro2 {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#614051;
 --desktop-text-background-color:#ddebec;
---canvas-background-color:#c0d5f0;
+--canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#c0d5f0;
 --inactive-text-background-color:#7a89b8;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#7a89b8;
@@ -754,10 +782,11 @@
 }
 
 .theme-E.visualcolors-retro2 {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#00755e;
 --desktop-text-background-color:#ddebec;
---canvas-background-color:#8dd9cc;
+--canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#8dd9cc;
 --inactive-text-background-color:#33cc99;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#33cc99;
@@ -774,10 +803,11 @@
 }
 
 .theme-F.visualcolors-retro2 {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#ddebec;
---canvas-background-color:#c8c8cd;
+--canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#c8c8cd;
 --inactive-text-background-color:#c9c0bb;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#803790;
@@ -794,10 +824,11 @@
 }
 
 .theme-G.visualcolors-retro2 {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#00755e;
 --desktop-text-background-color:#ddebec;
---canvas-background-color:#c8c8cd;
+--canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#c8c8cd;
 --inactive-text-background-color:#c9c0bb;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#00cccc;
@@ -814,10 +845,11 @@
 }
 
 .theme-H.visualcolors-retro2 {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#00755e;
 --desktop-text-background-color:#ddebec;
---canvas-background-color:#fbe870;
+--canvas-background-color:#ffffff;
+--canvas-secondary-background-color:#fbe870;
 --inactive-text-background-color:#acbf60;
 --canvas-text-background-color:#000000;
 --highlight-background-color:#acbf60;
@@ -841,7 +873,7 @@
 
 /* Light */
 .theme-A.visualcolors-neonlight {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-image-filter:opacity(100%);
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#000000;
@@ -869,7 +901,7 @@
 }
 
 .theme-B.visualcolors-neonlight {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-image-filter:opacity(100%);
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#2d383a;
@@ -897,7 +929,7 @@
 }
 
 .theme-C.visualcolors-neonlight {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-image-filter:opacity(100%);
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#614051;
@@ -925,7 +957,7 @@
 }
 
 .theme-D.visualcolors-neonlight {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-image-filter:opacity(100%);
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#664228;
@@ -953,7 +985,7 @@
 }
 
 .theme-E.visualcolors-neonlight {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-image-filter:opacity(100%);
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#000000;
@@ -981,7 +1013,7 @@
 }
 
 .theme-F.visualcolors-neonlight {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-image-filter:opacity(100%);
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#2d383a;
@@ -1009,7 +1041,7 @@
 }
 
 .theme-G.visualcolors-neonlight {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-image-filter:opacity(100%);
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#732e6c;
@@ -1037,7 +1069,7 @@
 }
 
 .theme-H.visualcolors-neonlight {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-image-filter:opacity(100%);
 --desktop-background-color:#ffffff;
 --desktop-text-background-color:#2d383a;
@@ -1066,7 +1098,7 @@
 
 /* Dark */
 .theme-A.visualcolors-neon {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#c5e17a;
 --canvas-background-color:#000000;
@@ -1077,7 +1109,7 @@
 --active-title-background-color:#4d8c57;
 --inactive-title-background-color:#000000;
 --custom-secondary-font:"";
---border-radius:3px;
+--border-radius:4px;
 --icon-filter:sepia(0) hue-rotate(0deg) saturate(100%) brightness(100%) opacity(1) invert(0);
 --icon-filter-hover:sepia(1) hue-rotate(240deg) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
@@ -1086,7 +1118,7 @@
 }
 
 .theme-B.visualcolors-neon {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#93ccea;
 --canvas-background-color:#000000;
@@ -1097,7 +1129,7 @@
 --active-title-background-color:#9cc1f5;
 --inactive-title-background-color:#000000;
 --custom-secondary-font:"";
---border-radius:3px;
+--border-radius:4px;
 --icon-filter:sepia(0) hue-rotate(0deg) saturate(100%) brightness(100%) opacity(1) invert(0);
 --icon-filter-hover:sepia(1) hue-rotate(0deg) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
@@ -1106,7 +1138,7 @@
 }
 
 .theme-C.visualcolors-neon {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#ffa6c9;
 --canvas-background-color:#000000;
@@ -1117,7 +1149,7 @@
 --active-title-background-color:#d96cbe;
 --inactive-title-background-color:#000000;
 --custom-secondary-font:"";
---border-radius:3px;
+--border-radius:4px;
 --icon-filter:sepia(0) hue-rotate(0deg) saturate(100%) brightness(100%) opacity(1) invert(0);
 --icon-filter-hover:sepia(1) hue-rotate(90deg) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
@@ -1126,7 +1158,7 @@
 }
 
 .theme-D.visualcolors-neon {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#ffae42;
 --canvas-background-color:#000000;
@@ -1137,7 +1169,7 @@
 --active-title-background-color:#e77200;
 --inactive-title-background-color:#000000;
 --custom-secondary-font:"";
---border-radius:3px;
+--border-radius:4px;
 --icon-filter:sepia(0) hue-rotate(0deg) saturate(100%) brightness(100%) opacity(1) invert(0);
 --icon-filter-hover:sepia(1) hue-rotate(180deg) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
@@ -1146,7 +1178,7 @@
 }
 
 .theme-E.visualcolors-neon {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#febaad;
 --canvas-background-color:#000000;
@@ -1157,7 +1189,7 @@
 --active-title-background-color:#d92121;
 --inactive-title-background-color:#000000;
 --custom-secondary-font:"";
---border-radius:3px;
+--border-radius:4px;
 --icon-filter:sepia(0) hue-rotate(0deg) saturate(100%) brightness(100%) opacity(1) invert(0);
 --icon-filter-hover:sepia(1) hue-rotate(130deg) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
@@ -1166,7 +1198,7 @@
 }
 
 .theme-F.visualcolors-neon {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#fbe870;
 --canvas-background-color:#000000;
@@ -1177,7 +1209,7 @@
 --active-title-background-color:#f1d651;
 --inactive-title-background-color:#000000;
 --custom-secondary-font:"";
---border-radius:3px;
+--border-radius:4px;
 --icon-filter:sepia(0) hue-rotate(0deg) saturate(100%) brightness(100%) opacity(1) invert(0);
 --icon-filter-hover:sepia(1) hue-rotate(200deg) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
@@ -1186,7 +1218,7 @@
 }
 
 .theme-G.visualcolors-neon {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#c9a0dc;
 --canvas-background-color:#000000;
@@ -1197,7 +1229,7 @@
 --active-title-background-color:#803790;
 --inactive-title-background-color:#000000;
 --custom-secondary-font:"";
---border-radius:3px;
+--border-radius:4px;
 --icon-filter:sepia(0) hue-rotate(0deg) saturate(100%) brightness(100%) opacity(1) invert(0);
 --icon-filter-hover:sepia(1) hue-rotate(45deg) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
@@ -1206,7 +1238,7 @@
 }
 
 .theme-H.visualcolors-neon {
---desktop-background-image:url("");
+--desktop-background-image:none;
 --desktop-background-color:#000000;
 --desktop-text-background-color:#ddebec;
 --canvas-background-color:#000000;
@@ -1217,7 +1249,7 @@
 --active-title-background-color:#ffffff;
 --inactive-title-background-color:#000000;
 --custom-secondary-font:"";
---border-radius:3px;
+--border-radius:4px;
 --icon-filter:sepia(0) grayscale(0) saturate(100%) brightness(100%) opacity(1) invert(0);
 --icon-filter-hover:sepia(1) grayscale(1) saturate(800%) brightness(125%) opacity(0.8) invert(1);
 --icon-filter-duration:300ms;
@@ -1252,7 +1284,7 @@
 --inactive-title-background-color:#ffffff;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;
@@ -1279,7 +1311,7 @@
 --inactive-title-background-color:#ffffff;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;
@@ -1306,7 +1338,7 @@
 --inactive-title-background-color:#ffffff;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;
@@ -1333,7 +1365,7 @@
 --inactive-title-background-color:#ffffff;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;
@@ -1360,7 +1392,7 @@
 --inactive-title-background-color:#ffffff;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;
@@ -1388,7 +1420,7 @@
 --inactive-title-background-color:#ffffff;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;
@@ -1416,7 +1448,7 @@
 --inactive-title-background-color:#ffffff;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;
@@ -1444,7 +1476,7 @@
 --inactive-title-background-color:#ffffff;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;
@@ -1473,7 +1505,7 @@
 --inactive-title-background-color:#000000;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;
@@ -1500,7 +1532,7 @@
 --inactive-title-background-color:#000000;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;
@@ -1527,7 +1559,7 @@
 --inactive-title-background-color:#000000;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;
@@ -1554,7 +1586,7 @@
 --inactive-title-background-color:#000000;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;
@@ -1581,7 +1613,7 @@
 --inactive-title-background-color:#000000;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;
@@ -1609,7 +1641,7 @@
 --inactive-title-background-color:#000000;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;
@@ -1637,7 +1669,7 @@
 --inactive-title-background-color:#000000;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;
@@ -1665,7 +1697,7 @@
 --inactive-title-background-color:#000000;
 --custom-font:"Didact Gothic";
 --custom-secondary-font:"Rubik";
---border-radius:3px;
+--border-radius:5px;
 --icon-filter:opacity(1);
 --icon-filter-hover:opacity(0.8);
 --icon-filter-duration:300ms;

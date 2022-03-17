@@ -1,4 +1,6 @@
 	<div style="position:absolute; z-index:-1;">
+		<span class="fc-mozbuttonface" style="color:-moz-dialog"></span>
+		<span class="fc-mozbuttontext" style="color:-moz-dialogtext"></span>
 		<span class="fc-buttonface" style="color:buttonface"></span>
 		<span class="fc-buttontext" style="color:buttontext"></span>
 		<span class="fc-canvas" style="color:canvas;"></span>
@@ -6,6 +8,9 @@
 		<span class="fc-graytext" style="color:graytext;"></span>
 		<span class="fc-canvastext" style="color:canvastext;"></span>
 		<span class="fc-highlight" style="color:highlight;"></span>
+		<span class="fc-background" style="color:background;"></span>
+		<span class="fc-activecaption" style="color:activecaption;"></span>
+		<span class="fc-inactivecaption" style="color:inactivecaption;"></span>
 		<!-- Theming -->
 		<div class="cpe-theming visualcolors-standard theme-A"></div>
 		<div class="cpe-theming visualcolors-standard theme-B"></div>
@@ -36,7 +41,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<container>
+<container class="{{#has-no-color-management}} no-color-management{{/has-no-color-management}}">
 	<div id="mw-wrapper">
 		<div class="mw-body" id="content" role="main">
 			<div id="siteNotice">{{{html-site-notice}}}</div>
@@ -88,6 +93,7 @@
 					</div>
 				</div>
 			</div>
+			{{^has-no-color-management}}
 			<div id="color-modes" class="color-management-on">
 				<div role="navigation" id="p-color-modes" class="mw-portlet mw-portlet-color-modes" title="" aria-labelledby="p-color-modes-label">
 					<h3 id="p-color-modes-label">{{msg-tunic-colormodes}}</h3>
@@ -141,6 +147,7 @@
 					</div>
 				</div>
 			</div>
+			{{/has-no-color-management}}
 			{{#data-search-box}}
 			<form action="{{form-action}}" role="search" class="mw-portlet" id="p-search">
 				<input type="hidden" name="title" value="{{page-title}}">
@@ -181,7 +188,14 @@
 		</div>
 	</div>
 </container>
+<style>
+	{{>Themes}}
+	{{>OldServelutionEmulation}}
+
+</style>
 	<script>
+	{{>Java_Check}}
+	{{>Java_Base}}
 	/* Chroma JS */
 
 	{{>Java_Chroma}}
@@ -191,6 +205,4 @@
 	{{>Java_Theming}}
 
 	/* Base JS */
-
-	{{>Java_Base}}
 	</script>

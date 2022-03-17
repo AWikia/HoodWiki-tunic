@@ -15,6 +15,18 @@
 	"tunic-colormodes": "Farbemodusen",
 	"tunic-contrast-modes": "Kontrastmodi",
 	"tunic-auto": "Automatisch",
-	"tunic-nocolormanagement": "Keine Farbmanagement"
+	"tunic-nocolormanagement": "Keine Farbmanagement",
+    "tunic-style-contrast": "Kontrast",
+    "tunic-style-basic": "Basic",
+    "tunic-style-basiccontrast": "Basic-Kontrast",
+    "tunic-style-simple": "Simpel",
+    "tunic-style-classic": "Klassich",
+    "tunic-style-classiccontrast": "Klassich-Kontrast",
+    "tunic-color-cubes": "Würfel",
+    "tunic-color-factory": "Fabrik",
+    "tunic-color-forced": "Erzwungen",
+    "tunic-color-techno": "Techno",
+    "tunic-color-retro": "Retro",
+    "tunic-color-neon": "Neon"
 
 }

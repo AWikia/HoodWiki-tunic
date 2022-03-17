@@ -15,5 +15,18 @@
 	"tunic-colormodes": "Μορφές Χρώματος",
 	"tunic-contrast-modes": "Μορφές κοντράστ",
 	"tunic-auto": "Αυτόματο",
-	"tunic-nocolormanagement": "Χωρίς διαχείριση χρωμάτων"
+	"tunic-nocolormanagement": "Χωρίς διαχείριση χρωμάτων",
+    "tunic-nocolormanagement": "Χωρίς διαχείριση χρωμάτων",
+    "tunic-style-contrast": "Αντιθέσεις",
+    "tunic-style-basic": "Βασικό",
+    "tunic-style-basiccontrast": "Βασικές Αντιθέσεις",
+    "tunic-style-simple": "Απλό",
+    "tunic-style-classic": "Κλασσικό",
+    "tunic-style-classiccontrast": "Κλασσικές Αντιθέσεις",
+    "tunic-color-cubes": "Κύβοι",
+    "tunic-color-factory": "Εργοστασιακά",
+    "tunic-color-forced": "Εξαναγκασμένα",
+    "tunic-color-techno": "Τέκνο",
+    "tunic-color-retro": "Ρετρό",
+    "tunic-color-neon": "Νέον"
 }
