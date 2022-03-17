@@ -19,7 +19,7 @@ http://www.gnu.org/copyleft/gpl.html
 
 
 # Requirements
-To Run Tunic on your wiki, you must have MediaWiki 1.36 or greater. Older versions are not supported
+To Run Tunic on your wiki, you must have MediaWiki 1.36 or greater and Evelution 66.0.0 or greater. Older versions of MediaWiki and Evelution are not supported
 
 # Installation
 To Install Tunic, you must download the reposistory first. Make a folder called **Tunic** in **Skins** diractory where you have installed MediaWiki and extract the zipped file contents in **Tunic** folder.  Lastly, put this in **LocalSettings.php**:
