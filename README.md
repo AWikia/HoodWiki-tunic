@@ -1,4 +1,4 @@
-*Starting from 17/4//2022, this project will no longer be maintained because the main DB trasmitter of that project died. See [Evelution](https://github.com/AWikia/SkinEvelution) for a related project*
+*Starting from 17/4//2022, this project will no longer be maintained because the main DB trasmitter of that project died. See [Evelution](https://github.com/AWikia/SkinEvelution) for a related project. You should uninstall the skin from your wiki, if you have it installed as Tunic will become less compatible with Evelution's config from time to time.*
 
 # Description
 A lightweight Monobook skin with no sidebar, the sidebar links are
