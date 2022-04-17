@@ -1,3 +1,5 @@
+*Starting from 17/4//2022, this project will no longer be maintained because the main DB trasmitter of that project died. See [Evelution](https://github.com/AWikia/SkinEvelution) for a related project*
+
 # Description
 A lightweight Monobook skin with no sidebar, the sidebar links are
 given at the bottom of the page instead. Based on retired skin Chick.
